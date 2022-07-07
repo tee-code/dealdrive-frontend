@@ -33,6 +33,8 @@
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
+/**
+   
 
   /**
    * Navbar links active state on scroll
@@ -153,6 +155,29 @@
   });
 
   /**
+   * Hero Slider
+   */
+   var swiper = new Swiper(".sliderFeaturedPosts", {
+    spaceBetween: 0,
+    speed: 500,
+    centeredSlides: true,
+    loop: true,
+    slideToClickedSlide: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".custom-swiper-button-next",
+      prevEl: ".custom-swiper-button-prev",
+    },
+  });
+
+  /**
    * Clients Slider
    */
   new Swiper('.hero-slider', {
@@ -232,6 +257,13 @@
 
   });
 
+   /**
+   * Initiate glightbox
+   */
+    const glightbox = GLightbox({
+      selector: '.glightbox'
+    });
+
   /**
    * Initiate portfolio lightbox 
    */
@@ -281,6 +313,61 @@
       1200: {
         slidesPerView: 3,
         spaceBetween: 20
+      }
+    }
+  });
+
+
+  /**
+   * Init swiper slider with 1 slide at once in desktop view
+   */
+   new Swiper('.slides-1', {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+
+  /**
+   * Init swiper slider with 3 slides at once in desktop view
+   */
+  new Swiper('.slides-3', {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 40
+      },
+
+      1200: {
+        slidesPerView: 3,
       }
     }
   });
