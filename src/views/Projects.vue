@@ -25,14 +25,12 @@ const count = ref(0)
       <nav>
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><router-link :to="{name: 'Index'}">Home</router-link></li>
             <li>Projects</li>
           </ol>
         </div>
       </nav>
     </div><!-- End Breadcrumbs -->
-
-
 
     <!-- ======= Departments Section ======= -->
     <section id="departments" class="departments">

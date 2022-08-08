@@ -41,7 +41,7 @@ defineProps({
     <!-- ======= Get a Quote Section ======= -->
     <!-- modal -->
     <div class="modal-overlay">
-        <section id="get-a-quote" class="modal-container" style="overflow-y:scroll";>
+        <section id="get-a-quote" class="modal-container" style="overflow-y:scroll;">
           <div class="container" data-aos="fade-up">
             <div class="row">
               <div class="col-lg-12">
@@ -241,7 +241,7 @@ defineProps({
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="box">
-              <div class="icon"><i class="bi-wallet-fill"></i></i></div>
+              <div class="icon"><i class="bi-wallet-fill"></i></div>
               <h4 class="title"><a href="">Brand Development</a></h4>
               <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident etiro rabeta lingo.</p>
             </div>
@@ -249,7 +249,7 @@ defineProps({
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="box">
-              <div class="icon"><i class="bi-file-code-fill"></i></i></div>
+              <div class="icon"><i class="bi-file-code-fill"></i></div>
               <h4 class="title"><a href="">Web Development</a></h4>
               <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata nodera clas.</p>
             </div>
@@ -565,7 +565,5 @@ defineProps({
 </template>
 
 <style scoped>
-.read-the-docs {
-  color: #888;
-}
+
 </style>

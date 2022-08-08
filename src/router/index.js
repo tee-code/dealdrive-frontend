@@ -15,36 +15,36 @@ const routes = [{
     component: DefaultLayout,
     name: "DefaultLayout",
     children: [{
-            path: 'home',
+            path: '/home',
             component: Index,
             name: "Index",
         }, {
-            path: 'about',
+            path: '/about',
             component: About,
             name: "About",
         }, {
-            path: 'blog',
+            path: '/blog',
             component: Blog,
             name: "Blog",
         }, {
-            path: 'projects',
+            path: '/projects',
             component: Projects,
-            name: "Project",
+            name: "Projects",
         }, {
-            path: 'quotation',
+            path: '/quotation',
             component: Quotation,
             name: "Quotation",
         }, {
-            path: 'service',
+            path: '/service',
             component: Service,
             name: "Service",
         },
         {
-            path: 'services',
+            path: '/services',
             component: Services,
             name: "Services",
         }, {
-            path: 'readmore',
+            path: '/readmore',
             component: ReadMore,
             name: "ReadMore",
         }

@@ -55,7 +55,7 @@ defineProps({
                             <div class="comment d-flex mb-4">
                                 <div class="flex-shrink-0">
                                     <div class="avatar avatar-sm rounded-circle">
-                                        <img class="avatar-img" src="assets/img/person-5.jpg" alt="" class="img-fluid">
+                                        <img src="assets/img/person-5.jpg" alt="" class="avatar-img img-fluid">
                                     </div>
                                 </div>
                                 <div class="flex-grow-1 ms-2 ms-sm-3">
@@ -73,7 +73,7 @@ defineProps({
                                         <div class="reply d-flex mb-4">
                                             <div class="flex-shrink-0">
                                                 <div class="avatar avatar-sm rounded-circle">
-                                                    <img class="avatar-img" src="assets/img/person-4.jpg" alt="" class="img-fluid">
+                                                    <img src="assets/img/person-4.jpg" alt="" class="avatar-img img-fluid">
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1 ms-2 ms-sm-3">
@@ -89,7 +89,7 @@ defineProps({
                                         <div class="reply d-flex">
                                             <div class="flex-shrink-0">
                                                 <div class="avatar avatar-sm rounded-circle">
-                                                    <img class="avatar-img" src="assets/img/person-3.jpg" alt="" class="img-fluid">
+                                                    <img src="assets/img/person-3.jpg" alt="" class="avatar-img img-fluid">
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1 ms-2 ms-sm-3">
@@ -108,7 +108,7 @@ defineProps({
                             <div class="comment d-flex">
                                 <div class="flex-shrink-0">
                                     <div class="avatar avatar-sm rounded-circle">
-                                        <img class="avatar-img" src="assets/img/person-2.jpg" alt="" class="img-fluid">
+                                        <img src="assets/img/person-2.jpg" alt="" class="avatar-img img-fluid">
                                     </div>
                                 </div>
                                 <div class="flex-shrink-1 ms-2 ms-sm-3">
@@ -149,7 +149,7 @@ defineProps({
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- End Comments Form -->
 
                     </div>

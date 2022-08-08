@@ -127,7 +127,7 @@ const count = ref(0)
     
     <div class="col-lg-6 order-1 order-lg-1 mt-3 mt-lg-0">
       <div class="modal-overlay">
-        <section class="modal-container" style="overflow-y:scroll";>
+        <section class="modal-container" style="overflow-y:scroll;">
           <div class="container" data-aos="fade-up">
             <div class="row">
               <div class="col-lg-12">

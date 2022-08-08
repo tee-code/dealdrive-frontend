@@ -24,7 +24,7 @@ defineProps({
             <nav>
                 <div class="container">
                     <ol>
-                        <li><a href="index.html">Home</a></li>
+                        <li><router-link :to="{name: 'Index'}">Home</router-link></li>
                         <li>Services</li>
                     </ol>
                 </div>
@@ -53,7 +53,7 @@ defineProps({
                             <h3 class="stretched-link">Branding</h3>
                             <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
                             <div class="row d-flex mb-5 justify-content-center">
-                                <a href="quotation.html" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></a>
+                                <router-link :to="{name: 'ReadMore'}" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></router-link>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ defineProps({
                             <h3><a href="service-details.html" class="stretched-link">Website</a></h3>
                             <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
                             <div class="row d-flex mb-5 justify-content-center">
-                                <a href="quotation.html" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></a>
+                                <router-link :to="{name: 'Quotation'}" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></router-link>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ defineProps({
                             <h3><a href="service-details.html" class="stretched-link">Mobile App</a></h3>
                             <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
                             <div class="row d-flex mb-5 justify-content-center">
-                                <a href="quotation.html" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></a>
+                                <router-link :to="{name: 'Quotation'}" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></router-link>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ defineProps({
                             <h3><a href="service-details.html" class="stretched-link">Desktop App</a></h3>
                             <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
                             <div class="row d-flex mb-5 justify-content-center">
-                                <a href="quotation.html" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></a>
+                                <router-link :to="{name: 'ReadMore'}" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></router-link>
                             </div>
                         </div>
                     </div>

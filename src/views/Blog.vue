@@ -18,39 +18,39 @@ defineProps({
             <div class="swiper sliderFeaturedPosts">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <a href="readmore.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-1.jpg');">
+                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-1.jpg');">
                     <div class="img-bg-inner">
                       <h2>The Best Homemade Masks for Face (keep the Pimples Away)</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
                     </div>
-                  </a>
+                  </router-link>
                 </div>
 
                 <div class="swiper-slide">
-                  <a href="readmore.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-2.jpg');">
+                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-2.jpg');">
                     <div class="img-bg-inner">
                       <h2>17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
                     </div>
-                  </a>
+                  </router-link>
                 </div>
 
                 <div class="swiper-slide">
-                  <a href="readmore.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-3.jpg');">
+                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-3.jpg');">
                     <div class="img-bg-inner">
                       <h2>13 Amazing Poems from Shel Silverstein with Valuable Life Lessons</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
                     </div>
-                  </a>
+                  </router-link>
                 </div>
 
                 <div class="swiper-slide">
-                  <a href="readmore.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-4.jpg');">
+                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-4.jpg');">
                     <div class="img-bg-inner">
                       <h2>9 Half-up/half-down Hairstyles for Long and Medium Hair</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
                     </div>
-                  </a>
+                  </router-link>
                 </div>
               </div>
               <div class="custom-swiper-button-next">
@@ -68,8 +68,8 @@ defineProps({
       <nav>
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Blog</li>
+            <li><router-link :to="{name: 'Index'}">Home</router-link></li>
+            <li><router-link :to="{name: 'Blog'}">Blog</router-link></li>
           </ol>
         </div>
       </nav>
@@ -82,12 +82,12 @@ defineProps({
           <div class="col-md-9">
 
             <div class="d-md-flex post-entry-2 small-img">
-              <a href="readmore.html" class="me-4 thumbnail">
+              <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
                 <img src="assets/images/post/post-landscape-2.jpg" alt="" class="img-fluid">
-              </a>
+              </router-link>
               <div>
                 <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                <h3><a href="readmore.html">17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</a></h3>
+                <h3><router-link :to="{name: 'ReadMore'}">17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</router-link></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
                 <div class="d-flex align-items-center author">
                   <div class="photo"><img src="assets/images/me.png" alt="" class="img-fluid"></div>
@@ -99,12 +99,12 @@ defineProps({
             </div>
 
             <div class="d-md-flex post-entry-2 small-img">
-              <a href="readmore.html" class="me-4 thumbnail">
+              <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
                 <img src="assets/images/post/post-landscape-3.jpg" alt="" class="img-fluid">
-              </a>
+              </router-link>
               <div>
                 <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                <h3><a href="readmore.html">The Best Homemade Masks for Face (keep the Pimples Away)</a></h3>
+                <h3><router-link :to="{name: 'ReadMore'}">The Best Homemade Masks for Face (keep the Pimples Away)</router-link></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
                 <div class="d-flex align-items-center author">
                   <div class="photo"><img src="assets/images/me.png" alt="" class="img-fluid"></div>
@@ -116,12 +116,12 @@ defineProps({
             </div>
 
             <div class="d-md-flex post-entry-2 small-img">
-              <a href="readmore.html" class="me-4 thumbnail">
+              <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
                 <img src="assets/images/post/post-landscape-4.jpg" alt="" class="img-fluid">
-              </a>
+              </router-link>
               <div>
                 <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                <h3><a href="readmore.html">10 Life-Changing Hacks Every Working Mom Should Know</a></h3>
+                <h3><router-link :to="{name: 'ReadMore'}">10 Life-Changing Hacks Every Working Mom Should Know</router-link></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
                 <div class="d-flex align-items-center author">
                   <div class="photo"><img src="assets/images/me.png" alt="" class="img-fluid"></div>
@@ -133,12 +133,12 @@ defineProps({
             </div>
 
             <div class="d-md-flex post-entry-2 small-img">
-              <a href="readmore.html" class="me-4 thumbnail">
+              <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
                 <img src="assets/images/post/post-landscape-6.jpg" alt="" class="img-fluid">
-              </a>
+              </router-link>
               <div>
                 <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                <h3><a href="readmore.html">9 Half-up/half-down Hairstyles for Long and Medium Hair</a></h3>
+                <h3><router-link :to="{name: 'ReadMore'}">9 Half-up/half-down Hairstyles for Long and Medium Hair</router-link></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
                 <div class="d-flex align-items-center author">
                   <div class="photo"><img src="assets/images/me.png" alt="" class="img-fluid"></div>
@@ -250,14 +250,14 @@ defineProps({
             <div class="aside-block">
               <h3 class="aside-title">Tags</h3>
               <ul class="aside-tags list-unstyled">
-                <li><a href="category.html">Business</a></li>
-                <li><a href="category.html">Branding</a></li>
-                <li><a href="category.html">Design</a></li>
-                <li><a href="category.html">Website</a></li>
-                <li><a href="category.html">Logo</a></li>
-                <li><a href="category.html">Mobile app</a></li>
-                <li><a href="category.html">Software</a></li>
-                <li><a href="category.html">Blockchain</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Branding</a></li>
+                <li><a href="#">Design</a></li>
+                <li><a href="#">Website</a></li>
+                <li><a href="#">Logo</a></li>
+                <li><a href="#">Mobile app</a></li>
+                <li><a href="#">Software</a></li>
+                <li><a href="#">Blockchain</a></li>
               </ul>
             </div><!-- End Tags -->
 
@@ -271,7 +271,5 @@ defineProps({
 </template>
 
 <style scoped>
-.read-the-docs {
-  color: #888;
-}
+
 </style>
