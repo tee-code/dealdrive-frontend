@@ -18,7 +18,9 @@ defineProps({
         <div class="hero-cc">
           <div>
             <h2>Giving your<span> business </span>a<br>Brand!</h2>
-            <a href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</a>
+            <!-- Button trigger modal -->
+
+            <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
           </div>
           <div class="dn">
             <img src="assets/images/hero-img.svg" class="image-fluid" alt="">
@@ -40,76 +42,78 @@ defineProps({
 
     <!-- ======= Get a Quote Section ======= -->
     <!-- modal -->
-    <div class="modal-overlay">
-        <section id="get-a-quote" class="modal-container" style="overflow-y:scroll;">
-          <div class="container" data-aos="fade-up">
-            <div class="row">
-              <div class="col-lg-12">
-                <form action="" method="post" class="quote-form">
-                  <h3>Get a quote</h3>
-                  <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
-                  <div class="row gy-4">
-    
-                    <div class="col-md-6">
-                      <input type="text" name="projecsname" class="form-control" placeholder="Name of Projects" required>
-                    </div>
-    
-                    <div class="col-md-6">
-                      <input type="text" name="location" class="form-control" placeholder="Your Location" required>
-                    </div>
-    
-                    <div class="col-md-6">
-                      <input type="text" name="time" class="form-control" placeholder="Timeframe" required>
-                    </div>
-    
-                    <div class="col-md-6">
-                      <input type="text" name="dimensions" class="form-control" placeholder="Budget($)" required>
-                    </div>
-    
-                    <div class="col-lg-12">
-                      <h4>Your Company or Personal Details</h4>
-                    </div>
-    
-                    <div class="col-md-12">
-                      <input type="text" name="name" class="form-control" placeholder="Name" required>
-                    </div>
-    
-                    <div class="col-md-12 ">
-                      <input type="email" class="form-control" name="email" placeholder="Email" required>
-                    </div>
-    
-                    <div class="col-md-12">
-                      <input type="text" class="form-control" name="phone" placeholder="Phone" required>
-                    </div>
-    
-                    <div class="col-md-12">
-                      <textarea class="form-control" name="message" rows="6" placeholder="Leave a Message" required></textarea>
-                    </div>
-    
-                    <div class="col-md-12 text-center">
-                      <div class="loading">Loading</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
-    
-                      <button type="submit">Get a quote</button>
-                    </div>
-    
-                  </div>
-                </form>
-              </div><!-- End Quote Form -->
-    
-            </div>
-    
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Get a quote</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-        </section><!-- End Get a Quote Section -->
-        <button class="close-btn"><i class="fas fa-times"></i></button>
+          <div class="modal-body">
+            <div class="row">
+                  <div class="col-lg-12">
+                    <form action="" method="post" class="quote-form">
+                      <h3>Get a quote</h3>
+                      <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
+                      <div class="row gy-4">
+        
+                        <div class="col-md-6">
+                          <input type="text" name="projecsname" class="form-control" placeholder="Name of Projects" required>
+                        </div>
+        
+                        <div class="col-md-6">
+                          <input type="text" name="location" class="form-control" placeholder="Your Location" required>
+                        </div>
+        
+                        <div class="col-md-6">
+                          <input type="text" name="time" class="form-control" placeholder="Timeframe" required>
+                        </div>
+        
+                        <div class="col-md-6">
+                          <input type="text" name="dimensions" class="form-control" placeholder="Budget($)" required>
+                        </div>
+        
+                        <div class="col-lg-12">
+                          <h4>Your Company or Personal Details</h4>
+                        </div>
+        
+                        <div class="col-md-12">
+                          <input type="text" name="name" class="form-control" placeholder="Name" required>
+                        </div>
+        
+                        <div class="col-md-12 ">
+                          <input type="email" class="form-control" name="email" placeholder="Email" required>
+                        </div>
+        
+                        <div class="col-md-12">
+                          <input type="text" class="form-control" name="phone" placeholder="Phone" required>
+                        </div>
+        
+                        <div class="col-md-12">
+                          <textarea class="form-control" name="message" rows="6" placeholder="Leave a Message" required></textarea>
+                        </div>
+        
+                        <div class="col-md-12 text-center">
+                          <div class="loading">Loading</div>
+                          <div class="error-message"></div>
+                          <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
+        
+                          <button type="submit">Get a quote</button>
+                        </div>
+        
+                      </div>
+                    </form>
+                  </div><!-- End Quote Form -->
+        
+                </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
-    
-    
-
     <main id="main">
 
       <!-- ======= About Section ======= -->
