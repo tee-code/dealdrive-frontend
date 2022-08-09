@@ -1,6 +1,3 @@
-
-
-
 var category = new Array();
 
 // const Servicerow = document.getElementById("service-row");
@@ -19,65 +16,66 @@ let output = '';
 //     })
 
 window.onload = init;
+
 function init() {
     getServicesData();
 }
+
 function getServicesData() {
     var request = new XMLHttpRequest();
     request.open("GET", url2, true);
-    request.onreadystatechange = function(){
-        if(request.readyState === XMLHttpRequest.DONE && request.status ===200){
-            if(request.responseText){
-              if(request.responseText ==null || request.responseText.trim() == " "){
-                return;
-              }
-              var catArray = JSON.parse()
-              if(catArray.length == 0){
-                console.log("Error: the todo list array is empty! ");
-                return
-              }
-              for (var i = 0; i < catArray.length; i++){
-                var catItem = catArray[i]
-                category.push(catItem)
-              }
-              console.log("category item: ");
-              console.log(category);
+    request.onreadystatechange = function() {
+        if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+            if (request.responseText) {
+                if (request.responseText == null || request.responseText.trim() == " ") {
+                    return;
+                }
+                var catArray = JSON.parse()
+                if (catArray.length == 0) {
+                    console.log("Error: the todo list array is empty! ");
+                    return
+                }
+                for (var i = 0; i < catArray.length; i++) {
+                    var catItem = catArray[i]
+                    category.push(catItem)
+                }
+                console.log("category item: ");
+                console.log(category);
 
-              // console.log(request.responseText);
+                // console.log(request.responseText);
                 // parseCatItems(request.responseText)
                 // addServicePage()
-            }
-            else{
+            } else {
                 console.log("Error: Data is empty");
             }
         }
     };
     request.send();
-} 
+}
 
-    function parseCatItems(cat) {
-      if(cat ==null || cat.trim() == ""){
-          return;
-      }
-      var catArray = JSON.parse(cat)
-      if(catArray.length == 0){
-          console.log("Error: the todo list array is empty! ");
-          return
-      }
-      for (var i = 0; i < catArray.length; i++){
-          var catItem = catArray[i]
-          category.push(catItem)
-      }
-      console.log("category item: ");
-      console.log(category);
-  }
+function parseCatItems(cat) {
+    if (cat == null || cat.trim() == "") {
+        return;
+    }
+    var catArray = JSON.parse(cat)
+    if (catArray.length == 0) {
+        console.log("Error: the todo list array is empty! ");
+        return
+    }
+    for (var i = 0; i < catArray.length; i++) {
+        var catItem = catArray[i]
+        category.push(catItem)
+    }
+    console.log("category item: ");
+    console.log(category);
+}
 
 
-  function addServicePage() {
+function addServicePage() {
     var Servicerow = document.getElementById("service-row");
-    for (var i = 0; i < category.length; i++){
+    for (var i = 0; i < category.length; i++) {
         var catItem = category[i]
-        output+=`
+        output += `
             <div class="col-lg-9 pt-5">
             <div class="tab-content">
               <div class="tab-pane active show" id="mtab-1">

@@ -1,4 +1,7 @@
-# frontend
-This repo is for our website development.
-we are a software development company interested in developing applications to satisfy our client needs.....
-we are developing an e-commerce that wll change the the way online businnes s done
+# Vue 3 + Vite
+
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+
+## Recommended IDE Setup
+
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
