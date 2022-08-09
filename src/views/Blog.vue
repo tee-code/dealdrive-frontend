@@ -18,7 +18,7 @@ defineProps({
             <div class="swiper sliderFeaturedPosts">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-1.jpg');">
+                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('/assets/images/blog-hero/post-slide-1.jpg');">
                     <div class="img-bg-inner">
                       <h2>The Best Homemade Masks for Face (keep the Pimples Away)</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
@@ -27,7 +27,7 @@ defineProps({
                 </div>
 
                 <div class="swiper-slide">
-                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-2.jpg');">
+                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('/assets/images/blog-hero/post-slide-2.jpg');">
                     <div class="img-bg-inner">
                       <h2>17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
@@ -36,7 +36,7 @@ defineProps({
                 </div>
 
                 <div class="swiper-slide">
-                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-3.jpg');">
+                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('/assets/images/blog-hero/post-slide-3.jpg');">
                     <div class="img-bg-inner">
                       <h2>13 Amazing Poems from Shel Silverstein with Valuable Life Lessons</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
@@ -45,7 +45,7 @@ defineProps({
                 </div>
 
                 <div class="swiper-slide">
-                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('assets/images/blog-hero/post-slide-4.jpg');">
+                  <router-link :to="{name: 'ReadMore'}" class="img-bg d-flex align-items-end" style="background-image: url('/assets/images/blog-hero/post-slide-4.jpg');">
                     <div class="img-bg-inner">
                       <h2>9 Half-up/half-down Hairstyles for Long and Medium Hair</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
@@ -83,14 +83,14 @@ defineProps({
 
             <div class="d-md-flex post-entry-2 small-img">
               <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
-                <img src="assets/images/post/post-landscape-2.jpg" alt="" class="img-fluid">
+                <img src="/assets/images/post/post-landscape-2.jpg" alt="" class="img-fluid">
               </router-link>
               <div>
                 <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
                 <h3><router-link :to="{name: 'ReadMore'}">17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</router-link></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
                 <div class="d-flex align-items-center author">
-                  <div class="photo"><img src="assets/images/me.png" alt="" class="img-fluid"></div>
+                  <div class="photo"><img src="/assets/images/me.png" alt="" class="img-fluid"></div>
                   <div class="name">
                     <h3 class="m-0 p-0">Wade Warren</h3>
                   </div>
@@ -100,14 +100,14 @@ defineProps({
 
             <div class="d-md-flex post-entry-2 small-img">
               <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
-                <img src="assets/images/post/post-landscape-3.jpg" alt="" class="img-fluid">
+                <img src="/assets/images/post/post-landscape-3.jpg" alt="" class="img-fluid">
               </router-link>
               <div>
                 <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
                 <h3><router-link :to="{name: 'ReadMore'}">The Best Homemade Masks for Face (keep the Pimples Away)</router-link></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
                 <div class="d-flex align-items-center author">
-                  <div class="photo"><img src="assets/images/me.png" alt="" class="img-fluid"></div>
+                  <div class="photo"><img src="/assets/images/me.png" alt="" class="img-fluid"></div>
                   <div class="name">
                     <h3 class="m-0 p-0">Wade Warren</h3>
                   </div>
@@ -117,14 +117,14 @@ defineProps({
 
             <div class="d-md-flex post-entry-2 small-img">
               <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
-                <img src="assets/images/post/post-landscape-4.jpg" alt="" class="img-fluid">
+                <img src="/assets/images/post/post-landscape-4.jpg" alt="" class="img-fluid">
               </router-link>
               <div>
                 <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
                 <h3><router-link :to="{name: 'ReadMore'}">10 Life-Changing Hacks Every Working Mom Should Know</router-link></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
                 <div class="d-flex align-items-center author">
-                  <div class="photo"><img src="assets/images/me.png" alt="" class="img-fluid"></div>
+                  <div class="photo"><img src="/assets/images/me.png" alt="" class="img-fluid"></div>
                   <div class="name">
                     <h3 class="m-0 p-0">Wade Warren</h3>
                   </div>
@@ -134,14 +134,14 @@ defineProps({
 
             <div class="d-md-flex post-entry-2 small-img">
               <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
-                <img src="assets/images/post/post-landscape-6.jpg" alt="" class="img-fluid">
+                <img src="/assets/images/post/post-landscape-6.jpg" alt="" class="img-fluid">
               </router-link>
               <div>
                 <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
                 <h3><router-link :to="{name: 'ReadMore'}">9 Half-up/half-down Hairstyles for Long and Medium Hair</router-link></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
                 <div class="d-flex align-items-center author">
-                  <div class="photo"><img src="assets/images/me.png" alt="" class="img-fluid"></div>
+                  <div class="photo"><img src="/assets/images/me.png" alt="" class="img-fluid"></div>
                   <div class="name">
                     <h3 class="m-0 p-0">Wade Warren</h3>
                   </div>
@@ -242,7 +242,7 @@ defineProps({
               <div class="video-post">
                 <a href="https://www.youtube.com/watch?v=AiFfDjmd0jU" class="glightbox link-video">
                   <span class="bi-play-fill"></span>
-                  <img src="assets/images/post/post-landscape-5.jpg" alt="" class="img-fluid">
+                  <img src="/assets/images/post/post-landscape-5.jpg" alt="" class="img-fluid">
                 </a>
               </div>
             </div><!-- End Video -->

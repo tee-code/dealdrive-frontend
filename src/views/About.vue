@@ -12,7 +12,7 @@ defineProps({
   <main id="main">
      <!-- ======= Breadcrumbs ======= -->
      <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('assets/images/page-header.jpg');">
+      <div class="page-header d-flex align-items-center" style="background-image: url('/assets/images/page-header.jpg');">
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
@@ -38,7 +38,7 @@ defineProps({
         <h3>About Us</h3>
         <div class="row gy-4">
           <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
-            <img src="assets/images/dd.jpg" class="img-fluid" alt="">
+            <img src="/assets/images/dd.jpg" class="img-fluid" alt="">
             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
           </div>
           <div class="col-lg-6 content order-last  order-lg-first">
@@ -89,7 +89,7 @@ defineProps({
 
           <div class="col-lg-6">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/images/pic.png" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="/assets/images/pic.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Muekara Tor</h4>
                 <span>Worker 1</span>
@@ -106,7 +106,7 @@ defineProps({
 
           <div class="col-lg-6 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/images/llt.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="/assets/images/llt.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Ayuk John</h4>
                 <span>Chief Technology Officer</span>
@@ -123,7 +123,7 @@ defineProps({
 
           <div class="col-lg-6 mt-4 ">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/images/me.png" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="/assets/images/me.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Moses Imeh</h4>
                 <span>Brand Developer</span>
@@ -140,7 +140,7 @@ defineProps({
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/images/me.png" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="/assets/images/me.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Amanda Jepson</h4>
                 <span>Business Developer</span>

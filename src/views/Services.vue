@@ -11,7 +11,7 @@ defineProps({
    <main id="main">
         <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs">
-            <div class="page-header d-flex align-items-center" style="background-image: url('assets/images/page-header.jpg');">
+            <div class="page-header d-flex align-items-center" style="background-image: url('/assets/images/page-header.jpg');">
                 <div class="container position-relative">
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-6 text-center">
@@ -48,7 +48,7 @@ defineProps({
                     <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="card">
                             <div class="card-img">
-                                <img src="assets/images/features-1.png" alt="" class="img-fluid">
+                                <img src="/assets/images/features-1.png" alt="" class="img-fluid">
                             </div>
                             <h3 class="stretched-link">Branding</h3>
                             <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
@@ -62,7 +62,7 @@ defineProps({
                     <div class="col-lg-6 col-md-6 w-80" data-aos="fade-up" data-aos-delay="200">
                         <div class="card">
                             <div class="card-img">
-                                <img src="assets/images/features-2.png" alt="" class="img-fluid">
+                                <img src="/assets/images/features-2.png" alt="" class="img-fluid">
                             </div>
                             <h3><a href="service-details.html" class="stretched-link">Website</a></h3>
                             <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
@@ -76,7 +76,7 @@ defineProps({
                     <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="card">
                             <div class="card-img">
-                                <img src="assets/images/features-3.png" alt="" class="img-fluid">
+                                <img src="/assets/images/features-3.png" alt="" class="img-fluid">
                             </div>
                             <h3><a href="service-details.html" class="stretched-link">Mobile App</a></h3>
                             <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
@@ -90,7 +90,7 @@ defineProps({
                     <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
                         <div class="card">
                             <div class="card-img">
-                                <img src="assets/images/features-4.png" alt="" class="img-fluid">
+                                <img src="/assets/images/features-4.png" alt="" class="img-fluid">
                             </div>
                             <h3><a href="service-details.html" class="stretched-link">Desktop App</a></h3>
                             <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>

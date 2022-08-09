@@ -27,7 +27,7 @@ defineProps({
         <div id="logo">
           <!-- <h1><a href="index.html">Reve<span>al</span></a></h1> -->
           <!-- Uncomment below if you prefer to use an image logo -->
-          <a href="index.html"><img src="assets/images/picnobg.png" alt=""></a>
+          <router-link :to = "{name: 'Index'}"><img src="/assets/images/picnobg.png" alt=""></router-link>
         </div>
   
         <nav id="navbar" class="navbar">
