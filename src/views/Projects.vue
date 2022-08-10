@@ -12,7 +12,7 @@ const count = ref(0)
    <main id="main">
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('assets/images/page-header.jpg');">
+      <div class="page-header d-flex align-items-center" style="background-image: url('/assets/images/page-header.jpg');">
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
@@ -66,7 +66,7 @@ const count = ref(0)
               <div class="tab-pane active show" id="tab-1">
                 <div class="row gy-4">
                   <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
-                    <img src="../assets/images/hero-carousel/5.jpg" alt="" class="img-fluid">
+                    <img src="/assets/images/hero-carousel/5.jpg" alt="" class="img-fluid">
                   </div>
                   <div class="col-lg-12 order-1 order-lg-2 details">
                     <h3>LOGO Applications</h3>
@@ -79,7 +79,7 @@ const count = ref(0)
                 <div class="row gy-4">
                   
                   <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
-                    <img src="assets/images/hero-carousel/4.jpg" alt="" class="img-fluid">
+                    <img src="/assets/images/hero-carousel/4.jpg" alt="" class="img-fluid">
                   </div>
                   <div class="col-lg-12 order-1 order-lg-2 details">
                     <h3>Et blanditiis nemo veritatis excepturi</h3>
@@ -92,7 +92,7 @@ const count = ref(0)
                 <div class="row gy-4">
                   
                   <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
-                    <img src="assets/images/hero-carousel/3.jpg" alt="" class="img-fluid">
+                    <img src="/assets/images/hero-carousel/3.jpg" alt="" class="img-fluid">
                   </div>
                   <div class="col-lg-12 order-1 order-lg-2 details">
                     <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
@@ -105,7 +105,7 @@ const count = ref(0)
                 <div class="row gy-4">
                   
                   <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
-                    <img src="assets/images/hero-carousel/2.jpg" alt="" class="img-fluid">
+                    <img src="/assets/images/hero-carousel/2.jpg" alt="" class="img-fluid">
                   </div>
                   <div class="col-lg-12 order-1 order-lg-2 details">
                     <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
@@ -118,7 +118,7 @@ const count = ref(0)
                 <div class="row gy-4">
                   
                   <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
-                    <img src="assets/images/hero-carousel/1.jpg" alt="" class="img-fluid">
+                    <img src="/assets/images/hero-carousel/1.jpg" alt="" class="img-fluid">
                   </div>
                   <div class="col-lg-12 order-1 order-lg-2 details">
                     <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>

@@ -24,7 +24,7 @@ defineProps({
                             <figure class="my-4">
                                 <a href="https://www.youtube.com/watch?v=AiFfDjmd0jU" class="glightbox link-video">
                                     <span class="bi-play-fill"></span>
-                                    <img src="assets/images/post/post-landscape-5.jpg" alt="" class="img-fluid">
+                                    <img src="/assets/images/post/post-landscape-5.jpg" alt="" class="img-fluid">
                                 </a>
                                 <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>
                             </figure>
@@ -38,7 +38,7 @@ defineProps({
                                 nemo provident eveniet tempora minus! Voluptates aut laboriosam, maiores nihil accusantium, a dolorum quaerat tenetur illo eum culpa cum laudantium sunt doloremque modi possimus magni? Perferendis cum repudiandae corrupti
                                 porro.</p>
                             <figure class="my-4">
-                                <img src="assets/images/post/post-landscape-5.jpg" alt="" class="img-fluid">
+                                <img src="/assets/images/post/post-landscape-5.jpg" alt="" class="img-fluid">
                                 <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>
                             </figure>
                             <p>Quis molestiae, dolorem consequuntur labore perferendis enim accusantium commodi optio, sequi magnam ad consectetur iste omnis! Voluptatibus, quia officia esse necessitatibus magnam tempore reprehenderit quo aspernatur! Assumenda,
@@ -55,7 +55,7 @@ defineProps({
                             <div class="comment d-flex mb-4">
                                 <div class="flex-shrink-0">
                                     <div class="avatar avatar-sm rounded-circle">
-                                        <img src="assets/img/person-5.jpg" alt="" class="avatar-img img-fluid">
+                                        <img src="/assets/img/person-5.jpg" alt="" class="avatar-img img-fluid">
                                     </div>
                                 </div>
                                 <div class="flex-grow-1 ms-2 ms-sm-3">
@@ -73,7 +73,7 @@ defineProps({
                                         <div class="reply d-flex mb-4">
                                             <div class="flex-shrink-0">
                                                 <div class="avatar avatar-sm rounded-circle">
-                                                    <img src="assets/img/person-4.jpg" alt="" class="avatar-img img-fluid">
+                                                    <img src="/assets/img/person-4.jpg" alt="" class="avatar-img img-fluid">
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1 ms-2 ms-sm-3">
@@ -89,7 +89,7 @@ defineProps({
                                         <div class="reply d-flex">
                                             <div class="flex-shrink-0">
                                                 <div class="avatar avatar-sm rounded-circle">
-                                                    <img src="assets/img/person-3.jpg" alt="" class="avatar-img img-fluid">
+                                                    <img src="/assets/img/person-3.jpg" alt="" class="avatar-img img-fluid">
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1 ms-2 ms-sm-3">
@@ -108,7 +108,7 @@ defineProps({
                             <div class="comment d-flex">
                                 <div class="flex-shrink-0">
                                     <div class="avatar avatar-sm rounded-circle">
-                                        <img src="assets/img/person-2.jpg" alt="" class="avatar-img img-fluid">
+                                        <img src="/assets/img/person-2.jpg" alt="" class="avatar-img img-fluid">
                                     </div>
                                 </div>
                                 <div class="flex-shrink-1 ms-2 ms-sm-3">

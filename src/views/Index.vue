@@ -23,18 +23,18 @@ defineProps({
             <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
           </div>
           <div class="dn">
-            <img src="assets/images/hero-img.svg" class="image-fluid" alt="">
+            <img src="/assets/images/hero-img.svg" class="image-fluid" alt="">
           </div>
         </div>
       </div>
   
       <div class="hero-slider swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('assets/images/hero-carousel/1.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('assets/images/hero-carousel/2.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('assets/images/hero-carousel/3.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('assets/images/hero-carousel/4.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('assets/images/hero-carousel/5.jpg');"></div>
+          <div class="swiper-slide" style="background-image: url('/assets/images/hero-carousel/1.jpg');"></div>
+          <div class="swiper-slide" style="background-image: url('/assets/images/hero-carousel/2.jpg');"></div>
+          <div class="swiper-slide" style="background-image: url('/assets/images/hero-carousel/3.jpg');"></div>
+          <div class="swiper-slide" style="background-image: url('/assets/images/hero-carousel/4.jpg');"></div>
+          <div class="swiper-slide" style="background-image: url('/assets/images/hero-carousel/5.jpg');"></div>
         </div>
       </div>
   
@@ -125,7 +125,7 @@ defineProps({
         <div class="container" data-aos="fade-up">
           <div class="row">
             <div class="col-lg-6 about-img">
-              <img src="assets/images/llt.jpg" alt="">
+              <img src="/assets/images/llt.jpg" alt="">
             </div>
   
             <div class="col-lg-6 content">
@@ -167,62 +167,62 @@ defineProps({
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/images/projects/1.jpg" class="img-fluid" alt="">
+            <img src="/assets/images/projects/1.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>App 1</h4>
               <p>App</p>
-              <a href="assets/images/projects/1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="/assets/images/projects/1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/images/projects/2.jpg" class="img-fluid" alt="">
+            <img src="/assets/images/projects/2.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Web 3</h4>
               <p>Web</p>
-              <a href="assets/images/projects/2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="/assets/images/projects/2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/images/projects/3.png" class="img-fluid" alt="">
+            <img src="/assets/images/projects/3.png" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>App 2</h4>
               <p>App</p>
-              <a href="assets/images/projects/3.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="/assets/images/projects/3.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/images/projects/4.png" class="img-fluid" alt="">
+            <img src="/assets/images/projects/4.png" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Card 2</h4>
               <p>Card</p>
-              <a href="assets/images/projects/4.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="/assets/images/projects/4.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/images/projects/5.jpg" class="img-fluid" alt="">
+            <img src="/assets/images/projects/5.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Web 2</h4>
               <p>Web</p>
-              <a href="assets/images/projects/5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="/assets/images/projects/5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
       
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/images/projects/7.jpg" class="img-fluid" alt="">
+            <img src="/assets/images/projects/7.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Brand Designs</h4>
               <p>Designs 1</p>
-              <a href="assets/images/projects/7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="/assets/images/projects/7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
@@ -295,7 +295,7 @@ defineProps({
 
           <div class="col-lg-6">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/images/pic.png" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="/assets/images/pic.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Muekara Tor</h4>
                 <span>Worker 1</span>
@@ -312,7 +312,7 @@ defineProps({
 
           <div class="col-lg-6 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/images/llt.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="/assets/images/llt.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Ayuk John</h4>
                 <span>Chief Technology Officer</span>
@@ -329,7 +329,7 @@ defineProps({
 
           <div class="col-lg-6 mt-4 ">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/images/me.png" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="/assets/images/me.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Moses Imeh</h4>
                 <span>Brand Developer</span>
@@ -346,7 +346,7 @@ defineProps({
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/images/me.png" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="/assets/images/me.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Amanda Jepson</h4>
                 <span>Business Developer</span>
@@ -410,7 +410,7 @@ defineProps({
                     </div>
                   </div>
                   <div class="col-lg-2 text-center">
-                    <img src="assets/images/pics.jpg" class="img-fluid testimonial-img" alt="">
+                    <img src="/assets/images/pics.jpg" class="img-fluid testimonial-img" alt="">
                   </div>
                 </div>
               </div>
@@ -434,7 +434,7 @@ defineProps({
                     </div>
                   </div>
                   <div class="col-lg-2 text-center">
-                    <img src="assets/images/cc.jpg" class="img-fluid testimonial-img" alt="">
+                    <img src="/assets/images/cc.jpg" class="img-fluid testimonial-img" alt="">
                   </div>
                 </div>
               </div>
@@ -458,7 +458,7 @@ defineProps({
                     </div>
                   </div>
                   <div class="col-lg-2 text-center">
-                    <img src="assets/images/me.png" class="img-fluid testimonial-img" alt="">
+                    <img src="/assets/images/me.png" class="img-fluid testimonial-img" alt="">
                   </div>
                 </div>
               </div>
@@ -482,7 +482,7 @@ defineProps({
                     </div>
                   </div>
                   <div class="col-lg-2 text-center">
-                    <img src="assets/images/pics.jpg" class="img-fluid testimonial-img" alt="">
+                    <img src="/assets/images/pics.jpg" class="img-fluid testimonial-img" alt="">
                   </div>
                 </div>
               </div>

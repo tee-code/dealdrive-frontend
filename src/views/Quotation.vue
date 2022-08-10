@@ -12,7 +12,7 @@ const count = ref(0)
    <main id="main">
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('assets/images/page-header.jpg');">
+      <div class="page-header d-flex align-items-center" style="background-image: url('/assets/images/page-header.jpg');">
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-8 text-center">
