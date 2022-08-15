@@ -124,4 +124,8 @@ const slides = computed(() => {
     outline: none;
     border-radius: 5px;
   }
+
+  #demo{
+    margin-top: 100px;
+  }
 </style>
