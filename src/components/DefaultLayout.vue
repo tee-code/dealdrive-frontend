@@ -11,11 +11,13 @@ defineProps({
 
 <template>
  <!-- ======= Top Bar ======= -->
+  <div class="head-wrapper">
+
     <section id="topbar" class="d-flex align-items-center">
       <div class="container d-flex justify-content-center">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@dealdrivetechnology.com">contact@dealdrivetechnology.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+234 806 1467 293</span></i>
+        <div class="contact-info ">
+          <i class="bi bi-envelope"><a href="mailto:contact@dealdrivetechnology.com">contact@dealdrivetechnology.com</a></i>
+          <i class="bi bi-phone"><span>+234 806 1467 293</span></i>
         </div>
       </div>
     </section><!-- End Top Bar-->
@@ -54,6 +56,8 @@ defineProps({
         </div>
       </div>
     </header><!-- End Header -->
+
+    </div><!-- End of head-wrapper -->
 
     <router-view></router-view>
 
@@ -123,5 +127,27 @@ defineProps({
 </template>
 
 <style scoped>
+.head-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.contact-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+  padding: 1em;
+}
 
+@media screen and (min-width:60rem) {
+  .contact-info{
+    flex-direction: row;
+  }
+  .contact-info i{
+    margin: 0 2em;
+  }
+}
 </style>
