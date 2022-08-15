@@ -460,6 +460,7 @@ defineProps({
 </template>
 
 <style scoped>
+
 /* SERVICE SECTION */
 .box{
   box-shadow: 0px 2px 4px #aaa;
@@ -472,6 +473,7 @@ defineProps({
 .box .icon i{
   font-size: 2.5rem;
 }
+
 /* HERO SECTION */
 #hero{
   margin-top: 100px;
