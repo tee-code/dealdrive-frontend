@@ -1,35 +1,11 @@
 <script setup>
 import { ref } from 'vue'
-import Header from './Header.vue'
-import Footer from './Footer.vue'
-import TopBar from './TopBar.vue'
-
-defineProps({
-  msg: String
-});
 
 
 </script>
 
 <template>
-
-    <div class="head-wrapper">
-      <TopBar />
-      <Header />
-    </div>
- <!-- ======= Top Bar ======= -->
-  <div class="head-wrapper">
-
-    <section id="topbar" class="d-flex align-items-center">
-      <div class="container d-flex justify-content-center">
-        <div class="contact-info ">
-          <i class="bi bi-envelope"><a href="mailto:contact@dealdrivetechnology.com">contact@dealdrivetechnology.com</a></i>
-          <i class="bi bi-phone"><span>+234 806 1467 293</span></i>
-        </div>
-      </div>
-    </section><!-- End Top Bar-->
-
-    <!-- ======= Header ======= -->
+      <!-- ======= Header ======= -->
     <header id="header" class="header d-flex align-items-center">
       <div class="container d-flex justify-content-between">
   
@@ -64,37 +40,8 @@ defineProps({
       </div>
     </header><!-- End Header -->
 
-    </div><!-- End of head-wrapper -->
-
-    <router-view></router-view>
-    <Footer />
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+    
 </template>
-
 <style scoped>
-.head-wrapper{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
 
-.contact-info{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.7rem;
-  padding: 1em;
-}
-
-@media screen and (min-width:60rem) {
-  .contact-info{
-    flex-direction: row;
-  }
-  .contact-info i{
-    margin: 0 2em;
-  }
-}
 </style>

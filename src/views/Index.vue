@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import Carousel from '../components/Carousel.vue';
 
 defineProps({
   msg: String
@@ -11,34 +12,8 @@ defineProps({
   <div>
     
     <!-- ======= hero Section ======= -->
-
-    <section id="hero">
-
-      <div class="hero-content" data-aos="fade-up">
-        <div class="hero-cc">
-          <div>
-            <h2>Giving your<span> business </span>a<br>Brand!</h2>
-            <!-- Button trigger modal -->
-
-            <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
-          </div>
-          <div class="dn">
-            <img src="/assets/images/hero-img.svg" class="image-fluid" alt="">
-          </div>
-        </div>
-      </div>
-  
-      <div class="hero-slider swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('/assets/images/hero-carousel/1.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('/assets/images/hero-carousel/2.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('/assets/images/hero-carousel/3.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('/assets/images/hero-carousel/4.jpg');"></div>
-          <div class="swiper-slide" style="background-image: url('/assets/images/hero-carousel/5.jpg');"></div>
-        </div>
-      </div>
-  
-    </section><!-- End Hero Section -->
+    
+     <Carousel />
 
     <!-- ======= Get a Quote Section ======= -->
     <!-- modal -->
