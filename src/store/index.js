@@ -44,10 +44,13 @@ const socials = [
     { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'http://test@linkedin.com' },
 ];
 
+const contacts = { email: 'contact@dealdrivetechnology.com', phone: '+234 806 1467 293' };
+
 const store = createStore({
     state: {
         slides,
         socials,
+        contacts,
     },
     getters: {},
     actions: {

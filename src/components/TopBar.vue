@@ -1,6 +1,13 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue';
+import { useStore } from 'vuex';
 
+
+const store = useStore();
+
+const contacts = computed(() => {
+  return store.state.contacts;
+});
 
 </script>
 
@@ -9,8 +16,8 @@ import { ref } from 'vue'
  <section id="topbar" class="d-flex align-items-center">
       <div class="container d-flex justify-content-center">
         <div class="contact-info ">
-          <i class="bi bi-envelope"><a href="mailto:contact@dealdrivetechnology.com">contact@dealdrivetechnology.com</a></i>
-          <i class="bi bi-phone"><span>+234 806 1467 293</span></i>
+          <i class="bi bi-envelope"><a :href="'mailto:'+contacts.email">{{contacts.email}}</a></i>
+          <i class="bi bi-phone"><span>{{contacts.phone}}</span></i>
         </div>
       </div>
     </section><!-- End Top Bar-->
