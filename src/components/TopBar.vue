@@ -23,7 +23,7 @@ import { ref } from 'vue'
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.7rem;
+  font-size: 1rem;
   padding: 1em;
 }
 @media screen and (min-width:60rem) {

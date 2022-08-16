@@ -5,7 +5,7 @@ import { ref } from 'vue'
 </script>
 
 <template>
-      <!-- ======= Header ======= -->
+  <!-- ======= Header ======= -->
     <header id="header" class="header d-flex align-items-center">
       <div class="container d-flex justify-content-between">
   
@@ -40,8 +40,8 @@ import { ref } from 'vue'
       </div>
     </header><!-- End Header -->
 
-    
 </template>
+
 <style scoped>
 
 </style>

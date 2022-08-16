@@ -37,9 +37,17 @@ const slides = [{
     }
 ];
 
+const socials = [
+    { name: 'twitter', icon: 'fab fa-twitter', profile: 'http://test@twitter.com' },
+    { name: 'facebook', icon: 'fab fa-facebook', profile: 'http://test@facebook.com' },
+    { name: 'instagram', icon: 'fab fa-instagram', profile: 'http://test@instagram.com' },
+    { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'http://test@linkedin.com' },
+];
+
 const store = createStore({
     state: {
         slides,
+        socials,
     },
     getters: {},
     actions: {
