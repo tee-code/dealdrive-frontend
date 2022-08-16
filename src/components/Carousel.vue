@@ -4,62 +4,15 @@
 
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[0].id" class="active"></button>
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[1].id"></button>
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[2].id"></button>
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[3].id"></button>
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[4].id"></button>
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[5].id"></button>
-    
+    <button v-for="slide in slides" :key="slide.id" type="button" data-bs-target="#demo" :data-bs-slide-to="slide.id" :class="slide.id == 0 ? 'active' : 'not-active'"></button>
   </div>
   
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img :src="slides[0].image" alt="Los Angeles" class="d-block" style="width:100%">
+    <div v-for="slide in slides" :style="{'background-image':`url(${slide.image})`}" :key="slide.id" :class="[slide.id == 0 ? 'active':'not-active' ,'carousel-item']">
       <div class="carousel-caption">
-        <h3>{{slides[0].title}}</h3>
-        <p>{{slides[0].caption}}</p>
-        <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img :src="slides[1].image" alt="Los Angeles" class="img-fluid" style="width:100%">
-      <div class="carousel-caption">
-        <h3>{{slides[1].title}}</h3>
-        <p>{{slides[0].caption}}</p>
-        <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img :src="slides[2].image" alt="Los Angeles" class="img-fluid" style="width:100%">
-      <div class="carousel-caption">
-        <h3>{{slides[2].title}}</h3>
-        <p>{{slides[0].caption}}</p>
-        <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img :src="slides[3].image" alt="Los Angeles" class="img-fluid" style="width:100%">
-      <div class="carousel-caption">
-        <h3>{{slides[3].title}}</h3>
-        <p>{{slides[0].caption}}</p>
-        <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img :src="slides[4].image" alt="Los Angeles" class="img-fluid" style="width:100%">
-      <div class="carousel-caption">
-        <h3>{{slides[4].title}}</h3>
-        <p>{{slides[0].caption}}</p>
-        <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img :src="slides[5].image" alt="Los Angeles" class="img-fluid" style="width:100%">
-      <div class="carousel-caption">
-        <h3>{{slides[5].title}}</h3>
-        <p>{{slides[0].caption}}</p>
+        <h3>{{slide.title}}</h3>
+        <p>{{slide.caption}}</p>
         <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
       </div>
     </div>
@@ -67,7 +20,7 @@
   </div>
   
   <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+  <button class="carousel-control-prev text-primary" type="button" data-bs-target="#demo" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
@@ -90,6 +43,7 @@ const slides = computed(() => {
   return store.state.slides;
 });
 
+
 </script>
 
 <style scoped>
@@ -104,6 +58,7 @@ const slides = computed(() => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
   }
   .carousel-caption h3{
     font-weight: bolder;
@@ -125,7 +80,20 @@ const slides = computed(() => {
     border-radius: 5px;
   }
 
+  .carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
   #demo{
     margin-top: 100px;
   }
+
+
 </style>
