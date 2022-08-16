@@ -4,13 +4,7 @@
 
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[0].id" class="active"></button>
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[1].id"></button>
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[2].id"></button>
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[3].id"></button>
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[4].id"></button>
-    <button type="button" data-bs-target="#demo" :data-bs-slide-to="slides[5].id"></button>
-    
+    <button v-for="slide in slides" :key="slide.id" type="button" data-bs-target="#demo" :data-bs-slide-to="slide.id" :class="slide.id == 0 ? 'active' : 'not-active'"></button>
   </div>
   
   <!-- The slideshow/carousel -->
