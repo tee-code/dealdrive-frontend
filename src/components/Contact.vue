@@ -89,7 +89,6 @@ const contact_form = ref(null);
 let new_form = {};
 
 const form = {
-
     user_name:'',
     user_email: '',
     subject: '',
@@ -98,9 +97,6 @@ const form = {
     template_id: "dealdrive_0fpecbe",
     user_id: "84Cf-v4RU4LGcbfYz"
 };
-
-
-const router = useRouter();
 
 const sendEmail = () => {
     emailjs.sendForm(form.service_id, form.template_id, contact_form.value, form.user_id)

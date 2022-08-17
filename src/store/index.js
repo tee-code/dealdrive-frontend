@@ -83,12 +83,27 @@ const testimonials = [
 
 const contactus = { email1: "torwisdom4@gmail.com", email2: "dealdrivetechnology@gmail.com", phone1: "+234 5589 5548", phone2: "+234 6678 2545", address: "81 itu Road" };
 
+const attendants = [{
+        app: 'whatsapp',
+        label: 'Customer support',
+        name: 'Muekara Tor',
+        number: '2348061467293',
+        avatar: {
+            src: 'https://avatars0.githubusercontent.com/u/8084606?s=460&u=20b6499a416cf7129a18e5c168cf387e159edb1a&v=4',
+            alt: 'Muekara Tor'
+        }
+    },
+
+    // ...
+];
+
 const store = createStore({
     state: {
         slides,
         socials,
         contacts,
         contactus,
+        attendants,
         about,
         categories,
         projects,

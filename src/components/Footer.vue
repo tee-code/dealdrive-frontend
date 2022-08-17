@@ -1,13 +1,14 @@
 <script setup>
 import { ref } from 'vue'
-
+import { SocialChat } from 'vue-social-chat'
+import ChatUs from './ChatUs.vue';
 
 </script>
 
 <template>
      <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
-
+      <ChatUs />
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">

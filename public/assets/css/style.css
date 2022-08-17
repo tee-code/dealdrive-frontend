@@ -13,6 +13,15 @@ Variables
 */
 
 :root {
+    --vsc-bg-header: hsl(205, 63%, 48%) !important;
+    --vsc-bg-footer: #fafafa;
+    --vsc-text-color-header: #fff;
+    --vsc-text-color-footer: inherit;
+    --vsc-bg-button: #46C056 !important;
+    --vsc-text-color-button: #fff;
+    --vsc-outline-color: #46C056 !important;
+    --vsc-border-color-bottom-header: transparent;
+    --vsc-border-color-top-footer: #f3f3f3
     /* dark shades of primary color*/
     --clr-primary-1: rgba(13, 66, 255, 0.8);
     --clr-primary-2: hsl(205, 77%, 27%);
