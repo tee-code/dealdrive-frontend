@@ -1,6 +1,6 @@
 <template>
 
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
+<div id="demo" class="carousel slide slant" data-bs-ride="carousel">
 
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
@@ -9,8 +9,8 @@
   
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
-    <div v-for="slide in slides" :style="{'background-image':`url(${slide.image})`}" :key="slide.id" :class="[slide.id == 0 ? 'active':'not-active' ,'carousel-item']">
-      <div class="carousel-caption">
+    <div v-for="slide in slides" :style="{'background-image':`linear-gradient(to right, rgba(16, 25, 136, .8), rgba(243, 19, 107, .8)), url(${slide.image})`}" :key="slide.id" :class="[slide.id == 0 ? 'active':'not-active' ,'carousel-item']">
+      <div class="carousel-caption text-white">
         <h3>{{slide.title}}</h3>
         <p>{{slide.caption}}</p>
         <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
@@ -61,18 +61,18 @@ const slides = computed(() => {
     padding: 1rem;
   }
   .carousel-caption h3{
-    font-weight: bolder;
-    color: black;
+    font-weight: bold;
+    color: whitesmoke;
     font-size: 2rem;
   }
   .carousel-caption p{
     font-weight: bold;
-    color: black;
+    color: white;
     font-size: 1rem;
     
   }
   .carousel-caption button{
-    background: rgba(13,66,255,0.8);
+    background: #f3136bcc;
     color: white;
     padding: 1rem;
     border: none;
@@ -90,10 +90,20 @@ const slides = computed(() => {
   background-size: cover;
 }
 
-
+.slant {
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      animation: upanddown 5s ease-in-out infinite alternate-reverse;
+    }
   #demo{
     margin-top: 100px;
   }
 
-
+@keyframes upanddown {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75vh);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    }
+}
 </style>
