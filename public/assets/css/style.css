@@ -811,7 +811,7 @@ section {
     text-transform: uppercase;
     margin-bottom: 20px;
     padding-bottom: 0;
-    color: #001973;
+    color: rgb(243, 19, 107);
     position: relative;
     z-index: 2;
     margin-bottom: 20px;
@@ -825,7 +825,7 @@ section {
     display: block;
     width: 50px;
     height: 3px;
-    background: var(--clr-primary-4);
+    background: rgb(243, 19, 107);
     left: 0;
     right: 0;
     bottom: 0;
@@ -1569,9 +1569,10 @@ section {
 --------------------------------------------------------------*/
 
 .call-to-action {
-    background: linear-gradient(rgba(14, 29, 52, 0.6), rgba(14, 29, 52, 0.8)), url("../images/dlogo.png") center center;
+    background: linear-gradient(rgb(243, 19, 107, .8), rgba(14, 29, 52, 0.8)), url("../images/dlogo.png") center center;
     background-size: cover;
     padding: 100px 0;
+    /* background-color: whitesm; */
 }
 
 @media (min-width: 1365px) {
@@ -2672,7 +2673,7 @@ section {
 
 .footer {
     font-size: 14px;
-    background-color: var(--clr-primary-1);
+    background-color: rgb(243, 19, 107);
     padding: 50px 0;
     color: white;
 }
@@ -2780,4 +2781,62 @@ section {
 
 .footer .credits a {
     color: #fff;
+}
+
+
+/*  */
+
+.btn:link,
+.btn:visited,
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 30px;
+    transition: all .2s;
+    position: relative;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:hover:after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 100px;
+    background-color: rgb(243, 19, 107);
+    transition: all .4s;
+}
+
+.service-title {
+    color: rgb(243, 19, 107);
+}
+
+.slant {
+    clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+    animation: upanddown 5s ease-in-out infinite alternate-reverse;
+}
+
+.slant-up {
+    padding-top: 5rem !important;
+    clip-path: polygon(0 15vh, 100% 0, 100%, 0 100%);
+    animation: upanddown 5s ease-in-out infinite alternate-reverse;
 }
