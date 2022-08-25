@@ -30,9 +30,15 @@ const contacts = computed(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1rem;
+  font-size: .9rem;
   padding: 1em;
 }
+@media screen and (max-width:400) {
+  .contact-info{
+    font-size: .9rem;
+}
+}
+
 @media screen and (min-width:60rem) {
   .contact-info{
     flex-direction: row;

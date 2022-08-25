@@ -60,12 +60,14 @@ const about = {
 const categories = [{ name: 'Web Apps', id: 1, class: ".filter-web" }, { name: 'Brand Designs', id: 2, class: ".filter-brand" }];
 
 const projects = [
-    { class: "filter-web", name: "Ecommerce", image: "/assets/images/projects/1.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
-    { class: "filter-web", name: "Ecommerce", image: "/assets/images/projects/2.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
-    { class: "filter-web", name: "Ecommerce", image: "/assets/images/projects/3.png", url: "http://google.com", desc: "A multivendor ecommerce" },
-    { class: "filter-brand", name: "Ecommerce", image: "/assets/images/projects/4.png", url: "http://google.com", desc: "A multivendor ecommerce" },
-    { class: "filter-brand", name: "Ecommerce", image: "/assets/images/projects/5.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
-    { class: "filter-brand", name: "Ecommerce", image: "/assets/images/projects/6.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
+   
+    { class: "filter-brand", name: "Ecommerce", image: "/assets/workImages/branding/DSTRING LOGO THREE.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
+    { class: "filter-brand", name: "Ecommerce", image: "/assets/workImages/branding/savoury.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
+
+    // web app
+    { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld1.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
+
+    { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld9.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
 ];
 
 const services = [

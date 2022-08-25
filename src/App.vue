@@ -9,6 +9,7 @@ import HelloWorld from './components/DefaultLayout.vue'
 </template>
 
 <style scoped>
+@import url(../public/assets/css/style.css);
 .logo {
   height: 6em;
   padding: 1.5em;
