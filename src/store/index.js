@@ -60,33 +60,12 @@ const about = {
 const categories = [{ name: 'Web Apps', id: 1, class: ".filter-web" }, { name: 'Brand Designs', id: 2, class: ".filter-brand" }];
 
 const projects = [
-    { class: "filter-brand", name: "Ecommerce", image: "/assets/workImages/branding/sc PROMO ONE.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
-    { class: "filter-branding", name: "Ecommerce", image: "/assets/workImages/branding/sc PROMO two.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
-    { class: "filter-branding", name: "Ecommerce", image: "/assets/workImages/branding/PRES TWO.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
-    { class: "filter-brand", name: "Ecommerce", image: "/assets/workImages/branding/monday bb.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
-    { class: "filter-brand", name: "Ecommerce", image: "/assets/workImages/branding/AUGUST.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
+   
     { class: "filter-brand", name: "Ecommerce", image: "/assets/workImages/branding/DSTRING LOGO THREE.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
-
-    { class: "filter-brand", name: "Ecommerce", image: "/assets/workImages/branding/Paper_Cup_3.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
-
-    { class: "filter-brand", name: "Ecommerce", image: "/assets/workImages/branding/mainflyer.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
+    { class: "filter-brand", name: "Ecommerce", image: "/assets/workImages/branding/savoury.jpg", url: "http://google.com", desc: "A multivendor ecommerce" },
 
     // web app
     { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld1.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
-
-    { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld2.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
-
-    { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld3.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
-
-    { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld4.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
-
-    { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld5.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
-
-    { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld6.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
-
-    { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld7.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
-
-    { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld8.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
 
     { class: "filter-web", name: "Ecommerce", image: "/assets/workImages/webServices/sld9.PNG", url: "http://google.com", desc: "A multivendor ecommerce" },
 ];
