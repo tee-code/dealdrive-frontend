@@ -17,9 +17,9 @@
                                 <img :src="service.image" alt="" class="img-fluid">
                             </div>
                             <h3 class="stretched-link text-center service-title">{{service.title}}</h3>
-                            <p>{{service.description}}</p>
+                            <p class="text-justify">{{service.short_desc}}</p>
                             <div class="row d-flex mb-5 justify-content-center">
-                                <router-link :to="{name: 'ReadMore'}" class="readmore text-center stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></router-link>
+                                <router-link :to="{name: 'Services'}" class="readmore text-center stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></router-link>
                             </div>
                         </div>
                     </div>

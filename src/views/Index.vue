@@ -6,6 +6,8 @@ import Services from '../components/Services.vue';
 import LatestInfo from '../components/LatestInfo.vue';
 import Testimonials from '../components/Testimonials.vue';
 import Contact from '../components/Contact.vue';
+import About from '../components/About.vue';
+import FAQ from '../components/FAQ.vue';
 
 const store = useStore();
 
@@ -111,70 +113,45 @@ defineProps({
     
     <main id="main">
 
-      <!-- ======= About Section ======= -->
-      <section id="about">
-        <div class="section-header">
-          <span>About Us</span>
-          <h2>About Us</h2> 
-          <p class="lead">{{about.heading}}</p>
-        </div>
-        <div class="container" data-aos="fade-up">
-          <div class="row">
-            
-  
-            <div class="col-lg-6 content order-last py-5">
-              <h3>
-              ` {{ about.short_desc }}
-              </h3>
-  
-              <ul>
-                <li v-for="list in about.list" :key="list"><i class="bi bi-check-circle"></i>{{list}}</li>
-              </ul>
-  
-            </div>
-            <div class="col-lg-6 about-img order-first">
-              <img src="/assets/images/about-img.svg" alt="About us image">
-            </div>
-          </div>
-  
-        </div>
-      </section><!-- End About Section -->
+      <About />
 
       <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <span>Our Projects</span>
-          <h2>Our Projects</h2> 
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li v-for="category in categories" :key="category.id" :data-filter="category.class">{{ category.name }}</li>          
-            </ul>
+      <section id="portfolio" class="portfolio">
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <span>Our Projects</span>
+            <h2>Our Projects</h2> 
+            <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
           </div>
-        </div>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div v-for="project in projects" :key="project" :class="['col-lg-4 col-md-6 portfolio-item', project.class]">
-            <img :src="project.image" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>{{project.name}}</h4>
-              <p>{{project.desc}}</p>
-              <a :href="project.image" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" :title="project.name"><i class="bx bx-plus"></i></a>
-              <a :href="project.url" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <li v-for="category in categories" :key="category.id" :data-filter="category.class">{{ category.name }}</li>          
+              </ul>
             </div>
           </div>
-          
-        </div>
 
-      </div>
-    </section><!-- End Portfolio Section -->
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div v-for="project in projects" :key="project" :class="['col-lg-4 col-md-6 portfolio-item', project.class]">
+              <img :src="project.image" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{project.name}}</h4>
+                <p>{{project.desc}}</p>
+                <a :href="project.image" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" :title="project.name"><i class="bx bx-plus"></i></a>
+                <a :href="project.url" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+      </section><!-- End Portfolio Section -->
     <Services />
+
+    <FAQ />
 
     <LatestInfo />
 
