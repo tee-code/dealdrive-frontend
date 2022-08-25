@@ -23,8 +23,7 @@ const navigations = [
   {name: 'Home',to: {name: 'Index'}},
   {name: 'About Us',to: {name: 'About'}},
   {name: 'Services',to: {name: 'Services'}},
-  {name: 'Blog',to: {name: 'Blog'}},
-  {name: 'Contact Us',to: {name: 'About'}},
+  {name: 'Contact Us',to: {name: 'Contact'}},
 ];
 
 

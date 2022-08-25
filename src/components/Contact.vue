@@ -1,45 +1,68 @@
 <template>
    <!-- ======= Contact Section ======= -->
-     <section id="contact" class="h-contact">
+    <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
-    <div class=" section-header">
-        <span>Contact</span>
-        <h2>Contact Us</h2>
-      </div>
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Need Help? <span>Contact Us</span></p>
+        </div>
 
-      <div class="row">
+        <div class="mb-3">
 
-        <div class="col-lg-6">
+          <iframe style="border:0; width: 100%; height: 200px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.29258293895!2d7.911139914090669!3d5.05624513639351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105d571dcfc03fc9%3A0x39bdf82a321d3622!2sDealdrive%20technology!5e0!3m2!1sen!2sng!4v1655918778606!5m2!1sen!2sng" frameborder="0" allowfullscreen></iframe>
+        </div><!-- End Google Maps -->
 
-          <div class="row">
-            <div class="col-md-12">
-              <div class="info-box">
-                <i class="bx bx-map"></i>
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-map flex-shrink-0"></i>
+              <div>
                 <h3>Our Address</h3>
-                <p>{{ contact.address }}</p>
+                <p>{{contact.address}}</p>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="info-box mt-4">
-                <i class="bx bx-envelope"></i>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center">
+              <i class="icon bi bi-envelope flex-shrink-0"></i>
+              <div>
                 <h3>Email Us</h3>
-                <p>{{contact.email1}}<br>{{ contact.email2 }}</p>
+                <p>{{contact.email1}}</p>
+                <p>{{contact.email2}}</p>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="info-box mt-4">
-                <i class="bx bx-phone-call"></i>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-telephone flex-shrink-0"></i>
+              <div>
                 <h3>Call Us</h3>
-                <p>{{contact.phone1}}<br>{{contact.phone2}}</p>
+                <p>{{contact.phone1}}</p>
+                <p>{{contact.phone2}}</p>
               </div>
             </div>
-          </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-share flex-shrink-0"></i>
+              <div>
+                <h3>Opening Hours</h3>
+                <div><strong>Mon-Fri:</strong> 8AM - 5PM;
+                  <strong>Sat:</strong> 9AM - 3PM;
+                  <strong>Sunday:</strong> Closed
+                </div>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
 
         </div>
 
-        <div class="col-lg-6 mt-4 mt-lg-0">
-          <form ref="contact_form" @submit.prevent="sendEmail" class="send">
+       <form ref="contact_form" @submit.prevent="sendEmail" class="send">
             <div class="row">
               <div class="col-md-6 form-group">
                 <input v-model="form.user_name" type="text" name="user_name" class="form-control" id="name" placeholder="Your Name" required>
@@ -61,12 +84,10 @@
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
-        </div>
+        <!--End Contact Form -->
 
       </div>
-
-      </div>
-    </section><!-- End Contact Section -->  
+    </section><!-- End Contact Section -->
 
 </template>
 

@@ -1,9 +1,19 @@
 <script setup>
 import { ref } from 'vue'
 
+import { useStore } from 'vuex';
+import { computed } from 'vue';
+
 defineProps({
   msg: String
-})
+});
+
+
+const store = useStore();
+
+const services = computed(() => {
+  return store.state.services;
+});
 
 </script>
 
@@ -45,61 +55,20 @@ defineProps({
 
                 <div class="row gy-4">
 
-                    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div v-for="service in services" :key="service" class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="card">
                             <div class="card-img">
-                                <img src="/assets/images/features-1.png" alt="" class="img-fluid">
+                                <img :src="service.image" alt="" class="img-fluid">
                             </div>
-                            <h3 class="stretched-link">Branding</h3>
-                            <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-                            <div class="row d-flex mb-5 justify-content-center">
-                                <router-link :to="{name: 'ReadMore'}" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card Item -->
-
-                    <div class="col-lg-6 col-md-6 w-80" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="/assets/images/features-2.png" alt="" class="img-fluid">
-                            </div>
-                            <h3><a href="service-details.html" class="stretched-link">Website</a></h3>
-                            <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
+                            <h3 class="stretched-link">{{service.title}}</h3>
+                            <p>
+                                {{ service.description}}
+                            </p>
                             <div class="row d-flex mb-5 justify-content-center">
                                 <router-link :to="{name: 'Quotation'}" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></router-link>
                             </div>
                         </div>
                     </div>
-                    <!-- End Card Item -->
-
-                    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="/assets/images/features-3.png" alt="" class="img-fluid">
-                            </div>
-                            <h3><a href="service-details.html" class="stretched-link">Mobile App</a></h3>
-                            <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-                            <div class="row d-flex mb-5 justify-content-center">
-                                <router-link :to="{name: 'Quotation'}" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card Item -->
-
-                    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="/assets/images/features-4.png" alt="" class="img-fluid">
-                            </div>
-                            <h3><a href="service-details.html" class="stretched-link">Desktop App</a></h3>
-                            <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-                            <div class="row d-flex mb-5 justify-content-center">
-                                <router-link :to="{name: 'ReadMore'}" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card Item -->
 
                 </div>
 
