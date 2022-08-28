@@ -24,7 +24,7 @@ Variables
     --vsc-border-color-top-footer: #f3f3f3
     /* dark shades of primary color*/
     --clr-primary-1: rgba(13, 66, 255, 0.8);
-    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-2: hsl(203, 65%, 8%);
     --clr-primary-3: hsl(205, 72%, 37%);
     --clr-primary-4: hsl(205, 63%, 48%);
     /* primary/main color */
@@ -2848,4 +2848,8 @@ section {
     padding-top: 5rem !important;
     clip-path: polygon(0 15vh, 100% 0, 100%, 0 100%);
     animation: upanddown 5s ease-in-out infinite alternate-reverse;
+}
+
+.page-header {
+    background-image: linear-gradient(to right, rgba(16, 25, 136, .8), rgba(243, 19, 107, .8)), url('/assets/images/page-header.jpg');
 }

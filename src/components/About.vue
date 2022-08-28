@@ -34,7 +34,7 @@ const about = computed(() => {
   
             </div>
             <div class="col-lg-6 about-img order-first">
-              <img src="/assets/images/about-img.svg" alt="About us image">
+              <img :src="about.image" alt="About us image">
             </div>
           </div>
   

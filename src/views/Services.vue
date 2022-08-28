@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
+import FAQ from '../components/FAQ.vue';
 
 import { useStore } from 'vuex';
 import { computed } from 'vue';
@@ -21,12 +22,12 @@ const services = computed(() => {
    <main id="main">
         <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs">
-            <div class="page-header d-flex align-items-center" style="background-image: url('/assets/images/page-header.jpg');">
+            <div class="page-header d-flex align-items-center" style="">
                 <div class="container position-relative">
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-6 text-center">
                             <h2>Services</h2>
-                            <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+                            <p>We offer on-demand digital solutions to enhance business growth and productivity</p>
                         </div>
                     </div>
                 </div>
@@ -75,6 +76,7 @@ const services = computed(() => {
             </div>
         </section>
         <!-- End Services Section -->
+        <FAQ />
 
     </main>
     <!-- End #main -->

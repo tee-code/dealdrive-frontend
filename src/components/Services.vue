@@ -10,10 +10,10 @@
                     <h2 style="color: whitesmoke;">Our Services</h2>
 
                 </div>
-                <div class="row gy-4 rounded-5">
-                    <div v-for="service in services" :key="service" class="col-lg-4 col-md-4 rounded-5" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card rounded-5">
-                            <div class="card-img rounded-5">
+                <div class="row gy-4 rounded-top">
+                    <div v-for="service in services" :key="service" class="col-lg-4 col-md-4 rounded-top" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card rounded-top">
+                            <div class="card-img rounded-top">
                                 <img :src="service.image" alt="" class="img-fluid">
                             </div>
                             <h3 class="stretched-link text-center service-title">{{service.title}}</h3>
