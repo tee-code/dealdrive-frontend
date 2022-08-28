@@ -36,6 +36,7 @@ const contacts = computed(() => {
 @media screen and (max-width:400) {
   .contact-info{
     font-size: .9rem;
+    padding: 1rem;
 }
 }
 

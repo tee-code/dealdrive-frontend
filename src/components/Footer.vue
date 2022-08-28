@@ -1,55 +1,69 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { SocialChat } from 'vue-social-chat'
+import { useStore } from 'vuex';
 import ChatUs from './ChatUs.vue';
 
+
+
+const store = useStore();
+
+const socials = computed(() => {
+  return store.state.socials;
+});
+
+const services = computed(() => {
+  return store.state.services;
+});
+
+const navigations = computed(() => {
+  return store.state.navigations;
+}); 
+
+const contact = computed(() => {
+  return store.state.contactus;
+});
 </script>
 
 <template>
      <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
-      <ChatUs />
+      <!-- <ChatUs /> -->
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">
             <router-link :to="{name: 'Index'}" class="logo d-flex align-items-center">
               <span>Dealdrive</span>
             </router-link>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <p>We believe there is a software solution to every hard craked experience in a brand. What we do is to ease the experience.</p>
             <div class="social-links d-flex mt-4">
-              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              <a v-for="social in socials" :key="social" :href="social.profile" :class="social.name"><i :class="social.icon"></i></a>
+              
             </div>
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">Services</a></li>
+              <li @click="closeMenu"  v-for="nav in navigations" :key="nav.name" :class="nav-item"><router-link class="nav-link scrollto active" :to="nav.to">{{nav.name}}</router-link></li>
             </ul>
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><a href="#">Brand Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Mobile App Aevelopment</a></li>
-              <li><a href="#">Software Development</a></li>
+              <li v-for="service in services" :key="service"><router-link :to="{name: 'Services'}">{{service.title}}</router-link></li>
+              
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
             <h4>Contact Us</h4>
             <p>
-              81 Itu road, Uyo, Akwa Ibom, 
-              Nigeria<br>
-              <strong>Phone:</strong> +234 806 1467 293<br>
-              <strong>Email:</strong> contact@dealdrivetechnology.com<br>
+              {{ contact.address }}
+              <br>
+              <strong>Phone:</strong> {{contact.phone1}}<br>
+              <strong>Email:</strong> {{contact.email1}}<br>
             </p>
 
           </div>

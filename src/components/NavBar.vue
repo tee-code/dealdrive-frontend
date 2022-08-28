@@ -19,12 +19,10 @@ function closeMenu() {
                           collapsNav.classList.remove('close'):
                           collapsNav.classList.add('close')
 }
-const navigations = [
-  {name: 'Home',to: {name: 'Index'}},
-  {name: 'About Us',to: {name: 'About'}},
-  {name: 'Services',to: {name: 'Services'}},
-  {name: 'Contact Us',to: {name: 'Contact'}},
-];
+
+const navigations = computed(() => {
+  return store.state.navigations;
+});
 
 
 </script>
@@ -43,12 +41,12 @@ const navigations = [
       <ul class="navbar-nav mx-auto">
         <li @click="closeMenu"  v-for="nav in navigations" :key="nav.name" :class="nav-item"><router-link class="nav-link scrollto active" :to="nav.to">{{nav.name}}</router-link></li>
            
-            <li class="dropdown"><router-link :to="{name: 'Projects'}"><span>Projects</span> <i class="bi bi-chevron-down"></i></router-link>
+            <!-- <li class="dropdown"><router-link :to="{name: 'Projects'}"><span>Projects</span> <i class="bi bi-chevron-down"></i></router-link>
               <ul>
                 <li class="nav-item"><a href="#">Finished Projects</a></li>
                 <li class="nav-item"><a href="#">Ongoing Projects</a></li>
               </ul>
-            </li>
+            </li> -->
       </ul>
       <div class="d-flex p-3 align-center">
           <a v-for="social in socials" :key="social.name" :href="social.profile" :class="social.name"><i :class="[social.icon, 'text-primary']"></i></a>
