@@ -8,6 +8,7 @@ import Quotation from "../views/Quotation.vue";
 import ReadMore from "../views/ReadMore.vue";
 import Service from "../views/Service.vue";
 import Services from "../views/Services.vue";
+import blogReadMore from "../views/blogReadMore.vue";
 import DefaultLayout from "../components/DefaultLayout.vue";
 
 const routes = [{
@@ -52,6 +53,13 @@ const routes = [{
             path: '/readmore',
             component: ReadMore,
             name: "ReadMore",
+        },
+
+        {
+            path: '/blogReadMore/:id',
+            component: blogReadMore,
+            name: "blogReadMore",
+            props:true
         }
     ]
 }];
