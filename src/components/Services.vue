@@ -1,7 +1,7 @@
 <template>
 <!-- ======= Services Section ======= -->
         <section 
-        :style="{'background-image':`linear-gradient(to right, rgba(16, 25, 136, .8), rgba(243, 19, 107, .8)), url(${services[0].image})`}"
+        :style="{'background-image':`linear-gradient(to right, rgba(16, 25, 136, .8), rgba(38, 84, 156, 0.6)), url(${services[0].image})`}"
         id="service" class="services pt-0 slant-up">
             <div class="container col-md-10 col-lg-8 mx-auto" data-aos="fade-up">
 

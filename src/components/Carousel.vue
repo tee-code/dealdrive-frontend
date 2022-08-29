@@ -9,7 +9,7 @@
   
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
-    <div v-for="slide in slides" :style="{'background-image':`linear-gradient(to right, rgba(16, 25, 136, .8), rgba(243, 19, 107, .8)), url(${slide.image})`}" :key="slide.id" :class="[slide.id == 0 ? 'active':'not-active' ,'carousel-item']">
+    <div v-for="slide in slides" :style="{'background-image':`linear-gradient(to right, rgba(16, 25, 136, .8), rgba(38, 84, 156, 0.6)), url(${slide.image})`}" :key="slide.id" :class="[slide.id == 0 ? 'active':'not-active' ,'carousel-item']">
       <div class="carousel-caption text-white">
         <h3>{{slide.title}}</h3>
         <p>{{slide.caption}}</p>
@@ -88,6 +88,10 @@ const slides = computed(() => {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.btn-get-started{
+  background-color: #e49300 !important;
 }
 
 .slant {

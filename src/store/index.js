@@ -38,13 +38,13 @@ const slides = [{
 ];
 
 const socials = [
-    { name: 'twitter', icon: 'fab fa-twitter', profile: 'http://test@twitter.com' },
-    { name: 'facebook', icon: 'fab fa-facebook', profile: 'http://test@facebook.com' },
-    { name: 'instagram', icon: 'fab fa-instagram', profile: 'http://test@instagram.com' },
-    { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'http://test@linkedin.com' },
+    { name: 'twitter', icon: 'fab fa-twitter', profile: 'https://twitter.com/ddrivebrand' },
+    { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/ddrivebrand' },
+    { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/ddrivebrand/' },
+    { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'https://www.linkedin.com/in/ddrivebrand/' },
 ];
 
-const contacts = { email: 'contact@dealdrivetechnology.com', phone: '+234 806 1467 293' };
+const contacts = { email: 'dealdrivetechnology@gmail.com', phone: '+2348061467293' };
 
 const about = {
     image: "/assets/images/about.jpg",
@@ -62,13 +62,13 @@ const categories = [{ name: 'Web Apps', id: 1, class: ".filter-web" }, { name: '
 
 const projects = [
 
-    { class: "filter-brand", name: "De String Electrical", image: "/assets/images/projects/branding/DSTRING.jpg", url: "#", desc: "They provide electrical installations and conduit wiring." },
-    { class: "filter-brand", name: "Savoury Crunches", image: "/assets/images/projects/branding/savoury.jpg", url: "#", desc: "They provide baking, pasteries, and catering services." },
+    { id: 1, class: "filter-brand", name: "De String Electrical", image: "/assets/images/projects/branding/DSTRING.jpg", url: "#", desc: "They provide electrical installations and conduit wiring.", full_desc: "They provide electrical installations and conduit wiring." },
+    { id: 2, class: "filter-brand", name: "Savoury Crunches", image: "/assets/images/projects/branding/savoury.jpg", url: "#", desc: "They provide baking, pasteries, and catering services.", full_desc: "They provide baking, pasteries, and catering services." },
 
     // web app
-    { class: "filter-web", name: "Reform7", image: "/assets/images/projects/webServices/sld1.PNG", url: "https://reform7international.org/", desc: "A NGO that provide reformation through the word of God." },
+    { id: 3, class: "filter-web", name: "Reform7", image: "/assets/images/projects/webServices/sld1.PNG", url: "https://reform7international.org/", desc: "A NGO that provide reformation through the word of God.", full_desc: "A NGO that provide reformation through the word of God." },
 
-    { class: "filter-web", name: "Sound mind ministries", image: "/assets/images/projects/webServices/sld9.PNG", url: "https://reform7international.org/", desc: "A NGO that provide sound teaching of of God's word" },
+    { id: 4, class: "filter-web", name: "Sound mind ministries", image: "/assets/images/projects/webServices/sld9.jpeg", url: "https://reform7international.org/", desc: "A NGO that provide sound teaching of of God's word", full_desc: "A NGO that provide sound teaching of of God's word" },
 ];
 
 const services = [
@@ -79,11 +79,11 @@ const services = [
     { image: "/assets/images/software.jpg", title: "Custom software", short_desc: "We build App for mobile, Desktop and other custom device", description: "We build App for mobile, Desktop and other custom device" },
 ];
 
-const news = { title: "Particpate in Our Training", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." };
+const news = { title: "Particpate in Our Training", description: "Dealdrive Technology Skillup programs is a digital skill acquisition program that train you to be master of tech related skills in the field of design, software and web application" };
 const testimonials = [
-    { star: "4", id: "0", image: "/assets/images/pics.jpg", author: "Testing testing", title: "Founder 1", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
-    { star: "2", id: "1", image: "/assets/images/pics.jpg", author: "Testing testing", title: "Founder 2", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
-    { star: "3", id: "2", image: "/assets/images/pics.jpg", author: "Testing testing", title: "Founder 3", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
+    { star: "5", id: "0", image: "/assets/images/mathics.jpeg", author: "Abasiofon Peter", title: "Scribe, The Mathics", description: "Thank you Dealdrive technology. You did a great job and your service delivery is quite commendable." },
+    { star: "5", id: "1", image: "/assets/images/moses.jpeg", author: "David Offiong", title: "Business Owner", description: "Your services are top-notch bro I love how organized it is And yes the designs are superb! Well done!" },
+
 ];
 
 const contactus = { email1: "torwisdom4@gmail.com", email2: "dealdrivetechnology@gmail.com", phone1: "+234 5589 5548", phone2: "+234 6678 2545", address: "81 Itu road, Uyo, Akwa Ibom, Nigeria" };
@@ -107,7 +107,7 @@ const navigations = [
     { name: 'About Us', to: { name: 'About' } },
     { name: 'Services', to: { name: 'Services' } },
     { name: 'Blog', to: { name: 'Blog' } },
-    { name: 'Projects', to: { name: 'Blog' } },
+    { name: 'Projects', to: { name: 'Projects' } },
     { name: 'Contact Us', to: { name: 'Contact' } },
 ];
 

@@ -37,7 +37,7 @@ const contact = computed(() => {
             </router-link>
             <p>We believe there is a software solution to every hard craked experience in a brand. What we do is to ease the experience.</p>
             <div class="social-links d-flex mt-4">
-              <a v-for="social in socials" :key="social" :href="social.profile" :class="social.name"><i :class="social.icon"></i></a>
+              <a target="_blank" v-for="social in socials" :key="social" :href="social.profile" :class="social.name"><i :class="social.icon"></i></a>
               
             </div>
           </div>
@@ -45,7 +45,8 @@ const contact = computed(() => {
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li @click="closeMenu"  v-for="nav in navigations" :key="nav.name" :class="nav-item"><router-link class="nav-link scrollto active" :to="nav.to">{{nav.name}}</router-link></li>
+              <li @click="closeMenu"  v-for="nav in navigations" :key="nav.name" :class="nav-item">
+              <router-link v-if="nav.name != 'Projects'" class="nav-link scrollto active" :to="nav.to">{{nav.name}}</router-link></li>
             </ul>
           </div>
 
