@@ -120,7 +120,8 @@ defineProps({
           <div class="section-header">
             <span>Our Projects</span>
             <h2>Our Projects</h2> 
-            <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+            <p>Check our completed jobs on Branding, web and software application.
+Every projects we build are chanel towards a particular use case that might apply to your business needs. Explore our finished projects below</p>
           </div>
 
           <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -140,7 +141,8 @@ defineProps({
                 <h4>{{project.name}}</h4>
                 <p>{{project.desc}}</p>
                 <a :href="project.image" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" :title="project.name"><i class="bx bx-plus"></i></a>
-                <a :href="project.url" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                <router-link :to="{name: 'Projects', params: {id: project.id }}" class="details-link" title="More Details"><i class="bx bx-link"></i></router-link>
+              
               </div>
             </div>
             

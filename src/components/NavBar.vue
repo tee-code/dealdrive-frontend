@@ -1,12 +1,16 @@
 <script setup>
 import { computed, ref } from 'vue';
+import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
 
 const store = useStore();
 
+const route = useRoute();
+
 const socials = computed(() => {
   return store.state.socials;
-})
+});
+
 function toggleMenu() {
     let collapsNav=document.querySelector('.navbar-collapse')
     collapsNav.classList.contains('close')?
@@ -39,7 +43,16 @@ const navigations = computed(() => {
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav mx-auto">
-        <li @click="closeMenu"  v-for="nav in navigations" :key="nav.name" :class="nav-item"><router-link class="nav-link scrollto active" :to="nav.to">{{nav.name}}</router-link></li>
+        <li @click="closeMenu"  v-for="nav in navigations" :key="nav.name" :class="nav-item">
+          <router-link v-if="nav.name != 'Projects'" class="nav-link scrollto active" :to="nav.to">{{nav.name}}
+        </router-link>
+        
+        </li>
+        <li @click="closeMenu" class="nav-item" :key="2">
+          <router-link :to="{name: 'Projects', params: {id:1}}" class="nav-link scrollto active">Projects
+          </router-link>
+         
+        </li>
            
             <!-- <li class="dropdown"><router-link :to="{name: 'Projects'}"><span>Projects</span> <i class="bi bi-chevron-down"></i></router-link>
               <ul>
@@ -49,7 +62,7 @@ const navigations = computed(() => {
             </li> -->
       </ul>
       <div class="d-flex p-3 align-center">
-          <a v-for="social in socials" :key="social.name" :href="social.profile" :class="social.name"><i :class="[social.icon, 'text-primary']"></i></a>
+          <a target="_blank" v-for="social in socials" :key="social.name" :href="social.profile" :class="social.name"><i :class="[social.icon, 'text-primary']"></i></a>
         </div>
     </div>
   </div>

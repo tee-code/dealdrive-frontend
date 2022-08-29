@@ -5,6 +5,7 @@ import Footer from './Footer.vue'
 import TopBar from './TopBar.vue'
 import NavBar from './NavBar.vue'
 
+
 defineProps({
   msg: String
 });
@@ -13,15 +14,16 @@ defineProps({
 </script>
 
 <template>
-
+  <div>
     <div class="head-wrapper">
       <TopBar />
       <NavBar />
     </div>
     <router-view></router-view>
     <Footer />
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  </div>
+    
 </template>
 
 <style scoped>

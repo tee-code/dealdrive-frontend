@@ -1,11 +1,21 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router';
+import { useStore } from 'vuex';
 
 defineProps({
   msg: String
-})
+});
 
-const count = ref(0)
+const store = useStore();
+
+const projects = computed(() => {
+  return store.state.projects;
+});
+
+const route = useRoute();
+
+
 </script>
 
 <template>
@@ -17,7 +27,9 @@ const count = ref(0)
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
               <h2>Projects</h2>
-              <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <p>Check our completed jobs on Branding, web and software application.
+              Every projects we build are chanel towards a particular 
+              use case that might apply to your business needs. Explore our finished projects below</p>
             </div>
           </div>
         </div>
@@ -44,93 +56,29 @@ const count = ref(0)
         <div class="row gy-4">
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
-              <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">LOGO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Letterhead</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Business Card</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Package</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Website</a>
+              <li class="nav-item" v-for="project in projects" :key="project">
+                <a :class="['nav-link', route.params.id == project.id ? 'active show' : '']" data-bs-toggle="tab" :href="'#tab-'+project.id">{{ project.name }}</a>
               </li>
             </ul>
           </div>
           <div class="col-lg-9">
             <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
+              <div :class="['tab-pane', route.params.id == project.id ? 'active show' : '']" :id="'tab-'+project.id" v-for="project in projects" :key="project">
                 <div class="row gy-4">
                   <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
-                    <img src="/assets/images/hero-carousel/5.jpg" alt="" class="img-fluid">
+                    <img :src="project.image" alt="" class="img-fluid">
                   </div>
                   <div class="col-lg-12 order-1 order-lg-2 details">
-                    <h3>LOGO Applications</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                    <h3>{{project.name}}</h3>
+                    <p class="fst-italic">{{project.desc}}</p>
+                    <p>{{project.full_desc}}</p>
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="tab-2">
-                <div class="row gy-4">
-                  
-                  <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
-                    <img src="/assets/images/hero-carousel/4.jpg" alt="" class="img-fluid">
-                  </div>
-                  <div class="col-lg-12 order-1 order-lg-2 details">
-                    <h3>Et blanditiis nemo veritatis excepturi</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-3">
-                <div class="row gy-4">
-                  
-                  <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
-                    <img src="/assets/images/hero-carousel/3.jpg" alt="" class="img-fluid">
-                  </div>
-                  <div class="col-lg-12 order-1 order-lg-2 details">
-                    <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                    <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                    <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <div class="row gy-4">
-                  
-                  <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
-                    <img src="/assets/images/hero-carousel/2.jpg" alt="" class="img-fluid">
-                  </div>
-                  <div class="col-lg-12 order-1 order-lg-2 details">
-                    <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-5">
-                <div class="row gy-4">
-                  
-                  <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
-                    <img src="/assets/images/hero-carousel/1.jpg" alt="" class="img-fluid">
-                  </div>
-                  <div class="col-lg-12 order-1 order-lg-2 details">
-                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                    <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
-
       </div>
     </section><!-- End Departments Section -->
 
