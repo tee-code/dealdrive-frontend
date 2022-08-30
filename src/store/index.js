@@ -8,8 +8,8 @@ const slides = [{
     },
     {
         id: 1,
-        title: 'GET MORE DONE WITH OUR SOFTWARE SOLUTIONS',
-        caption: 'Accelerate your digital transformation with our branding and software development solutions',
+        title: 'Particpate in Our Training',
+        caption: 'Dealdrive Technology Skillup programs is a digital skill acquisition program that train you to be master of tech related skills in the field of design, software and web application',
         image: '/assets/images/hero-carousel/1.jpg'
     },
     {
@@ -80,13 +80,13 @@ const services = [
 ];
 
 const news = { title: "Particpate in Our Training", description: "Dealdrive Technology Skillup programs is a digital skill acquisition program that train you to be master of tech related skills in the field of design, software and web application" };
+
 const testimonials = [
     { star: "5", id: "0", image: "/assets/images/mathics.jpeg", author: "Abasiofon Peter", title: "Scribe, The Mathics", description: "Thank you Dealdrive technology. You did a great job and your service delivery is quite commendable." },
     { star: "5", id: "1", image: "/assets/images/moses.jpeg", author: "David Offiong", title: "Business Owner", description: "Your services are top-notch bro I love how organized it is And yes the designs are superb! Well done!" },
-
 ];
 
-const contactus = { email1: "torwisdom4@gmail.com", email2: "dealdrivetechnology@gmail.com", phone1: "+234 5589 5548", phone2: "+234 6678 2545", address: "81 Itu road, Uyo, Akwa Ibom, Nigeria" };
+const contactus = { email1: "torwisdom4@gmail.com", email2: "dealdrivetechnology@gmail.com", phone1: "+2348182041899", phone2: "+2348061467293", address: "81 Itu road, Uyo, Akwa Ibom, Nigeria" };
 
 const attendants = [{
         app: 'whatsapp',
@@ -111,12 +111,41 @@ const navigations = [
     { name: 'Contact Us', to: { name: 'Contact' } },
 ];
 
-const faqs = [
-    { id: "1", question: "Non consectetur a erat nam at lectus urna duis?", answer: "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non." },
-    { id: "2", question: "Non consectetur a erat nam at lectus urna duis?", answer: "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non." },
-    { id: "3", question: "Non consectetur a erat nam at lectus urna duis?", answer: "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non." },
-    { id: "4", question: "Non consectetur a erat nam at lectus urna duis?", answer: "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non." },
-    { id: "5", question: "Non consectetur a erat nam at lectus urna duis?", answer: "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non." },
+const faqs = [{
+        id: "1",
+        question: "How much will it cost to design and build my website?",
+        answer: "Each business's needs are different, so due to variations in scope, pricing from one app development to the next can be quite different. Our typical end-to-end app development costs N100,000-N100,000,000. If you’d like a more detailed breakdown of the pricing, request for a quote to get a copy of our pricing sheet."
+    },
+    {
+        id: "2",
+        question: "Why do i need a custom application?",
+        answer: "Custom applications can be a web app that runs on the browser or software that can be install to run to on your device. Building a custom application is dependent on the use case. You may want to build a custom app for your production system, to help you maintain a consistent product. You may want to build a sales app for your sales team."
+    },
+    {
+        id: "3",
+        question: "How long does it take to build my app?",
+        answer: "Similar to questions regarding cost, the timeline will vary greatly based on the scope of your web design project. Typically, our end-to-end build projects take 4-8 months to complete."
+    },
+    {
+        id: "4",
+        question: "Who do you provide your service to?",
+        answer: "We work with even balance of start-ups, small businesses, non-profits, and enterprise clients across a multitude of industries."
+    },
+    {
+        id: "5",
+        question: "What kind of brand design do you do?",
+        answer: "We provide full branding services that guaranteed your brand awareness. Our designs are bespoke. They make you unique."
+    },
+    {
+        id: "6",
+        question: "Can you work with my existing team?",
+        answer: "Absolutely. It’s common for our Company to collaborate with your internal or external digital teams including developers, designers, production, sales and market team. Throughout the course of a project, we often help these teams set a better structural foundation for smarter segmentation, and improve goal- and task-tracking. Post-launch, we can collaborate with your team to produce new landing pages, website sections, and software tools to make their work productive."
+    },
+    {
+        id: "7",
+        question: "Why do I trust to do business with you?",
+        answer: "We are looking after for your growth. We have the best team for your projects. We are legally registered. We have a responsive support team, online and offline."
+    },
 
 ];
 

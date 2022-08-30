@@ -46,7 +46,9 @@ const contact = computed(() => {
             <h4>Useful Links</h4>
             <ul>
               <li @click="closeMenu"  v-for="nav in navigations" :key="nav.name" :class="nav-item">
-              <router-link v-if="nav.name != 'Projects'" class="nav-link scrollto active" :to="nav.to">{{nav.name}}</router-link></li>
+                <router-link v-if="nav.name != 'Projects'" class="nav-link scrollto active" :to="nav.to">{{nav.name}}</router-link>
+                <router-link v-else class="nav-link scrollto active" :to="{name:'Projects', params:{id:1}}">{{nav.name}}</router-link>
+              </li>
             </ul>
           </div>
 
@@ -63,8 +65,9 @@ const contact = computed(() => {
             <p>
               {{ contact.address }}
               <br>
-              <strong>Phone:</strong> {{contact.phone1}}<br>
-              <strong>Email:</strong> {{contact.email1}}<br>
+              <strong>Phone:</strong> {{contact.phone1}},{{contact.phone2}} <br>
+              <strong>Email 1:</strong> {{contact.email1}} <br>
+              <strong>Email 2:</strong> {{contact.email2}} <br>
             </p>
 
           </div>
