@@ -107,7 +107,6 @@ const contact = computed(() => {
 });
 
 const contact_form = ref(null);
-let new_form = {};
 
 const form = {
     user_name:'',
