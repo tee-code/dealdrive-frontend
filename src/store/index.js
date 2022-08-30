@@ -193,6 +193,31 @@ const teams = [{
     },
 ];
 
+const blog =[
+    {   title:'EIGHT STRATEGIES FOR BUSINESS GROWTH',
+        description:"1. Build A Br and",
+        date:'02/ 08/ 2022',
+        category:'Business',
+        image:'/assets/images/post/post-landscape-2.jpg',
+        id:1,
+        userProfile:{
+            name:'Wade Warren',
+            image:'/assets/images/me.png'
+        }
+    },
+
+    {   title:'5 WAYS TO OVERCOME COMPLEX DATA CHALLENGES AS AN ORGANISATION',
+        description:"1. Build A Brand",
+        date:'02/ 08/ 2022',
+        category:'Business',
+        image:'/assets/images/post/post-landscape-4.jpg',
+        id:2,
+        userProfile:{
+            name:'Wade Warren',
+            image:'/assets/images/me.png'
+        }
+    }
+];
 const store = createStore({
     state: {
         navigations,
@@ -209,6 +234,7 @@ const store = createStore({
         services,
         news,
         testimonials,
+        blog
     },
     getters: {},
     actions: {

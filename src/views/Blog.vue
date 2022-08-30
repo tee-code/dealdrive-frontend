@@ -1,8 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useStore } from 'vuex';
+
+const store = useStore();
 
 defineProps({
   msg: String
+})
+const blogs = computed(()=>{
+  return store.state.blog
 })
 
 </script>
@@ -42,75 +48,29 @@ defineProps({
     <section id="post" class="post">
       <div class="container">
         <div class="row">
-          <div class="col-md-9">
-
-            <div class="d-md-flex post-entry-2 small-img">
-              <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
-                <img src="/assets/images/post/post-landscape-2.jpg" alt="" class="img-fluid">
+          <div class="col-md-9" >
+              
+            <div class="d-md-flex post-entry-2 small-img" v-for="blog in blogs" :key="blog.id">
+              <router-link :to="{name: 'blogReadMore',params:{id:blog.id} }" class="me-4 thumbnail">
+                <img :src="blog.image" alt="" class="img-fluid">
               </router-link>
               <div>
-                <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                <h3><router-link :to="{name: 'ReadMore'}">17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</router-link></h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
+                
+                <div class="post-meta"><span class="date">{{blog.category}}</span> <span class="mx-1">&bullet;</span> <span>{{blog.date}}</span></div>
+                <h3><router-link :to="{name: 'blogReadMore', params:{id:blog.id} }">{{blog.title}}</router-link></h3>
+                <p>{{blog.description}}</p>
+
+                <!-- <router-link :to="{name: 'ReadMore', prams:'{blog.id}'}"><button>ReadMore</button></router-link> -->
                 <div class="d-flex align-items-center author">
-                  <div class="photo"><img src="/assets/images/me.png" alt="" class="img-fluid"></div>
+                  <div class="photo"><img :src="blog.userProfile.image" alt="" class="img-fluid"></div>
                   <div class="name">
-                    <h3 class="m-0 p-0">Wade Warren</h3>
+                    <h3 class="m-0 p-0">{{blog.userProfile.name}}</h3>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="d-md-flex post-entry-2 small-img">
-              <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
-                <img src="/assets/images/post/post-landscape-3.jpg" alt="" class="img-fluid">
-              </router-link>
-              <div>
-                <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                <h3><router-link :to="{name: 'ReadMore'}">The Best Homemade Masks for Face (keep the Pimples Away)</router-link></h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
-                <div class="d-flex align-items-center author">
-                  <div class="photo"><img src="/assets/images/me.png" alt="" class="img-fluid"></div>
-                  <div class="name">
-                    <h3 class="m-0 p-0">Wade Warren</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="d-md-flex post-entry-2 small-img">
-              <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
-                <img src="/assets/images/post/post-landscape-4.jpg" alt="" class="img-fluid">
-              </router-link>
-              <div>
-                <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                <h3><router-link :to="{name: 'ReadMore'}">10 Life-Changing Hacks Every Working Mom Should Know</router-link></h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
-                <div class="d-flex align-items-center author">
-                  <div class="photo"><img src="/assets/images/me.png" alt="" class="img-fluid"></div>
-                  <div class="name">
-                    <h3 class="m-0 p-0">Wade Warren</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="d-md-flex post-entry-2 small-img">
-              <router-link :to="{name: 'ReadMore'}" class="me-4 thumbnail">
-                <img src="/assets/images/post/post-landscape-6.jpg" alt="" class="img-fluid">
-              </router-link>
-              <div>
-                <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                <h3><router-link :to="{name: 'ReadMore'}">9 Half-up/half-down Hairstyles for Long and Medium Hair</router-link></h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas.</p>
-                <div class="d-flex align-items-center author">
-                  <div class="photo"><img src="/assets/images/me.png" alt="" class="img-fluid"></div>
-                  <div class="name">
-                    <h3 class="m-0 p-0">Wade Warren</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
 
             <!-- Paging -->
             <div class="text-start py-4">
