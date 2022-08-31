@@ -12,8 +12,9 @@
     <div v-for="slide in slides" :style="{'background-image':`linear-gradient(to right, rgba(16, 25, 136, .8), rgba(38, 84, 156, 0.6)), url(${slide.image})`}" :key="slide.id" :class="[slide.id == 0 ? 'active':'not-active' ,'carousel-item']">
       <div class="carousel-caption text-white">
         <h3>{{slide.title}}</h3>
-        <p>{{slide.caption}}</p>
-        <button data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
+        <p class="col-md-6 mx-auto">{{slide.caption}}</p>
+        <button v-if="slide.id == 0" data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
+        <button v-if="slide.id == 1" data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Join Now.</button>
       </div>
     </div>
    

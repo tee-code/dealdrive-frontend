@@ -30,7 +30,7 @@
               <i class="icon bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
-                <p>{{contact.email1}}</p>
+                
                 <p>{{contact.email2}}</p>
               </div>
             </div>
