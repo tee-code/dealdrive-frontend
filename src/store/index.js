@@ -52,8 +52,8 @@ const about = {
     short_desc: 'We believe there is a software solution to every hard craked experience in a brand. What we do is to ease the experience.',
     list: [
         "Build applications that other businesses can use to perform their daily business operations.",
-        "Work with our clients to understand there problem and how our solution can fit into the problem.",
-        "With our experienced team of designers developers we can bring your business to limelight",
+        "Work with our clients to understand their problem and how our solution can fit into the problem.",
+        "With our experienced team of designers and developers, we can bring your business to limelight",
         "We provide the best value for your money. Every service you receive from us come with a guarantee that secure your investment",
     ]
 };

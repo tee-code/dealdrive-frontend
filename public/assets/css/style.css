@@ -36,11 +36,11 @@ Variables
     --clr-primary-5: #2d6bd8 !important;
     /* --clr-primary-5: hsl(205, 78%, 60%); */
     /* lighter shades of primary color */
-    --clr-primary-6: hsl(205, 89%, 70%);
-    --clr-primary-7: hsl(205, 90%, 76%);
-    --clr-primary-8: hsl(205, 86%, 81%);
-    --clr-primary-9: hsl(205, 90%, 88%);
-    --clr-primary-10: hsl(205, 100%, 96%);
+    --clr-primary-6: #2d6bd8 !important;
+    --clr-primary-7: #2d6bd8 !important;
+    --clr-primary-8: #2d6bd8 !important;
+    --clr-primary-9: #2d6bd8 !important;
+    --clr-primary-10: #2d6bd8 !important;
     /* darkest grey - used for headings */
     --clr-grey-1: hsl(209, 61%, 16%);
     --clr-grey-2: hsl(211, 39%, 23%);
@@ -2838,12 +2838,12 @@ section {
     left: 0;
     z-index: -1;
     border-radius: 100px;
-    background-color: rgb(243, 19, 107);
+    background-color: var(--primary-blue);
     transition: all .4s;
 }
 
 .service-title {
-    color: rgb(243, 19, 107);
+    color: var(--primary-blue);
 }
 
 .slant {
