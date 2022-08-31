@@ -13,7 +13,9 @@ Variables
 */
 
 :root {
-    --vsc-bg-header: hsl(205, 63%, 48%) !important;
+    --primary-blue: #2d6bd8 !important;
+    /* --vsc-bg-header: hsl(205, 63%, 48%) !important; */
+    --vsc-bg-header: #2d6bd8 !important;
     --vsc-bg-footer: #fafafa;
     --vsc-text-color-header: #fff;
     --vsc-text-color-footer: inherit;
@@ -24,11 +26,15 @@ Variables
     --vsc-border-color-top-footer: #f3f3f3
     /* dark shades of primary color*/
     --clr-primary-1: rgba(13, 66, 255, 0.8);
-    --clr-primary-2: hsl(203, 65%, 8%);
+    --clr-primary-2: #2d6bd8 !important;
+    --clr-primary-3: #2d6bd8 !important;
+    --clr-primary-4: #2d6bd8 !important;
+    /* --clr-primary-2: hsl(203, 65%, 8%);
     --clr-primary-3: hsl(205, 72%, 37%);
-    --clr-primary-4: hsl(205, 63%, 48%);
+    --clr-primary-4: hsl(205, 63%, 48%); */
     /* primary/main color */
-    --clr-primary-5: hsl(205, 78%, 60%);
+    --clr-primary-5: #2d6bd8 !important;
+    /* --clr-primary-5: hsl(205, 78%, 60%); */
     /* lighter shades of primary color */
     --clr-primary-6: hsl(205, 89%, 70%);
     --clr-primary-7: hsl(205, 90%, 76%);
@@ -300,7 +306,7 @@ h6 {
 
 .quote-form input:focus,
 .quote-form textarea:focus {
-    border-color: var(--color-primary);
+    border-color: var(--primary-blue);
 }
 
 .quote-form input {
@@ -885,7 +891,7 @@ section {
 
 .breadcrumbs .page-header:before {
     content: "";
-    background-color: rgba(14, 29, 52, 0.8);
+    /* background-color: #2d6bd8; */
     position: absolute;
     inset: 0;
 }
@@ -1169,19 +1175,20 @@ section {
 }
 
 .services .card {
-    color: #001973;
+    color: var(--primary-blue);
     transition: 0.3;
 }
 
 .services .card:hover {
-    color: var(--color-primary);
+    color: var(--primary-blue);
 }
 
 .services .card p {
     padding: 0 30px;
     margin-bottom: 30px;
-    color: var(--color-secondary);
+    color: var(--primary-blue);
     font-size: 15px;
+    text-align: justify;
 }
 
 .services .card:hover .card-img img {
@@ -1734,7 +1741,7 @@ section {
 }
 
 .faq .accordion-button:not(.collapsed) {
-    color: var(--color-primary);
+    color: var(--primary-blue);
     border-bottom: 0;
     box-shadow: none;
 }
@@ -1744,7 +1751,7 @@ section {
     top: 14px;
     left: 25px;
     font-size: 20px;
-    color: var(--color-primary);
+    color: var(--primary-blue);
 }
 
 .faq .accordion-button:after {
@@ -2347,7 +2354,7 @@ section {
 
 .book-a-table .php-email-form input:focus,
 .book-a-table .php-email-form textarea:focus {
-    border-color: var(--color-primary);
+    border-color: var(--primary-blue);
 }
 
 .book-a-table .php-email-form input {
@@ -2851,5 +2858,5 @@ section {
 }
 
 .page-header {
-    background-image: linear-gradient(to right, rgba(16, 25, 136, .8), rgba(38, 84, 156, 0.6)), url('/assets/images/page-header.jpg');
+    background-image: linear-gradient(to right, rgb(45, 107, 216, .8), rgba(38, 84, 156, 0.8)), url('/assets/images/page-header.jpg');
 }

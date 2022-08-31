@@ -66,8 +66,8 @@ const contact = computed(() => {
               {{ contact.address }}
               <br>
               <strong>Phone:</strong> {{contact.phone1}},{{contact.phone2}} <br>
-              <strong>Email 1:</strong> {{contact.email1}} <br>
-              <strong>Email 2:</strong> {{contact.email2}} <br>
+              
+              <strong>Email:</strong> {{contact.email2}} <br>
             </p>
 
           </div>
