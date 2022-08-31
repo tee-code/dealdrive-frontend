@@ -66,7 +66,7 @@ const services = computed(() => {
                                 {{ service.description}}
                             </p>
                             <div class="row d-flex mb-5 justify-content-center">
-                                <router-link :to="{name: 'Quotation'}" class="readmore text-center stretched-link"><span>Order serice</span><i class="bi bi-arrow-right"></i></router-link>
+                                <router-link :to="{name: 'Quotation'}" class="readmore text-center stretched-link"><span>Order service</span><i class="bi bi-arrow-right"></i></router-link>
                             </div>
                         </div>
                     </div>
