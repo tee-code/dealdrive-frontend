@@ -1,11 +1,9 @@
 <script setup>
 import { computed, ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 
 const store = useStore();
-
-const route = useRoute();
 
 const socials = computed(() => {
   return store.state.socials;
@@ -28,6 +26,10 @@ const navigations = computed(() => {
   return store.state.navigations;
 });
 
+const route = useRoute();
+
+const name = computed(() =>route.name)
+
 
 </script>
 
@@ -43,15 +45,13 @@ const navigations = computed(() => {
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav mx-auto">
-        <li @click="closeMenu"  v-for="nav in navigations" :key="nav.name" :class="nav-item">
-          <router-link v-if="nav.name != 'Projects'" :class="['nav-link scrollto', this.$route.name == nav.to.name ? 'active' : '']" :to="nav.to">{{nav.name}}
+        <li @click="closeMenu"  v-for="(nav) in navigations" :key="nav.name" :class="nav-item">
+          <router-link v-if="nav.name != 'Projects'" :class="['nav-link scrollto', name == nav.to.name ? 'active' : '']" :to="nav.to">{{nav.name}}
         </router-link>
-        
         </li>
         <li @click="closeMenu" class="nav-item" :key="2">
           <router-link :to="{name: 'Projects', params: {id:1}}" class="nav-link scrollto">Projects
-          </router-link>
-         
+          </router-link>         
         </li>
            
             <!-- <li class="dropdown"><router-link :to="{name: 'Projects'}"><span>Projects</span> <i class="bi bi-chevron-down"></i></router-link>
