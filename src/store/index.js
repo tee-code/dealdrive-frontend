@@ -10,7 +10,7 @@ const slides = [{
         id: 1,
         title: 'Particpate in Our Training',
         caption: 'Dealdrive Technology Skillup programs is a digital skill acquisition program that train you to be master of tech related skills in the field of design, software and web application',
-        image: '/assets/images/hero-carousel/1.jpg'
+        image: '/assets/images/page-header.jpg'
     },
     {
         id: 2,
