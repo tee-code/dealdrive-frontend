@@ -71,7 +71,30 @@ const route = useRoute();
                   <div class="col-lg-12 order-1 order-lg-2 details">
                     <h3>{{project.name}}</h3>
                     <p class="fst-italic">{{project.desc}}</p>
-                    <p>{{project.full_desc}}</p>
+                    <div>
+                        <h5>Aim</h5>
+                        <p>{{project.full_desc.aim}}</p>
+                    </div>
+                    <div>
+                        <h5>The Gap</h5>
+                        <p>{{project.full_desc.gap}}</p>
+                    </div>
+                    <div>
+                        <h5>The Solution</h5>
+                        <p>{{project.full_desc.solution}}</p>
+                    </div>
+                    <div>
+                        <h5>Optimization</h5>
+                        <p>{{project.full_desc.optimization}}</p>
+                    </div>
+                    <div>
+                        <h5>The Results</h5>
+                        <p>{{project.full_desc.result.title}}</p>
+                        <ul>
+                          <li v-for="data in project.full_desc.result.data" :key="data">{{ data }}</li>
+                        </ul>
+                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -89,5 +112,8 @@ const route = useRoute();
 <style scoped>
 .read-the-docs {
   color: #888;
+}
+.details > div{
+  margin-bottom: 2rem;
 }
 </style>

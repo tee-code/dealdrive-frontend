@@ -19,7 +19,8 @@ const teams = computed(() => {
         <div class="section-header">
           <span>Our Team</span>
           <h2>Meet Our Team</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>We have a creative team of designers, developers, strategists, and producers building innovative applications for brands like yours.</p>
+          <p>Meet The Team You Want On Your Project</p>
         </div>
 
         <!-- Page Content -->
@@ -29,7 +30,10 @@ const teams = computed(() => {
     <!-- Team Member  -->
     <div class="col-xl-3 col-md-6 mb-4" v-for="team in teams" :key="team">
       <div class="card border-0 shadow">
-        <img :src="team.image" class="card-img-top" alt="...">
+        <div style="height: 250px;">
+          <img :src="team.image" class="card-img-top h-full" :alt="team.name" style="width: 100%;" />
+        </div>
+        
         <div class="card-body text-center">
           <h5 class="card-title mb-0">{{team.name}}</h5>
           <div class="card-text text-black-50">{{team.title}}</div>
