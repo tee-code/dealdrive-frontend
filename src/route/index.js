@@ -6,7 +6,7 @@ import Blog from "../views/Blog.vue";
 import Projects from "../views/Projects.vue";
 import Quotation from "../views/Quotation.vue";
 import ReadMore from "../views/ReadMore.vue";
-import Service from "../views/Service.vue";
+import Training from "../views/Training.vue";
 import Services from "../views/Services.vue";
 import blogReadMore from "../views/blogReadMore.vue";
 import DefaultLayout from "../components/DefaultLayout.vue";
@@ -41,9 +41,9 @@ const routes = [{
             component: Quotation,
             name: "Quotation",
         }, {
-            path: '/service',
-            component: Service,
-            name: "Service",
+            path: '/training',
+            component: Training,
+            name: "Training",
         },
         {
             path: '/services',
@@ -59,7 +59,7 @@ const routes = [{
             path: '/blogReadMore/:id',
             component: blogReadMore,
             name: "blogReadMore",
-            props:true
+            props: true
         }
     ]
 }];

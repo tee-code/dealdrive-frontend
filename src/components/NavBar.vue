@@ -44,12 +44,12 @@ const navigations = computed(() => {
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav mx-auto">
         <li @click="closeMenu"  v-for="nav in navigations" :key="nav.name" :class="nav-item">
-          <router-link v-if="nav.name != 'Projects'" class="nav-link scrollto active" :to="nav.to">{{nav.name}}
+          <router-link v-if="nav.name != 'Projects'" :class="['nav-link scrollto', this.$route.name == nav.to.name ? 'active' : '']" :to="nav.to">{{nav.name}}
         </router-link>
         
         </li>
         <li @click="closeMenu" class="nav-item" :key="2">
-          <router-link :to="{name: 'Projects', params: {id:1}}" class="nav-link scrollto active">Projects
+          <router-link :to="{name: 'Projects', params: {id:1}}" class="nav-link scrollto">Projects
           </router-link>
          
         </li>
@@ -82,6 +82,12 @@ const navigations = computed(() => {
 }
 .collapse.close{
   display: none;
+}
+.nav-item .active, .nav-link.active{
+  color: var(--clr-orange);
+}
+.nav-link{
+  color: var(--primary-blue);
 }
 .navbar-brand img{
   margin-left: -6em;

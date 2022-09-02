@@ -519,6 +519,10 @@ h6 {
     color: var(--clr-orange);
 }
 
+.orange {
+    background-color: var(--clr-orange);
+}
+
 .navbar .dropdown ul {
     display: block;
     position: absolute;
@@ -1177,6 +1181,10 @@ section {
 .services .card {
     color: var(--primary-blue);
     transition: 0.3;
+}
+
+.blue {
+    background-color: var(--primary-blue);
 }
 
 .services .card:hover {

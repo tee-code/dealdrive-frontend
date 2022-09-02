@@ -60,15 +60,92 @@ const about = {
 
 const categories = [{ name: 'Web Apps', id: 1, class: ".filter-web" }, { name: 'Brand Designs', id: 2, class: ".filter-brand" }];
 
-const projects = [
-
-    { id: 1, class: "filter-brand", name: "De String Electrical", image: "/assets/images/projects/branding/DSTRING.jpg", url: "#", desc: "They provide electrical installations and conduit wiring.", full_desc: "They provide electrical installations and conduit wiring." },
-    { id: 2, class: "filter-brand", name: "Savoury Crunches", image: "/assets/images/projects/branding/savoury.jpg", url: "#", desc: "They provide baking, pasteries, and catering services.", full_desc: "They provide baking, pasteries, and catering services." },
-
+const projects = [{
+        id: 1,
+        class: "filter-brand",
+        name: "De String Electrical",
+        image: "/assets/images/projects/branding/DSTRING.jpg",
+        url: "#",
+        desc: "They provide electrical installations and conduit wiring.",
+        full_desc: {
+            aim: "De String Electrical wants to create their brand identity to have a unified brand designs across all their touch points. They want a design that can connect to their audience. Most importantly, to generate more sales and grow their profit margin.",
+            gap: "De String Electrical wants to create their brand identity to have a unified brand designs across all their touch points. They want a design that can connect to their audience. Most importantly, to generate more sales and grow their profit margin.",
+            solution: "De String Electrical wants to create their brand identity to have a unified brand designs across all their touch points. They want a design that can connect to their audience. Most importantly, to generate more sales and grow their profit margin.",
+            optimization: "De String Electrical wants to create their brand identity to have a unified brand designs across all their touch points. They want a design that can connect to their audience. Most importantly, to generate more sales and grow their profit margin.",
+            result: {
+                title: "De String Electrical wants to create their brand identity to have a unified brand designs across all their touch points. They want a design that can connect to their audience. Most importantly, to generate more sales and grow their profit margin.",
+                data: [
+                    "De String Electrical wants to create their brand identity to have a unified brand designs across all their touch points. They want a design that can connect to their audience. Most importantly, to generate more sales and grow their profit margin.",
+                    "De String Electrical wants to create their brand identity to have a unified brand designs across all their touch points. They want a design that can connect to their audience. Most importantly, to generate more sales and grow their profit margin."
+                ]
+            }
+        }
+    },
+    {
+        id: 2,
+        class: "filter-brand",
+        name: "Savoury Crunches",
+        image: "/assets/images/projects/branding/savoury.jpg",
+        url: "#",
+        desc: "They provide baking, pasteries, and catering services.",
+        full_desc: {
+            aim: "Savoury Crunches wants to create their brand identity to have a unified brand designs across all their touch points. They want a design that can connect to their audience. Most importantly, to generate more sales and grow their profit margin.",
+            gap: "Savoury Crunches never had a brand design. Their sales and marketing campaign was barely done with any brand imagery.",
+            solution: "We designed their brand identity and structured the brand awareness images. Some of our deliverables include:  logo, flyer and package label designs.",
+            optimization: "We promote their brand awareness across all social media channels. Through brand designs we created their product designs that communicate what they do to their audience.",
+            result: {
+                title: "The results we achieved were very tremendous within the first three months.",
+                data: [
+                    "40% increase in sales for savoury crunches",
+                    "60% increase in brand awareness for savoury crunches."
+                ]
+            }
+        },
+    },
     // web app
-    { id: 3, class: "filter-web", name: "Reform7", image: "/assets/images/projects/webServices/sld1.PNG", url: "https://reform7international.org/", desc: "A NGO that provide reformation through the word of God.", full_desc: "A NGO that provide reformation through the word of God." },
+    {
+        id: 3,
+        class: "filter-web",
+        name: "Reform7",
+        image: "/assets/images/projects/webServices/sld1.PNG",
+        url: "https://reform7international.org/",
+        desc: "A NGO that provide reformation through the word of God.",
+        full_desc: {
+            aim: "Reform7 want to grow their ministry and NGO services. They want to bring their message to a wider audience that will contribute and benefit from it.",
+            gap: "Reform7 didn’t have any website to grow their online presence. Their ministry and NGO activity didn’t reach audience who were interested to be part of.",
+            solution: "We designed and built their website and hosted the website on a secured web hosting platform. Some of our deliverables include:  Website building, Hosting and Maintenance.",
+            optimization: "We promote their online presence across all social media channels. Through building their website it has bridge the communicate gap with their audience.",
+            result: {
+                title: "The results we achieved were very tremendous within the first three months. ",
+                data: [
+                    "40% increase in donations for their programs and fellowship.",
+                    "60% increase in Online presence for Reform7."
+                ]
+            }
+        }
+    },
 
-    { id: 4, class: "filter-web", name: "Sound mind ministries", image: "/assets/images/projects/webServices/sld9.jpeg", url: "https://reform7international.org/", desc: "A NGO that provide sound teaching of of God's word", full_desc: "A NGO that provide sound teaching of of God's word" },
+    {
+        id: 4,
+        class: "filter-web",
+        name: "Sound mind ministries",
+        image: "/assets/images/projects/webServices/sld9.jpeg",
+        url: "",
+        desc: "A NGO that provide sound teaching of of God's word",
+        full_desc: {
+            aim: "Sound mind ministries want to grow their ministry and NGO services. They want to bring their message to a wider audience that will contribute and benefit from it.",
+            gap: "Sound mind ministries didn’t have any website to grow their online presence. Their ministry and NGO activity didn’t reach audience who were interested to be part of.",
+            solution: "We designed and built their website and hosted the website on a secured web hosting platform. Some of our deliverables include:  Website building, Hosting and Maintenance.  ",
+            optimization: "We promote their online presence across all social media channels. Through building their website it has bridge the communicate gap with their audience.",
+            result: {
+                title: "The results we achieved were very tremendous within the first three months.",
+                data: [
+                    "40% increase in donations for their programs and fellowship.",
+                    "60% increase in Online presence for Sound Mind Ministries."
+                ]
+            }
+        }
+    },
 ];
 
 const services = [
@@ -106,6 +183,7 @@ const navigations = [
     { name: 'Home', to: { name: 'Index' } },
     { name: 'About Us', to: { name: 'About' } },
     { name: 'Services', to: { name: 'Services' } },
+    { name: 'Training', to: { name: 'Training' } },
     { name: 'Blog', to: { name: 'Blog' } },
     { name: 'Projects', to: { name: 'Projects' } },
     { name: 'Contact Us', to: { name: 'Contact' } },
@@ -150,45 +228,45 @@ const faqs = [{
 ];
 
 const teams = [{
-        image: "https://source.unsplash.com/7u5mwbu7qLg/500x350",
-        name: "Member Name",
-        title: "Software Engineer",
+        image: "/assets/images/team/wisdom.jpg",
+        name: "Muekara Tor, C.E.0",
+        title: "Business Development Director",
         socials: [
-            { name: 'twitter', icon: 'fab fa-twitter', profile: 'http://test@twitter.com' },
-            { name: 'facebook', icon: 'fab fa-facebook', profile: 'http://test@facebook.com' },
-            { name: 'instagram', icon: 'fab fa-instagram', profile: 'http://test@instagram.com' },
-            { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'http://test@linkedin.com' },
+            { name: 'twitter', icon: 'fab fa-twitter', profile: 'https://twitter.com/muekarator' },
+            { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/muekarator' },
+            { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/muekarator/' },
+            { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'https://www.linkedin.com/in/muekarator/' },
         ]
     }, {
-        name: "Member Name",
-        image: "https://source.unsplash.com/7u5mwbu7qLg/500x350",
-        title: "Software Engineer",
+        name: "Moses Imeh ",
+        image: "/assets/images/team/moses.jpg",
+        title: "Head of Projects Management",
         socials: [
-            { name: 'twitter', icon: 'fab fa-twitter', profile: 'http://test@twitter.com' },
-            { name: 'facebook', icon: 'fab fa-facebook', profile: 'http://test@facebook.com' },
-            { name: 'instagram', icon: 'fab fa-instagram', profile: 'http://test@instagram.com' },
-            { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'http://test@linkedin.com' },
+            { name: 'twitter', icon: 'fab fa-twitter', profile: 'https://twitter.com/imehmoses2' },
+            { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/imehmoses' },
+            { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/Moseslavido/' },
+            { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'https://www.linkedin.com/in/MosesImeh/' },
         ]
     }, {
-        image: "https://source.unsplash.com/7u5mwbu7qLg/500x350",
-        name: "Member Name",
-        title: "Software Engineer",
+        image: "/assets/images/team/john.jpg",
+        name: "John Ayuk",
+        title: "C.T.O & DevOps Engineer",
         socials: [
-            { name: 'twitter', icon: 'fab fa-twitter', profile: 'http://test@twitter.com' },
-            { name: 'facebook', icon: 'fab fa-facebook', profile: 'http://test@facebook.com' },
-            { name: 'instagram', icon: 'fab fa-instagram', profile: 'http://test@instagram.com' },
-            { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'http://test@linkedin.com' },
+            { name: 'twitter', icon: 'fab fa-twitter', profile: 'https://twitter.com/idev_ebi ' },
+            { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/Ebi John' },
+            { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/muekarator/' },
+            { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'https://www.linkedin.com/in/muekarator/' },
         ]
     },
     {
-        image: "https://source.unsplash.com/7u5mwbu7qLg/500x350",
-        name: "Member Name",
-        title: "Software Engineer",
+        image: "/assets/images/team/tobi.jpg",
+        name: "Oluwatobi Odekunle",
+        title: "Senior Software Developer",
         socials: [
-            { name: 'twitter', icon: 'fab fa-twitter', profile: 'http://test@twitter.com' },
-            { name: 'facebook', icon: 'fab fa-facebook', profile: 'http://test@facebook.com' },
-            { name: 'instagram', icon: 'fab fa-instagram', profile: 'http://test@instagram.com' },
-            { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'http://test@linkedin.com' },
+            { name: 'twitter', icon: 'fab fa-twitter', profile: 'https://twitter.com/lordteecode' },
+            { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/oluwatobiloba.odekunle.75' },
+            { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/_omotolanie/' },
+            { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'https://www.linkedin.com/in/lordteecode/' },
         ]
     },
 ];
@@ -219,8 +297,101 @@ const blog = [{
         }
     }
 ];
+
+const training = {
+    title: "SkillUp Program",
+    banner: "/assets/images/page-header.jpg",
+    bannerContent: "The technology industry is a promising marketplace for jobs and opportunities. Obtaining a digital skill is one of the viable options out there. Welcome to our SkillUp program.",
+    cardContent: {
+        heading1: "The Process",
+        heading2: "Follow this process to learn the most in-demand skills.",
+        contents: [
+            { title: "Pickup a skill", icon: "/assets/images/pick.jpg", content: "Begin your digital journey by picking a skill. You can get our expert advice in this process." },
+            { title: "Get trained", icon: "/assets/images/training.jpg", content: "The expert in anything was once a beginner.We train you from beginner level to profession." },
+            { title: "Get onboarded", icon: "/assets/images/onboard.jpg", content: "With our certification we lunch into your career.We train you on how to keep evolving when the technology industry keep innovating" },
+        ]
+    },
+    courseContent: {
+        heading1: "Courses",
+        heading2: "Explore our list of courses and pick anyone to start your journey.",
+        courses: [{
+                id: 1,
+                title: "Animation",
+                short_desc: "",
+                content: {
+                    sections: [{
+                            title: "What you will learn.",
+                            options: [
+                                "Students will learn how to make, texture, rig, animate & make characters talk. Students will learn how to create several different animations from start to end",
+                                "By the end of the course, students will be able to fully make, rig, texture and animate 3D characters including how to make them talk",
+                                "By the end of the course, students will be equiped with the skills to make their own scenes and characters from start to finish and fully animate them",
+                                "By the end of the course, students will learn the ins and outs of making characters, rigging them, animating them, making their own sounds for their animations!",
+                            ],
+                            content: ""
+                        },
+                        {
+                            title: "Description",
+                            content: `
+                            *Learn character creation and animation from A-Z with the popular 3D program "Blender"
+                            Want to learn 3D character creation and animation but don't know where to start? No problem! In this course we go from A-Z, from the basics to the more advanced of character creation to animation. This course is project based so we will be using the skills we learn along the way to create some awesome animations.
+                            Learn The Art of 3D Animation From The Very Basics to The More Advanced
+                            *We will kick it off with learning the VERY basics of Blender. How to navigate around the scene, manipulate objects and everything you need to know to be comfortable in Blender!
+                            *Then we will start with our very first animation project! Learning the basics of animation, modeling, materials, shapekeys to animate the face and much more to create our very first animation scene!
+                            *Our second animation will be all about curves, animating along curves, using particle systems, modeling, texturing and much more! By this point you will start to feel comfortable with Blender and 3D animation and have the skills and knowledge where you can start doing your own projects!
+                            *Our third project is a full blown animation! Just this one alone will teach you everything you need to know about character creation and animation! From making our character to rigging and adding materials to then creating our whole scene, lighting, adding sounds and much more! By the end of this you will have created a full blown animation that looks great and have learned the skills needed to create your own!
+                            *Our fourth project leads us to creating a human character! First making the human from scratch to then creating a full body rig that works nicely! In this one we go even more in depth with the node or shader editor and take a look at making different materials such as the eye material, skin shader and cloth material for our character. We will then fully animate this character, see how to make our own sounds and MUCH more!
+                            *For our fifth project we will be lip synching and making a character that talks! Firstly we will be modeling and making our alien from scratch! Then adding materials and a rig to fully animate and control him. We will then see how to make a character talk and much more!
+                            *Each project we do builds on the previous one and the further you go, the more you will be applying and doing!
+                            *End With The Confidence and Know How to Be Able to Create Your Own Projects and Animations From Just An Idea to Finished Product
+                            The Power to Create in the Palm of Your Hands
+                            *Use the skills you learn to then create your own artwork and animations
+                            *Learn and follow along with the workflow of 5 complete animations from A-Z
+                            *Finish the course with your very own animations and work of art that you can be proud of
+                            *Lifetime access!
+                            By the end of this training, you will emerge equipped with everything you need to know about character creation and animation! It is PACKED with character animation
+    
+                            `,
+                            options: []
+                        }
+                    ]
+                },
+                image: "/assets/images/animation.jpg",
+            },
+            { id: 2, title: "Brand Designs", content: "", image: "/assets/images/courses/brand.jpg", },
+            { id: 3, title: "Digital Marketing", content: "", image: "/assets/images/courses/digital.jpg", },
+            { id: 4, title: "UI/UX", content: "", image: "/assets/images/courses/uiux.jpg", },
+            { id: 5, title: "Web Development", content: "", image: "/assets/images/courses/web.jpg", },
+            { id: 6, title: "Cyber Security & Ethical Hacking", content: "", image: "/assets/images/courses/security.jpg", },
+        ],
+        levels: [
+            { id: 1, duration: "3 months", title: "Beginner", content: "At this level you will be taking through the fundamentals of the skill. You will understand what technology to use and how to work with them." },
+            { id: 2, duration: "6 months", title: "Intermediate", content: "Train you on how to build real-time project. This is where you get into intense training with whatever skill you pick." },
+            { id: 3, duration: "12 months", title: "Professional", content: "Help you build a professional career with your skill. Train you on how to solve real life problem with your skill. Teach you how to pass jobs interview." },
+        ],
+    },
+
+
+    sections: [
+        { id: 1, options: [], title: "ABOUT OUR TRAINING", content: "A Dealdrive Technology Skillup program is a digital skill acquisition program that trains you to be master of tech related skills in the field of design, software and web application. It is scheduled to hold twice a year." },
+        { id: 2, options: [], title: "ABOUT OUR COMMUNITY", content: "We have an unending learning community that helps our students grows continuously even after their training. Students have access to this membership immediately after their training." },
+        { id: 3, options: [], title: "ABOUT OUR INTERNSHIP", content: "Our students are been retained at the end of their training to test their level of expertise on the skill they were trained on before issuing out certificate." },
+        {
+            id: 4,
+            title: "BENEFIT",
+            content: "Our SkillUp Program has alot of benefits that will change your career. The following are the list of benefits you will gain:-",
+            options: [
+                "1. Instant solution to daily problem encounter by our member while carrying out work.",
+                "2. Weekend quiz to help members grow faster.",
+                "3. Code challenge: twice monthly. Winners go home with prices.",
+                "4. Access to remote jobs."
+            ]
+        },
+    ]
+};
+
 const store = createStore({
     state: {
+        training,
         navigations,
         teams,
         faqs,

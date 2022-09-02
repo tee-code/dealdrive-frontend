@@ -14,7 +14,7 @@
         <h3>{{slide.title}}</h3>
         <p class="col-md-6 mx-auto">{{slide.caption}}</p>
         <button v-if="slide.id == 0" data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Reguest for quote</button>
-        <button v-if="slide.id == 1" data-bs-toggle="modal" data-bs-target="#quoteModal" type="button" href="#" class="btn-get-started modal-btn scrollto">Join Now.</button>
+        <router-link :to="{name: 'Training'}" v-if="slide.id == 1" type="button" class="px-4 py-2 btn-get-started modal-btn scrollto">Join Now.</router-link>
       </div>
     </div>
    
