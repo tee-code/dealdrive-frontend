@@ -242,9 +242,9 @@ const teams = [{
         image: "/assets/images/team/moses.jpg",
         title: "Head of Projects Management",
         socials: [
-            { name: 'twitter', icon: 'fab fa-twitter', profile: 'https://twitter.com/imehmoses2' },
-            { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/imehmoses' },
-            { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/Moseslavido/' },
+            { name: 'twitter', icon: 'fab fa-twitter', profile: 'https://twitter.com/imehmoses1' },
+            { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/moses.lavido.5' },
+            { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/moseslavido_/' },
             { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'https://www.linkedin.com/in/MosesImeh/' },
         ]
     }, {
@@ -365,19 +365,19 @@ const training = {
         ],
         levels: [
             { id: 1, duration: "3 months", title: "Beginner", content: "At this level you will be taking through the fundamentals of the skill. You will understand what technology to use and how to work with them." },
-            { id: 2, duration: "6 months", title: "Intermediate", content: "Train you on how to build real-time project. This is where you get into intense training with whatever skill you pick." },
-            { id: 3, duration: "12 months", title: "Professional", content: "Help you build a professional career with your skill. Train you on how to solve real life problem with your skill. Teach you how to pass jobs interview." },
+            { id: 2, duration: "6 months", title: "Intermediate", content: "Train you on how to build real-time projects. This is where you get into intense training with whatever skill you pick." },
+            { id: 3, duration: "12 months", title: "Professional", content: "Help you build a professional career with your skill. Train you on how to solve real life problems with your skill. Teach you how to pass job interview." },
         ],
     },
 
 
     sections: [
-        { id: 1, options: [], title: "ABOUT OUR TRAINING", content: "A Dealdrive Technology Skillup program is a digital skill acquisition program that trains you to be master of tech related skills in the field of design, software and web application. It is scheduled to hold twice a year." },
+        { id: 1, options: [], title: "ABOUT OUR TRAINING", content: "A Dealdrive Technology Skillup program is a digital skill acquisition program that trains you to be master of technology related skills in the field of design, software and web application. It is scheduled to hold twice a year." },
         { id: 2, options: [], title: "ABOUT OUR COMMUNITY", content: "We have an unending learning community that helps our students grows continuously even after their training. Students have access to this membership immediately after their training." },
-        { id: 3, options: [], title: "ABOUT OUR INTERNSHIP", content: "Our students are been retained at the end of their training to test their level of expertise on the skill they were trained on before issuing out certificate." },
+        { id: 3, options: [], title: "ABOUT OUR INTERNSHIP", content: "Our students are being retained at the end of their training to test their level of expertise on the skill they were trained on before issuing out certificate." },
         {
             id: 4,
-            title: "BENEFIT",
+            title: "BENEFITS",
             content: "Our SkillUp Program has alot of benefits that will change your career. The following are the list of benefits you will gain:-",
             options: [
                 "1. Instant solution to daily problem encounter by our member while carrying out work.",
