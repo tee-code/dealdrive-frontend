@@ -15,8 +15,8 @@ const about = computed(() => {
   <!-- ======= About Section ======= -->
       <section id="about">
         <div class="section-header">
-          <span>About Us</span>
-          <h2>About Us</h2> 
+          <span>About what we do</span>
+          <h2>About what we do</h2> 
           <p class="lead">{{about.heading}}</p>
         </div>
         <div class="container" data-aos="fade-up">

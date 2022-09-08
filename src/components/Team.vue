@@ -38,10 +38,12 @@ const teams = computed(() => {
           <h5 class="card-title mb-0">{{team.name}}</h5>
           <div class="card-text text-black-50">{{team.title}}</div>
           <div class="social d-flex justify-content-around ">
-                  <a v-for="social in team.socials" :key="social" 
-                  :href="social.profile"><i :class="social.icon"></i></a>
+            <a v-for="social in team.socials" :key="social" 
+              :href="social.profile" target="_blank">
+              <i :class="social.icon"></i>
+            </a>
                   
-                </div>
+            </div>
         </div>
       </div>
     </div>

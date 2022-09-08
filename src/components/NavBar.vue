@@ -34,12 +34,13 @@ const name = computed(() =>route.name)
 </script>
 
 <template>
- <nav  class="navbar navbar-expand-sm navbar-light bg-white">
+
+ <nav  class="navbar navbar-expand-md navbar-light bg-white">
   <div class="container">
     <router-link class="navbar-brand" :to = "{name: 'Index'}">
       <img src="/assets/images/picnobg.png" alt="Logo" height="60">
     </router-link>
-   
+    
     <button @click="toggleMenu" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,11 +49,14 @@ const name = computed(() =>route.name)
         <li @click="closeMenu"  v-for="(nav) in navigations" :key="nav.name" :class="nav-item">
           <router-link v-if="nav.name != 'Projects'" :class="['nav-link scrollto', name == nav.to.name ? 'active' : '']" :to="nav.to">{{nav.name}}
         </router-link>
+         <router-link v-else :to="{name: 'Projects', params: {id:1}}" class="nav-link scrollto">Projects
+          </router-link>
         </li>
-        <li @click="closeMenu" class="nav-item" :key="2">
-          <router-link :to="{name: 'Projects', params: {id:1}}" class="nav-link scrollto">Projects
-          </router-link>         
-        </li>
+        <!-- <li @click="closeMenu" class="nav-item bg-danger text-white ml-5">
+          <router-link :class="['nav-link scrollto text-white']" :to="{name: 'Training'}">Training
+        </router-link>
+        </li> -->
+
            
             <!-- <li class="dropdown"><router-link :to="{name: 'Projects'}"><span>Projects</span> <i class="bi bi-chevron-down"></i></router-link>
               <ul>
@@ -61,9 +65,13 @@ const name = computed(() =>route.name)
               </ul>
             </li> -->
       </ul>
-      <div class="d-flex p-3 align-center">
-          <a target="_blank" v-for="social in socials" :key="social.name" :href="social.profile" :class="social.name"><i :class="[social.icon, 'text-primary']"></i></a>
-        </div>
+      <div class="d-none d-lg-flex align-center">
+      
+          <router-link class="blue text-white border-0 rounded p-2 mx-2" :to="{name:'Training'}"> Join Our Training </router-link>
+        
+          <router-link class="orange text-white border-0 rounded p-2" :to="{name:'Quotation'}"> Get Quote </router-link>    
+      
+      </div>
     </div>
   </div>
 </nav>

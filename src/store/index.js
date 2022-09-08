@@ -51,10 +51,10 @@ const about = {
     heading: 'Dealdrive Technology - your one-stop shop for your digital solution',
     short_desc: 'We believe there is a software solution to every hard craked experience in a brand. What we do is to ease the experience.',
     list: [
-        "Build applications that other businesses can use to perform their daily business operations.",
-        "Work with our clients to understand their problem and how our solution can fit into the problem.",
-        "With our experienced team of designers and developers, we can bring your business to limelight",
-        "We provide the best value for your money. Every service you receive from us come with a guarantee that secure your investment",
+        "We build custom applications that will optimize your daily business operations.",
+        "We work with you to understand your business need and how our solution can meet the need.",
+        "With our experienced team of designers and developers, we can bring your business to limelight.",
+        "We provide the best value for your money; Every service you receive from us comes with a guarantee that secure your investment.",
     ]
 };
 
@@ -153,7 +153,7 @@ const services = [
 
     { image: "/assets/images/web.jpeg", title: "Websites", short_desc: "We design and build web applicartion for various use cases. Features and benefit: Responsiveness: your website can be easily accessible on different devices of your users.", description: "We design and build web applicartion for various use cases. Features and benefit: Responsiveness: your website can be easily accessible on different devices of your users. Hight conversion: the goal is to make sure your have a return investment. We built the website with features with feature that enhance high sales conversion Security: we guarantee your full security. We make sure your users privacy is well protect. Support: we dont live you hanging. We provide you 24/7 support to ensure quality customer service" },
 
-    { image: "/assets/images/software.jpeg", title: "Custom software", short_desc: "We build App for mobile, Desktop and other custom device", description: "We build App for mobile, Desktop and other custom device" },
+    { image: "/assets/images/software.jpeg", title: "Custom Application", short_desc: "We build App for mobile, Desktop and other custom device", description: "We build App for mobile, Desktop and other custom device" },
 ];
 
 const news = { title: "Particpate in Our Training", description: "Dealdrive Technology Skillup programs is a digital skill acquisition program that train you to be master of tech related skills in the field of design, software and web application" };
@@ -179,14 +179,25 @@ const attendants = [{
     // ...
 ];
 
+const footerLinks = [
+    { name: 'Training', to: { name: 'Training' } },
+    { name: 'Projects', to: { name: 'Projects' } },
+    { name: 'Services', to: { name: 'Services' } },
+
+];
+
 const navigations = [
     { name: 'Home', to: { name: 'Index' } },
-    { name: 'About Us', to: { name: 'About' } },
     { name: 'Services', to: { name: 'Services' } },
-    { name: 'Training', to: { name: 'Training' } },
-    { name: 'Blog', to: { name: 'Blog' } },
     { name: 'Projects', to: { name: 'Projects' } },
     { name: 'Contact Us', to: { name: 'Contact' } },
+    { name: 'About Us', to: { name: 'About' } },
+
+
+    { name: 'Blog', to: { name: 'Blog' } },
+    // { name: 'Training', to: { name: 'Training' } },
+
+
 ];
 
 const faqs = [{
@@ -244,7 +255,7 @@ const teams = [{
         socials: [
             { name: 'twitter', icon: 'fab fa-twitter', profile: 'https://twitter.com/imehmoses1' },
             { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/moses.lavido.5' },
-            { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/moseslavido_/' },
+            { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/imehmoses1/' },
             { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'https://www.linkedin.com/in/MosesImeh/' },
         ]
     }, {
@@ -253,15 +264,15 @@ const teams = [{
         title: "C.T.O & DevOps Engineer",
         socials: [
             { name: 'twitter', icon: 'fab fa-twitter', profile: 'https://twitter.com/idev_ebi ' },
-            { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/Ebi John' },
-            { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/muekarator/' },
-            { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'https://www.linkedin.com/in/muekarator/' },
+            { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/ayuk.john.5036' },
+            { name: 'instagram', icon: 'fab fa-instagram', profile: 'https://www.instagram.com/' },
+            { name: 'linkedin', icon: 'fab fa-linkedin', profile: 'https://www.linkedin.com/in/john-ayuk-2205441b5/' },
         ]
     },
     {
         image: "/assets/images/team/tobi.jpg",
         name: "Oluwatobi Odekunle",
-        title: "Senior Software Developer",
+        title: "Fullstack Developer",
         socials: [
             { name: 'twitter', icon: 'fab fa-twitter', profile: 'https://twitter.com/lordteecode' },
             { name: 'facebook', icon: 'fab fa-facebook', profile: 'https://web.facebook.com/oluwatobiloba.odekunle.75' },
@@ -301,7 +312,7 @@ const blog = [{
 const training = {
     title: "SkillUp Program",
     banner: "/assets/images/page-header.jpg",
-    bannerContent: "The technology industry is a promising marketplace for jobs and opportunities. Obtaining a digital skill is one of the viable options out there. Welcome to our SkillUp program.",
+    bannerContent: "The technology industry is a promising market place for jobs and opportunities. Obtaining a digital skill is one of the viable options out there. Welcome to our SkillUp program.",
     cardContent: {
         heading1: "The Process",
         heading2: "Follow this process to learn the most in-demand skills.",
@@ -364,12 +375,11 @@ const training = {
             { id: 6, title: "Cyber Security & Ethical Hacking", content: "", image: "/assets/images/courses/security.jpg", },
         ],
         levels: [
-            { id: 1, duration: "3 months", title: "Beginner", content: "At this level you will be taking through the fundamentals of the skill. You will understand what technology to use and how to work with them." },
-            { id: 2, duration: "6 months", title: "Intermediate", content: "Train you on how to build real-time projects. This is where you get into intense training with whatever skill you pick." },
-            { id: 3, duration: "12 months", title: "Professional", content: "Help you build a professional career with your skill. Train you on how to solve real life problems with your skill. Teach you how to pass job interview." },
+            { id: 0, duration: "3 months", title: "Beginner", content: "At this level you will be taking through the fundamentals of the skill. You will understand what technology to use and how to work with them." },
+            { id: 1, duration: "6 months", title: "Intermediate", content: "Train you on how to build real-time projects. This is where you get into intense training with whatever skill you pick." },
+            { id: 2, duration: "12 months", title: "Professional", content: "Help you build a professional career with your skill. Train you on how to solve real life problems with your skill. Teach you how to pass job interview." },
         ],
     },
-
 
     sections: [
         { id: 1, options: [], title: "ABOUT OUR TRAINING", content: "A Dealdrive Technology Skillup program is a digital skill acquisition program that trains you to be master of technology related skills in the field of design, software and web application. It is scheduled to hold twice a year." },
@@ -393,6 +403,7 @@ const store = createStore({
     state: {
         training,
         navigations,
+        footerLinks,
         teams,
         faqs,
         slides,

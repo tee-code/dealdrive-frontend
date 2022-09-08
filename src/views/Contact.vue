@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import Contact from '../components/Contact.vue';
+import ContactWithMap from '../components/ContactWithMap.vue';
 
 defineProps({
   msg: String
@@ -9,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <main id="main" class="p-4">
+  <main id="main" class="">
      <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs">
             <div class="page-header d-flex align-items-center" style="">
@@ -32,7 +33,7 @@ defineProps({
             </nav>
         </div>
         <!-- End Breadcrumbs -->
-    <Contact />
+    <ContactWithMap />
   </main>
   
 
