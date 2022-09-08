@@ -16,13 +16,16 @@ const services = computed(() => {
   return store.state.services;
 });
 
-const navigations = computed(() => {
-  return store.state.navigations;
+const footerLinks = computed(() => {
+  return store.state.footerLinks;
 }); 
 
 const contact = computed(() => {
   return store.state.contactus;
 });
+
+const year = new Date().getFullYear();
+
 </script>
 
 <template>
@@ -35,7 +38,11 @@ const contact = computed(() => {
             <router-link :to="{name: 'Index'}" class="logo d-flex align-items-center">
               <span>Dealdrive</span>
             </router-link>
-            <p>We believe there is a software solution to every hard craked experience in a brand. What we do is to ease the experience.</p>
+            <p>
+              Expert in website design & development, mobile apps development, and brand designs. 
+              We start by giving you an authentic brand. We create tools that make you work smarter. 
+              We ease your customer experience.
+            </p>
             <div class="social-links d-flex mt-4">
               <a target="_blank" v-for="social in socials" :key="social" :href="social.profile" :class="social.name"><i :class="social.icon"></i></a>
               
@@ -45,7 +52,7 @@ const contact = computed(() => {
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li @click="closeMenu"  v-for="nav in navigations" :key="nav.name" :class="nav-item">
+              <li @click="closeMenu"  v-for="nav in footerLinks" :key="nav.name" :class="nav-item">
                 <router-link v-if="nav.name != 'Projects'" class="nav-link scrollto active" :to="nav.to">{{nav.name}}</router-link>
                 <router-link v-else class="nav-link scrollto active" :to="{name:'Projects', params:{id:1}}">{{nav.name}}</router-link>
               </li>
@@ -76,11 +83,11 @@ const contact = computed(() => {
 
       <div class="container mt-4">
         <div class="copyright">
-          &copy; Copyright <strong><span>dealdrive</span></strong>. All Rights Reserved
+          &copy; {{ year }} Dealdrive <span>Technology</span>. All Rights Reserved
         </div>
-        <div class="credits">
+        <!-- <div class="credits">
           Designed by <a href="#">dealdrive Technology</a>
-        </div>
+        </div> -->
       </div>
 
     </footer><!-- End Footer -->

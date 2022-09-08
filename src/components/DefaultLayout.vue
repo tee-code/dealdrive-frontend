@@ -14,19 +14,36 @@ defineProps({
 </script>
 
 <template>
-  <div>
+  <div class="position-relative">
     <div class="head-wrapper">
       <TopBar />
       <NavBar />
     </div>
     <router-view></router-view>
     <Footer />
-
+    <div class="fs-5 fw-bold d-lg-none fixed-bottom p-2 w-100 d-flex justify-content-center align-items-center bg-white shadow-lg">
+      
+      <router-link class="border-0 rounded p-2" :to="{name:'Quotation'}"> Get Quote </router-link>    
+      
+      <router-link style="color: var(--primary-blue);" class="border-0 rounded p-2 mx-2" :to="{name:'Training'}">Training </router-link>
+    
+    </div>
   </div>
     
 </template>
 
 <style scoped>
+.left{
+  position:absolute;
+  left: -5%;
+}
+.right{
+  position: absolute;
+  right: -3%;
+}
+.rotate{
+  transform: rotate(-90deg);
+}
 .head-wrapper{
   position: fixed;
   top: 0;

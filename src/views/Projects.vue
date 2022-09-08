@@ -49,7 +49,7 @@ const route = useRoute();
       <div class="container">
 
         <div class="section-header">
-          <h2>Single Projects view</h2>
+          <h2>Project View</h2>
           <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 

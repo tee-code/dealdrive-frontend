@@ -11,12 +11,10 @@ const training = computed(() => {
 const {cardContent, title, banner, bannerContent, courseContent, sections} = training.value;
 const {courses, levels} = courseContent;
 
-
 defineProps({
   msg: String
 })
 
-const count = ref(0)
 </script>
 
 <template>
@@ -77,7 +75,7 @@ const count = ref(0)
       
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div type="button" class="col cursor-pointer" v-for="(course) in courses" :key="course" data-bs-toggle="offcanvas" :data-bs-target="'#offcanvasTop'+course.id" aria-controls="offcanvasTop">
+        <div type="button" class="col cursor-pointer" v-for="(course) in courses" :key="course">
           <div class="card h-100 text-center">
             <img :src="course.image" class="card-img-top mx-auto"
               :alt="course.title" />
@@ -88,59 +86,67 @@ const count = ref(0)
               </p>
             </div>
             <div class="card-footer">
-              <span v-for="level in levels" :key="level" :class="['badge rounded-pill mx-2', level.id == 2 ? 'orange' : 'blue']">{{level.title}}-{{level.duration}}</span>
-            </div>
-          </div>
-
-          <div style="height: 100vh !important;" class="offcanvas offcanvas-bottom" tabindex="-1" :id="'offcanvasTop'+course.id" aria-labelledby="offcanvasTopLabel">
-            <div class="offcanvas-header">
-              <h5 id="offcanvasTopLabel">Course ({{course.title}})</h5>
-              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-               <div class="container mb-5" data-aos="fade-up" v-for="level in levels" :key="level">
-
-                <div class="section-header">
-                    <span>{{level.title}}</span>
-                    <h2>{{level.title}}</h2>
-                </div>
-                <div class="row row-cols-1">
-                  <div class="col">
-                    <div class="h-100">
-                      <p class="text-center">
-                      
-                        <span :class="['badge rounded-pill mx-2', level.id == 2 ? 'orange' : 'blue']">{{level.title}}-{{level.duration}}</span>
-                      </p>
-                      <p class="text-center">{{ level.content}}</p>
-                      
+              <div 
+                class="d-inline"
+                v-for="level in levels" 
+                :key="level" 
+                >
+                  <span
+                  :class="['badge rounded-pill mx-2', level.id == 1 ? 'orange' : 'blue']" 
+                  data-bs-toggle="offcanvas" :data-bs-target="'#offcanvasTop'+course.id+'c'+level.id" aria-controls="offcanvasTop">{{level.title}}-{{level.duration}}</span>
+                  <div style="height: 100vh !important; width: 100vw !important;" class="offcanvas offcanvas-bottom" tabindex="-1" :id="'offcanvasTop'+course.id+'c'+level.id" aria-labelledby="offcanvasTopLabel">
+                    <div class="offcanvas-header">
+                      <h5 id="offcanvasTopLabel">Course ({{course.title}})</h5>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    
+                    <div class="offcanvas-body">
+                      <div class="container mb-5" data-aos="fade-up">
+                        <div class="section-header">
+                            <span>{{levels[level.id].title}}</span>
+                            <h2>{{levels[level.id].title}}</h2>
+                        </div>
+                        <div class="row row-cols-1">
+                          <div class="col">
+                            <div class="h-100">
+                              <p class="text-center">                              
+                                <span :class="['badge rounded-pill mx-2', levels[level.id] == 1 ? 'orange' : 'blue']">{{levels[level.id].title}}-{{level.duration}}</span>
+                              </p>
+                              <p class="text-center">{{ levels[level.id].content }}</p>
+                              
+                            </div>
+                            
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="container mb-5"  v-for="section in course.content.sections" :key="section">
+
+                        <div class="section-header">
+                            <span>{{section.title}}</span>
+                            <h2>{{section.title}}</h2>
+                        </div>
+                        <div class="row row-cols-1 container">
+                          <div class="col">
+                            <div class="h-100">
+                              <p class="text-center" v-for="text in section.content.split('*')" :key="text">{{ text }}</p>
+                              <ul class="list-group text-left" v-if="section.options">
+                                <li class="list-group-item text-left" v-for="option in section.options" :key="option">{{option}}</li>
+                              </ul>
+                            </div>
+                            
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-              </div>
-
-              <div class="container mb-5"  v-for="section in course.content.sections" :key="section">
-
-                <div class="section-header">
-                    <span>{{section.title}}</span>
-                    <h2>{{section.title}}</h2>
-                </div>
-                <div class="row row-cols-1">
-                  <div class="col">
-                    <div class="h-100">
-                      <p class="text-center" v-for="text in section.content.split('*')" :key="text">{{ text }}</p>
-                      <ul class="list-group text-left" v-if="section.options">
-                        <li class="list-group-item text-left" v-for="option in section.options" :key="option">{{option}}</li>
-                      </ul>
-                    </div>
-                    
-                  </div>
-                </div>
-
-              </div>
             </div>
+
           </div>
+
+          
         </div>
       </div>
 
