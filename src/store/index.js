@@ -1,4 +1,10 @@
 import { createStore } from 'vuex';
+const adminnavigation=[
+    { name: 'Home', to: { name: 'Adminhome' } },
+    { name: 'Services', to: { name: 'Adminservices' } },
+    { name: 'About', to: { name: 'Adminabout' } },
+    
+]
 
 const slides = [{
         id: 0,
@@ -417,7 +423,10 @@ const store = createStore({
         services,
         news,
         testimonials,
-        blog
+        blog,
+
+        // admin section
+        adminnavigation
     },
     getters: {},
     actions: {

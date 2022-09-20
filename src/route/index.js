@@ -11,6 +11,15 @@ import Services from "../views/Services.vue";
 import blogReadMore from "../views/blogReadMore.vue";
 import DefaultLayout from "../components/DefaultLayout.vue";
 
+// admin
+import adminDashBoard from "../views/admin/adminDashBoard.vue";
+
+import Adminhome from "../views/admin/Adminhome.vue";
+import Adminabout from "../views/admin/Adminabout.vue";
+import Adminservices from "../views/admin/Adminservices.vue";
+
+
+
 const routes = [{
     path: '/',
     redirect: '/home',
@@ -60,6 +69,32 @@ const routes = [{
             component: blogReadMore,
             name: "blogReadMore",
             props: true
+        },
+
+        // Admin
+
+        {
+            path: '/admin-dashboard',
+            component: adminDashBoard,
+            name: "adminDashBoard",
+        },
+
+        {
+            path: '/Adminhome',
+            component: Adminhome,
+            name: "Adminhome",
+        },
+
+        {
+            path: '/Adminabout',
+            component: Adminabout,
+            name: "Adminabout",
+        },
+
+        {
+            path: '/Adminservices',
+            component: Adminservices,
+            name: "Adminservices",
         }
     ]
 }];
