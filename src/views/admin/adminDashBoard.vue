@@ -123,7 +123,7 @@ body,html{
     border-right: 1px solid #aaa;
     border-top: 1px solid #aaa;
     display: flex;
-    
+    background-color: rgb(248, 246, 246);
 }
 
 .main{
@@ -144,6 +144,7 @@ body,html{
     justify-content: space-between;
     align-items: center;
     background-color: #642afb;
+    border-radius: 5px;
 }
 .sidenav ul button {
     padding: 1em;
