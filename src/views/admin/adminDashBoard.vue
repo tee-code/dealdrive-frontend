@@ -104,6 +104,7 @@ body,html{
     grid-row: 1/3;
     border-right: 1px solid #aaa;
     display: flex;
+    background-color: hsl(39, 94%, 62%);
 }
 .topnav{
     grid-column: 3/-1;
@@ -114,6 +115,7 @@ body,html{
     justify-content: space-between;
     align-items: center;
     padding: .5em;
+    background-color: #642afb;
 }
 .sidenav{
     grid-column: 1/3;
@@ -121,12 +123,13 @@ body,html{
     border-right: 1px solid #aaa;
     border-top: 1px solid #aaa;
     display: flex;
+    background-color: rgb(248, 246, 246);
 }
 
 .main{
     grid-column: 3/-1;
     grid-row: 2/-1;
-    
+    background-color: rgb(248, 246, 246);
 }
 
 .sidenav ul{
@@ -140,18 +143,19 @@ body,html{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #642afb;
+    border-radius: 5px;
 }
 .sidenav ul button {
     padding: 1em;
     margin: .5em;
     cursor: pointer;
     border: none;
-    background-color: #fff;
     font-size: 1rem;
 }
 
 .sidenav ul button:hover {
-    background-color: #aaa;
+    background-color: hsl(39, 94%, 62%);
     border-radius: 5px;
 }
 .sidenav ul .logout {
