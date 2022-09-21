@@ -9,7 +9,7 @@
         <section class="sidenav">
             <ul >
                 
-                <button @click="isActiveChange(nav.name)" v-for="nav in navigation" :key="nav.name" :to="nav.to"><li>{{nav.name}}</li><i>icon</i></button>
+                <button @click="isActiveChange(nav.name)" v-for="nav in navigation" :key="nav.name" :to="nav.to"><li>{{nav.name}}</li><i class="fa-solid fa-user"></i></button>
 
 
                 <button class="logout" to="{name:'Home'}" ><li>Logout</li><i>icon</i></button>
@@ -17,7 +17,7 @@
         </section>
         <section class="topnav">
             <h3>DealDrive Admin</h3>
-            <p>Notification</p>
+            <p class="fa-solid fa-bell"></p>
         </section>
         <section class="main">
 
@@ -37,6 +37,7 @@ import { useRoute, useRouter } from 'vue-router';
 import Adminhome from '../../components/admin/Adminhome.vue';
 import Adminservices from '../../components/admin/Admin-services.vue';
 import Adminabout from '../../components/admin/Admin-about.vue';
+import { HomeIcon } from "@vue-hero-icons/outline"
 
 
 
