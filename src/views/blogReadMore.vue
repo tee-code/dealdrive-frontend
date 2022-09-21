@@ -26,7 +26,7 @@
                         <!-- End Single Post Content -->
 
                         <!-- ======= Comments ======= -->
-                        <div class="comments">
+                        <!-- <div class="comments">
                             <h5 class="comment-title py-4">2 Comments</h5>
                             <div class="comment d-flex mb-4">
                                 <div class="flex-shrink-0">
@@ -97,11 +97,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End Comments -->
 
                         <!-- ======= Comments Form ======= -->
-                        <div class="row justify-content-center mt-5">
+                        <!-- <div class="row justify-content-center mt-5">
 
                             <div class="col-lg-12">
                                 <h5 class="comment-title">Leave a Comment</h5>
@@ -124,7 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- End Comments Form -->
 
@@ -133,9 +133,7 @@
             </div>
         </section>
     </main>
-    <div>
-        <h1>{{id}}</h1>
-    </div>
+    
 </template>
 
 <script setup>
@@ -159,8 +157,5 @@ const blogs=computed(()=>{
 </script>
 
 <style scoped>
-main{
-    margin-top: 7em;
-    border: 2px solid red;
-}
+
 </style>
