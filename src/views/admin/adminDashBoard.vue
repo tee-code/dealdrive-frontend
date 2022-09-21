@@ -129,7 +129,7 @@ body,html{
 .main{
     grid-column: 3/-1;
     grid-row: 2/-1;
-    
+    background-color: rgb(248, 246, 246);
 }
 
 .sidenav ul{
