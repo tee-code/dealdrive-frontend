@@ -1,8 +1,19 @@
 import { createStore } from 'vuex';
 const adminnavigation=[
-    { name: 'Home', to: { name: 'Adminhome' } },
-    { name: 'Services', to: { name: 'Adminservices' } },
-    { name: 'About', to: { name: 'Adminabout' } },
+    { name: 'Home', to: { name: 'Adminhome' }, icon:'fa fa-home fa-2x',color:{color:'white'} },
+
+    { name: 'Services', to: { name: 'Adminservices' },icon:'fa fa-wheelchair-alt fa-2x',color:{color:'tomato'}},
+
+    { name: 'About', to: { name: 'Adminabout' },icon:'fa fa-book fa-2x',  color:{color:'pink'}},
+
+    { name: 'Testimonials', to: { name: 'Admintestimonials' },icon:'fa fa-certificate fa-2x', color:{color:'yellow'} },
+    
+    { name: 'Slides', to: { name: 'Adminslides' },icon:'fa fa-sliders fa-2x', color:{color:'purple'}},
+
+    { name: 'Projects', to: { name: 'Adminprojects' }, icon:'fa fa-archive fa-2x', color:{color:'skyblue'}},
+
+    { name: 'FAQ', to: { name: 'AdminFAQ' },icon:'fa fa-envelope-square fa-2x', color:{color:'green'}},
+    
     
 ]
 

@@ -1,22 +1,23 @@
 <template>
     <div>
-        <h1>About section</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, perspiciatis quod voluptatum aperiam quaerat sint corporis autem dolore doloribus voluptatem amet similique quasi dolor quo maxime voluptates maiores dignissimos pariatur? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam praesentium quam perspiciatis iusto at quisquam voluptates. Sunt repudiandae voluptatem, magni incidunt, excepturi expedita fugiat recusandae non pariatur, ipsum iste delectus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ullam reiciendis ratione maxime autem, tempora porro iste numquam placeat nemo laborum voluptas rerum hic debitis nobis eveniet est ea aliquam.</p>
-
+        <h1>Testimonials section</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, perspiciatis quod voluptatum aperiam quaerat sint corporis autem dolore doloribus voluptatem amet similique quasi dolor quo maxime voluptates maiores dignissimos pariatur?  Sunt repudiandae voluptatem, magni incidunt, excepturi expedita fugiat recusandae non pariatur, ipsum iste delectus?</p>
 
         <div class="button-section">
             <button @click="toggleModal">Edit</button>
         </div>
 
         <BaseModal v-show="showModal" @closeModal="toggleModal">
-            <h1 class="title">About edit form</h1>
+            <h1 class="title">Testimonials Edit Form</h1>
 
             <form action="">
                 <input type="file" placeholder="Chose image">
-                <input type="text" placeholder="About Heading">
-                <input type="text" placeholder="Short description">
+                <input type="text" placeholder="Star">
+                <input type="text" placeholder="Id">
+                <input type="text" placeholder="Author">
+                
 
-                <textarea name="" id="" cols="30" rows="10" placeholder="Main content list"></textarea>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Main Description"></textarea>
 
                 <button type="submit" class="success">Save</button>
             </form>
@@ -25,7 +26,7 @@
 </template>
 
 <script>
-import {ref} from 'vue'
+    import {ref} from 'vue'
 import BaseModal from '../BaseModal.vue';
     export default {
         setup(){
@@ -48,12 +49,18 @@ import BaseModal from '../BaseModal.vue';
 </script>
 
 <style scoped>
+
 input::placeholder{
     font-size: 1.4rem;
 }
 .title{
     text-align: center;
 }
+div p{
+    text-align: justify;
+}
+
+
 .success{
     background-color: green;
 }
@@ -71,7 +78,5 @@ form button{
     padding: .2em;
     font-size: 2rem;
 }
-
-
 
 </style>

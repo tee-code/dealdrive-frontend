@@ -13,6 +13,7 @@ import DefaultLayout from "../components/DefaultLayout.vue";
 
 // admin
 import adminDashBoard from "../views/admin/adminDashBoard.vue";
+import Adminlogin from "../views/admin/AdminLogin.vue";
 
 import Adminhome from "../views/admin/Adminhome.vue";
 import Adminabout from "../views/admin/Adminabout.vue";
@@ -77,6 +78,12 @@ const routes = [{
             path: '/admin-dashboard',
             component: adminDashBoard,
             name: "adminDashBoard",
+        },
+
+        {
+            path: '/Adminlogin',
+            component: Adminlogin,
+            name: "Adminlogin",
         },
 
         {
