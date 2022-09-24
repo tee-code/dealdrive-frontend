@@ -1,10 +1,11 @@
 <template>
+    <div>
       <!-- ======= Testimonials Section ======= -->
        <div class="section-header">
-                    <span>Testimonials</span>
-                    <h2>Testimonials</h2>
+            <span>Testimonials</span>
+            <h2>Testimonials</h2>
 
-                </div>
+        </div>
       <div class="carousel slide mt-5  bg-grey" data-bs-ride="carousel">
 
         <!-- Indicators/dots -->
@@ -43,6 +44,7 @@
         <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
+        </div>
     </div>
 
 </template>
@@ -66,5 +68,5 @@ store.dispatch('getData', 'testimonials');
 </script>
 
 <style scoped>
-  
+ 
 </style>

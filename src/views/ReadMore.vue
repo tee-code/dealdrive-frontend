@@ -1,21 +1,28 @@
 <script setup>
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+
+
+const route = useRoute()
+
+const userData = ref(route.params.id)
 
 defineProps({
-  msg: String
+  msg: String,
+  id:String
 })
 
 </script>
 
 <template>
  
+    
     <main id="main">
-
         <section class="single-post-content">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 post-content" data-aos="fade-up">
-
+                      
                         <!-- ======= Single Post Content ======= -->
                         <div class="single-post">
                             <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
@@ -165,5 +172,9 @@ defineProps({
 <style scoped>
 .read-the-docs {
   color: #888;
+}
+
+h4{
+    border: 2px solid red;
 }
 </style>

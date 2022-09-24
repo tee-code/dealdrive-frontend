@@ -13,7 +13,9 @@ Variables
 */
 
 :root {
-    --vsc-bg-header: hsl(205, 63%, 48%) !important;
+    --primary-blue: #2d6bd8 !important;
+    /* --vsc-bg-header: hsl(205, 63%, 48%) !important; */
+    --vsc-bg-header: #2d6bd8 !important;
     --vsc-bg-footer: #fafafa;
     --vsc-text-color-header: #fff;
     --vsc-text-color-footer: inherit;
@@ -24,17 +26,21 @@ Variables
     --vsc-border-color-top-footer: #f3f3f3
     /* dark shades of primary color*/
     --clr-primary-1: rgba(13, 66, 255, 0.8);
-    --clr-primary-2: hsl(203, 65%, 8%);
+    --clr-primary-2: #2d6bd8 !important;
+    --clr-primary-3: #2d6bd8 !important;
+    --clr-primary-4: #2d6bd8 !important;
+    /* --clr-primary-2: hsl(203, 65%, 8%);
     --clr-primary-3: hsl(205, 72%, 37%);
-    --clr-primary-4: hsl(205, 63%, 48%);
+    --clr-primary-4: hsl(205, 63%, 48%); */
     /* primary/main color */
-    --clr-primary-5: hsl(205, 78%, 60%);
+    --clr-primary-5: #2d6bd8 !important;
+    /* --clr-primary-5: hsl(205, 78%, 60%); */
     /* lighter shades of primary color */
-    --clr-primary-6: hsl(205, 89%, 70%);
-    --clr-primary-7: hsl(205, 90%, 76%);
-    --clr-primary-8: hsl(205, 86%, 81%);
-    --clr-primary-9: hsl(205, 90%, 88%);
-    --clr-primary-10: hsl(205, 100%, 96%);
+    --clr-primary-6: #2d6bd8 !important;
+    --clr-primary-7: #2d6bd8 !important;
+    --clr-primary-8: #2d6bd8 !important;
+    --clr-primary-9: #2d6bd8 !important;
+    --clr-primary-10: #2d6bd8 !important;
     /* darkest grey - used for headings */
     --clr-grey-1: hsl(209, 61%, 16%);
     --clr-grey-2: hsl(211, 39%, 23%);
@@ -300,7 +306,7 @@ h6 {
 
 .quote-form input:focus,
 .quote-form textarea:focus {
-    border-color: var(--color-primary);
+    border-color: var(--primary-blue);
 }
 
 .quote-form input {
@@ -511,6 +517,10 @@ h6 {
 .navbar .active:focus,
 .navbar li:hover>a {
     color: var(--clr-orange);
+}
+
+.orange {
+    background-color: var(--clr-orange);
 }
 
 .navbar .dropdown ul {
@@ -820,7 +830,7 @@ section {
     text-transform: uppercase;
     margin-bottom: 20px;
     padding-bottom: 0;
-    color: rgb(243, 19, 107);
+    color: var(--clr-primary-3);
     position: relative;
     z-index: 2;
     margin-bottom: 20px;
@@ -834,7 +844,7 @@ section {
     display: block;
     width: 50px;
     height: 3px;
-    background: rgb(243, 19, 107);
+    background: var(--clr-orange);
     left: 0;
     right: 0;
     bottom: 0;
@@ -885,7 +895,7 @@ section {
 
 .breadcrumbs .page-header:before {
     content: "";
-    background-color: rgba(14, 29, 52, 0.8);
+    /* background-color: #2d6bd8; */
     position: absolute;
     inset: 0;
 }
@@ -1169,19 +1179,24 @@ section {
 }
 
 .services .card {
-    color: #001973;
+    color: var(--primary-blue);
     transition: 0.3;
 }
 
+.blue {
+    background-color: var(--primary-blue);
+}
+
 .services .card:hover {
-    color: var(--color-primary);
+    color: var(--primary-blue);
 }
 
 .services .card p {
     padding: 0 30px;
     margin-bottom: 30px;
-    color: var(--color-secondary);
+    color: var(--primary-blue);
     font-size: 15px;
+    text-align: justify;
 }
 
 .services .card:hover .card-img img {
@@ -1578,7 +1593,7 @@ section {
 --------------------------------------------------------------*/
 
 .call-to-action {
-    background: linear-gradient(rgb(243, 19, 107, .8), rgba(14, 29, 52, 0.8)), url("../images/dlogo.png") center center;
+    background: linear-gradient(to right, rgba(16, 25, 136, .8), rgba(38, 84, 156, 0.6)), url("../images/dlogo.png") center center;
     background-size: cover;
     padding: 100px 0;
     /* background-color: whitesm; */
@@ -1734,7 +1749,7 @@ section {
 }
 
 .faq .accordion-button:not(.collapsed) {
-    color: var(--color-primary);
+    color: var(--primary-blue);
     border-bottom: 0;
     box-shadow: none;
 }
@@ -1744,7 +1759,7 @@ section {
     top: 14px;
     left: 25px;
     font-size: 20px;
-    color: var(--color-primary);
+    color: var(--primary-blue);
 }
 
 .faq .accordion-button:after {
@@ -2347,7 +2362,7 @@ section {
 
 .book-a-table .php-email-form input:focus,
 .book-a-table .php-email-form textarea:focus {
-    border-color: var(--color-primary);
+    border-color: var(--primary-blue);
 }
 
 .book-a-table .php-email-form input {
@@ -2831,12 +2846,12 @@ section {
     left: 0;
     z-index: -1;
     border-radius: 100px;
-    background-color: rgb(243, 19, 107);
+    background-color: var(--primary-blue);
     transition: all .4s;
 }
 
 .service-title {
-    color: rgb(243, 19, 107);
+    color: var(--primary-blue);
 }
 
 .slant {
@@ -2851,5 +2866,9 @@ section {
 }
 
 .page-header {
-    background-image: linear-gradient(to right, rgba(16, 25, 136, .8), rgba(243, 19, 107, .8)), url('/assets/images/page-header.jpg');
+    background-image: linear-gradient(to right, rgb(45, 107, 216, .8), rgba(38, 84, 156, 0.8)), url('/assets/images/page-header.jpg');
+}
+
+input::placeholder{
+    font-size: 1.4rem;
 }

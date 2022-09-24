@@ -6,9 +6,20 @@ import Blog from "../views/Blog.vue";
 import Projects from "../views/Projects.vue";
 import Quotation from "../views/Quotation.vue";
 import ReadMore from "../views/ReadMore.vue";
-import Service from "../views/Service.vue";
+import Training from "../views/Training.vue";
 import Services from "../views/Services.vue";
+import blogReadMore from "../views/blogReadMore.vue";
 import DefaultLayout from "../components/DefaultLayout.vue";
+
+// admin
+import adminDashBoard from "../views/admin/adminDashBoard.vue";
+import Adminlogin from "../views/admin/AdminLogin.vue";
+
+import Adminhome from "../views/admin/Adminhome.vue";
+import Adminabout from "../views/admin/Adminabout.vue";
+import Adminservices from "../views/admin/Adminservices.vue";
+
+
 
 const routes = [{
     path: '/',
@@ -32,7 +43,7 @@ const routes = [{
             component: Blog,
             name: "Blog",
         }, {
-            path: '/projects',
+            path: '/projects/:id',
             component: Projects,
             name: "Projects",
         }, {
@@ -40,9 +51,9 @@ const routes = [{
             component: Quotation,
             name: "Quotation",
         }, {
-            path: '/service',
-            component: Service,
-            name: "Service",
+            path: '/training',
+            component: Training,
+            name: "Training",
         },
         {
             path: '/services',
@@ -52,6 +63,45 @@ const routes = [{
             path: '/readmore',
             component: ReadMore,
             name: "ReadMore",
+        },
+
+        {
+            path: '/blogReadMore/:id',
+            component: blogReadMore,
+            name: "blogReadMore",
+            props: true
+        },
+
+        // Admin
+
+        {
+            path: '/admin-dashboard',
+            component: adminDashBoard,
+            name: "adminDashBoard",
+        },
+
+        {
+            path: '/Adminlogin',
+            component: Adminlogin,
+            name: "Adminlogin",
+        },
+
+        {
+            path: '/Adminhome',
+            component: Adminhome,
+            name: "Adminhome",
+        },
+
+        {
+            path: '/Adminabout',
+            component: Adminabout,
+            name: "Adminabout",
+        },
+
+        {
+            path: '/Adminservices',
+            component: Adminservices,
+            name: "Adminservices",
         }
     ]
 }];
@@ -60,7 +110,11 @@ const routes = [{
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        // return desired position
+        return { top: 0 };
+    }
 });
 
 export default router;
