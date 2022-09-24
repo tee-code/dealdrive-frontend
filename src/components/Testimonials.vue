@@ -60,6 +60,8 @@ const testimonials = computed(() => {
   return store.state.testimonials;
 });
 
+store.dispatch('getData', 'testimonials');
+
 
 </script>
 

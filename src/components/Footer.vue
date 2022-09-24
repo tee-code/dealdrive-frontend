@@ -23,6 +23,12 @@ const navigations = computed(() => {
 const contact = computed(() => {
   return store.state.contactus;
 });
+<<<<<<< Updated upstream
+=======
+
+const year = ref(new Date().getFullYear());
+
+>>>>>>> Stashed changes
 </script>
 
 <template>

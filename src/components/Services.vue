@@ -47,6 +47,8 @@ const services = computed(() => {
   return store.state.services;
 });
 
+store.dispatch('getData', 'services');
+
 
 </script>
 

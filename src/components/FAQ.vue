@@ -8,6 +8,8 @@ const faqs = computed(() => {
   return store.state.faqs;
 });
 
+store.dispatch('getData', 'faqs');
+
 
 </script>
 

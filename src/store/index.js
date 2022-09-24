@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import axiosClient from '../axios';
 
 const slides = [{
         id: 0,
@@ -102,6 +103,17 @@ const attendants = [{
     // ...
 ];
 
+<<<<<<< Updated upstream
+=======
+const footerLinks = [
+
+    { name: 'Training', to: { name: 'Training' } },
+    { name: 'Projects', to: { name: 'Projects' } },
+    { name: 'Services', to: { name: 'Services' } },
+
+];
+
+>>>>>>> Stashed changes
 const navigations = [
     { name: 'Home', to: { name: 'Index' } },
     { name: 'About Us', to: { name: 'About' } },
@@ -180,15 +192,62 @@ const store = createStore({
         services,
         news,
         testimonials,
+<<<<<<< Updated upstream
+=======
+        blog,
+        user: {
+            data: {},
+            token: sessionStorage.getItem('TOKEN')
+        },
+>>>>>>> Stashed changes
     },
     getters: {},
     actions: {
 
+        register: async({ commit }, data) => {
+
+            const response = await axiosClient.post('/register', data);
+
+            commit('setUserData', response.data);
+
+            return response.data;
+
+        },
+        login: async({ commit }, data) => {
+
+            const response = await axiosClient.post('/login', data);
+
+            commit('setUserData', response.data);
+
+            return response.data;
+
+        },
+        getData: async({ commit }, key) => {
+
+            const response = await axiosClient.get(`/${key}`);
+
+            commit('setData', response.data, key);
+
+            return response.data;
+        }
     },
     mutations: {
-
+        logout: (state) => {
+            state.user.token = null;
+            state.user.data = {};
+            sessionStorage.clear();
+        },
+        setData: (state, data, key) => {
+            state[key] = data;
+        },
+        setUserData: (state, { data, token }) => {
+            state.user.data = data;
+            state.user.token = token;
+            sessionStorage.setItem('TOKEN', token);
+        }
     },
     modules: {}
+
 });
 
 export default store;
