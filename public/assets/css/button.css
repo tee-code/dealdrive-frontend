@@ -1,0 +1,14 @@
+.button-section{
+    display: flex;
+    justify-content: flex-end;
+}
+.button-section button{
+    font-size: 1.1rem;
+    background-color: var(--clr-orange);
+    padding: .5em 1em;
+    border-radius: .3em;
+}
+
+.fa-solid{
+    font-size: 3rem;
+}

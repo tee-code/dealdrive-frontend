@@ -6,25 +6,45 @@
                 <p>ADMIN</p>
             </div>
         </header>
+
         <section class="sidenav">
             <ul >
                 
-                <button @click="isActiveChange(nav.name)" v-for="nav in navigation" :key="nav.name" :to="nav.to"><li>{{nav.name}}</li><i>icon</i></button>
+                <button @click="isActiveChange(nav.name)" v-for="nav in navigation" :key="nav.name" :to="nav.to"><li>{{nav.name}}</li><i :class=nav.icon :style=nav.color></i></button>
 
 
-                <button class="logout" to="{name:'Home'}" ><li>Logout</li><i>icon</i></button>
+                <button class="logout" to="{name:'Home'}" ><li>Logout</li><i style="color:red" class="fa fa-power-off fa-2x"></i></button>
             </ul>
         </section>
+
         <section class="topnav">
             <h3>DealDrive Admin</h3>
-            <p>Notification</p>
+            <p style="color:green" class="fa fa-bell fa-2x"></p>
         </section>
+
         <section class="main">
 
-            <Adminhome v-if="isActive==='Home'"/>
-            <Adminservices v-if="isActive==='Services'"/>
-            <Adminabout v-if="isActive==='About'"/>
+            <div class="main-navigation">
+                <div class="main-card"><h2>Users section</h2></div>
+            </div>
+        
+                <div class="content">
+                    <Adminhome v-if="isActive==='Home'"/>
+                    <Adminservices v-if="isActive==='Services'"/>
+                    <Adminabout v-if="isActive==='About'"/>
+                    <Admintestimonails v-if="isActive==='Testimonials'"/>
+                    <Adminslides v-if="isActive==='Slides'"/>
+                    <Adminprojects v-if="isActive === 'Projects'"/>
+                    <Adminfaq v-if="isActive === 'FAQ'"/>
+
+                </div>
+            
+
+            
+            
+            
         </section>
+        
     </div>
 
    
@@ -37,6 +57,14 @@ import { useRoute, useRouter } from 'vue-router';
 import Adminhome from '../../components/admin/Adminhome.vue';
 import Adminservices from '../../components/admin/Admin-services.vue';
 import Adminabout from '../../components/admin/Admin-about.vue';
+import Admintestimonails from '../../components/admin/Admin-testimonials.vue';
+import Adminslides from '../../components/admin/Admin-slides.vue';
+import Adminprojects from '../../components/admin/Admin-projects.vue';
+import Adminfaq from '../../components/admin/Admin-faq.vue';
+
+
+
+
 
 
 
@@ -44,21 +72,19 @@ import Adminabout from '../../components/admin/Admin-about.vue';
     export default {
         setup(){
 
-            const store = useStore();
+            // getting Admin navigation
+            const store = useStore(); 
             const navigation=computed(()=>{
             return store.state.adminnavigation
             })
 
             const route = useRoute();
 
-
             
 
-            
-            
+            // return necessary variable for output
             return{
-                navigation,
-                
+                navigation
             }
         },
 
@@ -75,7 +101,9 @@ import Adminabout from '../../components/admin/Admin-about.vue';
         components:{
            Adminhome,
            Adminservices,
-           Adminabout
+           Adminabout,
+           Admintestimonails,Adminslides,Adminprojects,
+           Adminfaq
         }
 
         
@@ -94,7 +122,7 @@ body,html{
 }
 #admin{
     margin-top: 10em;
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
@@ -130,8 +158,14 @@ body,html{
     grid-column: 3/-1;
     grid-row: 2/-1;
     background-color: rgb(248, 246, 246);
+    
 }
-
+.main .content{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #aaa;
+    padding: 0.9em;
+}
 .sidenav ul{
     list-style-type: none;
     display: flex;
@@ -154,12 +188,17 @@ body,html{
     font-size: 1rem;
 }
 
+.sidenav ul button li {
+    font-size: 1.5rem;
+}
+
 .sidenav ul button:hover {
     background-color: hsl(39, 94%, 62%);
     border-radius: 5px;
 }
+
 .sidenav ul .logout {
-    margin-top: auto;
+    margin-top: 5em;
 }
 .header div{
     display: flex;
@@ -168,5 +207,32 @@ body,html{
     padding: 1em;
 
     flex: 1;
+}
+
+.main-navigation{
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 5em;
+    padding: .5em;
+    display: flex;
+    justify-content: center;
+}
+.main-card{
+    width: 80%;
+    padding: .9em;
+    background-color: rgb(100, 173, 100);
+    border-radius: .5em;
+    cursor: pointer;
+}
+.main-card:hover{
+    background-color: white;
+}
+
+.main-card h2{
+    text-align: center;
+}
+@media screen  and (min-width: 500px){
+    .main-card{
+        width: 350px;
+    }
 }
 </style>
