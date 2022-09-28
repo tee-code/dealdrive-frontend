@@ -1,8 +1,10 @@
 <template>
-    <div>
-        <h1>Hello Admin</h1>
-        <p>Edit your content </p>
+    <div class="Home">
+        <div class="wrapper">
+            <h1>Hello Admin</h1>
+            <p>Edit your content </p>
 
+        </div>
         
 
         
@@ -33,6 +35,20 @@ import BaseModal from '../BaseModal.vue';
 </script>
 
 <style scoped>
+.Home{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px #aaa;
+}
 
+.wrapper{
+    padding: 1em;
+    font-size: 1.5rem;
+}
+.wrapper h1{
+    font-size: 3rem;
+}
 
 </style>

@@ -1,12 +1,49 @@
 <template>
     <div>
         <h1>Slides section</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, perspiciatis quod voluptatum aperiam quaerat sint corporis autem dolore doloribus voluptatem amet similique quasi dolor quo maxime voluptates maiores dignissimos pariatur?  Sunt repudiandae voluptatem, magni incidunt, excepturi expedita fugiat recusandae non pariatur, ipsum iste delectus?</p>
+       <table style="width:100%">
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Caption</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
 
-        <div class="button-section">
-            <button @click="toggleModal">Edit</button>
-        </div>
+            <tr>
+                <td>0</td>
+                <td>GET MORE DONE WITH OUR SOFTWARE SOLUTIONS</td>
 
+                <td>Accelerate your digital transformation with our branding and software development solutions</td>
+                <td><img style="width:100px; hieght:100px" src='/assets/images/hero-carousel/1.jpg' alt=""></td>
+                <td>
+                   <div class="button-section">
+                        <button class="info" @click="toggleModal">Edit</button>
+                        <button class="danger" >Delete</button>
+                     </div> 
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>1</td>
+                <td>Particpate in Our Training</td>
+
+                
+                <td>Dealdrive Technology Skillup programs is a digital skill acquisition program that train you to be master of tech related skills in the field of design, software and web application</td>
+                <td><img style="width:100px; hieght:100px" src='/assets/images/page-header.jpg' alt=""></td>
+                <td>
+                   <div class="button-section">
+                        <button class="info" @click="toggleModal">Edit</button>
+                        <button class="danger" >Delete</button>
+                     </div> 
+                </td>
+            </tr>
+
+
+            
+
+        </table>
         <BaseModal v-show="showModal" @closeModal="toggleModal">
             <h1 class="title">Slides Edit Form</h1>
 
@@ -77,5 +114,20 @@ form button{
     padding: .2em;
     font-size: 2rem;
 }
+div>h1{
+    text-align: center;
+}
 
+/* Table */
+table,tr,td,th{
+    border: 1px solid #aaa;
+}
+
+tr th{
+  text-align: center; 
+}
+tr td{
+    text-align: justify;
+    padding: .8em;
+}
 </style>

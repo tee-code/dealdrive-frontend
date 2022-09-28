@@ -1,12 +1,35 @@
 <template>
     <div>
         <h1>About section</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, perspiciatis quod voluptatum aperiam quaerat sint corporis autem dolore doloribus voluptatem amet similique quasi dolor quo maxime voluptates maiores dignissimos pariatur? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam praesentium quam perspiciatis iusto at quisquam voluptates. Sunt repudiandae voluptatem, magni incidunt, excepturi expedita fugiat recusandae non pariatur, ipsum iste delectus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ullam reiciendis ratione maxime autem, tempora porro iste numquam placeat nemo laborum voluptas rerum hic debitis nobis eveniet est ea aliquam.</p>
+        
 
+        <table style="width:100%">
+            <tr>
+                <th>Heading</th>
+                <th>Short Description</th>
+                <th>Lists</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
 
-        <div class="button-section">
-            <button @click="toggleModal">Edit</button>
-        </div>
+            <tr>
+                <td>Dealdrive Technology - your one-stop shop for your digital solution</td>
+                <td>We believe there is a software solution to every hard craked experience in a brand. What we do is to ease the experience.</td>
+
+                <td>"We build custom applications that will optimize your daily business operations.</td>
+
+                <td><img style="width:100px; hieght:100px" src="/assets/images/about.jpg" alt=""></td>
+                <td>
+                   <div class="button-section">
+                        <button class="info" @click="toggleModal">Edit</button>
+                        <button class="danger" >Delete</button>
+                     </div> 
+                </td>
+            </tr>
+
+            
+        </table>
+
 
         <BaseModal v-show="showModal" @closeModal="toggleModal">
             <h1 class="title">About edit form</h1>
@@ -71,7 +94,20 @@ form button{
     padding: .2em;
     font-size: 2rem;
 }
+div>h1{
+    text-align: center;
+}
+/* Table */
+table,tr,td,th{
+    border: 1px solid #aaa;
+}
 
-
+tr th{
+  text-align: center; 
+}
+tr td{
+    text-align: justify;
+    padding: .8em;
+}
 
 </style>

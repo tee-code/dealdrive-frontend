@@ -25,7 +25,7 @@
         <section class="main">
 
             <div class="main-navigation">
-                <div class="main-card"><h2>Users section</h2></div>
+                <div class="main-card"><h2>Users</h2></div>
             </div>
         
                 <div class="content">
@@ -36,6 +36,7 @@
                     <Adminslides v-if="isActive==='Slides'"/>
                     <Adminprojects v-if="isActive === 'Projects'"/>
                     <Adminfaq v-if="isActive === 'FAQ'"/>
+                    <Adminblog v-if="isActive === 'Blog'"/>
 
                 </div>
             
@@ -61,6 +62,7 @@ import Admintestimonails from '../../components/admin/Admin-testimonials.vue';
 import Adminslides from '../../components/admin/Admin-slides.vue';
 import Adminprojects from '../../components/admin/Admin-projects.vue';
 import Adminfaq from '../../components/admin/Admin-faq.vue';
+import Adminblog from '../../components/admin/Admin-blog.vue';
 
 
 
@@ -103,7 +105,7 @@ import Adminfaq from '../../components/admin/Admin-faq.vue';
            Adminservices,
            Adminabout,
            Admintestimonails,Adminslides,Adminprojects,
-           Adminfaq
+           Adminfaq,Adminblog
         }
 
         
@@ -158,12 +160,12 @@ body,html{
     grid-column: 3/-1;
     grid-row: 2/-1;
     background-color: rgb(248, 246, 246);
-    
 }
 .main .content{
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
-    border: 1px solid #aaa;
+    overflow: auto;
+    /* border: 1px solid #aaa; */
     padding: 0.9em;
 }
 .sidenav ul{
@@ -209,17 +211,19 @@ body,html{
     flex: 1;
 }
 
+/* main navigation */
 .main-navigation{
     border-bottom: 1px solid #aaa;
     margin-bottom: 5em;
     padding: .5em;
     display: flex;
     justify-content: center;
+    gap: .5em;
 }
 .main-card{
     width: 80%;
     padding: .9em;
-    background-color: rgb(100, 173, 100);
+    background-color: #e49300;
     border-radius: .5em;
     cursor: pointer;
 }

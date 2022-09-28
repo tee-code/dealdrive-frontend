@@ -2,7 +2,7 @@
     <!-- <Teleport to="body"> -->
         <div id="modal">
         <div class="modal-content">
-            <div>
+            <div v-show="showButton">
                 <button @click="$emit('closeModal')">Close</button>
             </div>
             <slot />
@@ -15,10 +15,15 @@
     
 </template>
 
-<script>
-    export default {
-        
-    }
+<script setup>
+    import { ref } from "vue";
+
+ defineProps({
+  showButton:{
+    // type:Boolean,
+    default:true
+  }
+})
 </script>
 
 <style scoped>
@@ -27,9 +32,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: black;
     opacity: .9;
+    z-index: 10;
 
     display: flex;
     justify-content: center;
@@ -42,6 +48,7 @@
     margin: 3em auto;
     padding: .9em;
     opacity: 0.9;
+    z-index: 10;
 }
 
 button{

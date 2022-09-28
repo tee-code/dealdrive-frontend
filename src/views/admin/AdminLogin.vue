@@ -1,8 +1,9 @@
 <template>
     <div id="wrapper">
-        <BaseModal>
+        <BaseModal >
+            
             <h1 class="title">Login</h1>
-
+            
             <form action="">
                 <input type="text" placeholder="Username">
                 <input type="password" placeholder="Password">
@@ -14,7 +15,12 @@
 </template>
 
 <script setup>
-   import BaseModal from '../../components/BaseModal.vue';
+import BaseModal from '../../components/BaseModal.vue';
+
+import { ref } from "vue";
+
+
+   
 
 </script>
 
