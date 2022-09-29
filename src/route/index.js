@@ -86,23 +86,6 @@ const routes = [{
             name: "Adminlogin",
         },
 
-        {
-            path: '/Adminhome',
-            component: Adminhome,
-            name: "Adminhome",
-        },
-
-        {
-            path: '/Adminabout',
-            component: Adminabout,
-            name: "Adminabout",
-        },
-
-        {
-            path: '/Adminservices',
-            component: Adminservices,
-            name: "Adminservices",
-        }
     ]
 }];
 
