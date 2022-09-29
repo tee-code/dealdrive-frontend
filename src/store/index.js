@@ -14,9 +14,11 @@ const adminnavigation = [
 
     { name: 'Projects', to: { name: 'Adminprojects' }, icon: 'fa fa-archive fa-2x', color: { color: 'skyblue' } },
 
-    { name: 'FAQ', to: { name: 'AdminFAQ' }, icon: 'fa fa-envelope-square fa-2x', color: { color: 'green' } },
+   
+    { name: 'Blog', to: { name: 'Adminblog' }, icon:'fa fa-sliders fa-2x', color:{color:'orange'}},
 
-
+    { name: 'FAQ', to: { name: 'AdminFAQ' },icon:'fa fa-envelope-square fa-2x', color:{color:'green'}},
+    
 ]
 
 const slides = [{
@@ -304,7 +306,7 @@ const teams = [{
 
 const blog = [{
         title: 'EIGHT STRATEGIES FOR BUSINESS GROWTH',
-        description: "1. Build A Br and",
+        description: "Build A Brand",
         date: '02/ 08/ 2022',
         category: 'Business',
         image: '/assets/images/post/post-landscape-2.jpg',

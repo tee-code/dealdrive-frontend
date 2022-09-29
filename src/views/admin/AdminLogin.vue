@@ -1,8 +1,9 @@
 <template>
     <div id="wrapper">
-        <BaseModal>
-            <h1 class="title">Login</h1>
+        <BaseModal >
             
+            <h1 class="title">Login</h1>
+           
             <span v-if="errorMsg"
                 @click="errorMsg = ''"
                 class="alert alert-danger"
@@ -30,7 +31,7 @@
                     v-model="user.password"
                     placeholder="Password"
                 />
-
+         
                 <button type="submit" class="success">Save</button>
 
             </form>
