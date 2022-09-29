@@ -468,6 +468,16 @@ const store = createStore({
             return response.data;
 
         },
+
+        logout: async({ commit }) => {
+
+            const response = await axiosClient.post('/logout');
+
+            commit('logout');
+
+            return response.data;
+        },
+
         getData: async({ commit }, key) => {
 
             const response = await axiosClient.get(`/${key}`);
@@ -481,7 +491,7 @@ const store = createStore({
         logout: (state) => {
             state.user.token = null;
             state.user.data = {};
-            sessionStorage.clear();
+            sessionStorage.removeItem("TOKEN");
         },
         setData: (state, data, key) => {
             state[key] = data;
