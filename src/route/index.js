@@ -11,6 +11,8 @@ import Services from "../views/Services.vue";
 import blogReadMore from "../views/blogReadMore.vue";
 import DefaultLayout from "../components/DefaultLayout.vue";
 
+import store from "../store"
+
 // admin
 import adminDashBoard from "../views/admin/adminDashBoard.vue";
 import Adminlogin from "../views/admin/AdminLogin.vue";
@@ -18,7 +20,6 @@ import Adminlogin from "../views/admin/AdminLogin.vue";
 import Adminhome from "../views/admin/Adminhome.vue";
 import Adminabout from "../views/admin/Adminabout.vue";
 import Adminservices from "../views/admin/Adminservices.vue";
-
 
 
 const routes = [{
@@ -78,14 +79,35 @@ const routes = [{
             path: '/admin-dashboard',
             component: adminDashBoard,
             name: "adminDashBoard",
+            meta: { requiresAuth: true },
         },
 
         {
             path: '/Adminlogin',
             component: Adminlogin,
             name: "Adminlogin",
+
+        },
+        {
+            path: '/Adminhome',
+            component: Adminhome,
+            name: "Adminhome",
+            meta: { requiresAuth: true },
         },
 
+        {
+            path: '/Adminabout',
+            component: Adminabout,
+            name: "Adminabout",
+            meta: { requiresAuth: true },
+        },
+
+        {
+            path: '/Adminservices',
+            component: Adminservices,
+            name: "Adminservices",
+            meta: { requiresAuth: true },
+        }
     ]
 }];
 
@@ -99,5 +121,16 @@ const router = createRouter({
         return { top: 0 };
     }
 });
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.requiresAuth && !store.state.user.token) {
+        next({ name: "Adminlogin" });
+    } else if (store.state.user.token && to.meta.isGuest) {
+        next({ name: "adminDashboard" });
+    } else {
+        next();
+    }
+});
+
 
 export default router;

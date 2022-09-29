@@ -1,21 +1,23 @@
 import { createStore } from 'vuex';
-const adminnavigation=[
-    { name: 'Home', to: { name: 'Adminhome' }, icon:'fa fa-home fa-2x',color:{color:'white'} },
+import axiosClient from '../axios';
 
-    { name: 'Services', to: { name: 'Adminservices' },icon:'fa fa-wheelchair-alt fa-2x',color:{color:'tomato'}},
+const adminnavigation = [
+    { name: 'Home', to: { name: 'Adminhome' }, icon: 'fa fa-home fa-2x', color: { color: 'white' } },
 
-    { name: 'About', to: { name: 'Adminabout' },icon:'fa fa-book fa-2x',  color:{color:'pink'}},
+    { name: 'Services', to: { name: 'Adminservices' }, icon: 'fa fa-wheelchair-alt fa-2x', color: { color: 'tomato' } },
 
-    { name: 'Testimonials', to: { name: 'Admintestimonials' },icon:'fa fa-certificate fa-2x', color:{color:'yellow'} },
-    
-    { name: 'Slides', to: { name: 'Adminslides' },icon:'fa fa-sliders fa-2x', color:{color:'purple'}},
+    { name: 'About', to: { name: 'Adminabout' }, icon: 'fa fa-book fa-2x', color: { color: 'pink' } },
 
-    { name: 'Projects', to: { name: 'Adminprojects' }, icon:'fa fa-archive fa-2x', color:{color:'skyblue'}},
+    { name: 'Testimonials', to: { name: 'Admintestimonials' }, icon: 'fa fa-certificate fa-2x', color: { color: 'yellow' } },
 
+    { name: 'Slides', to: { name: 'Adminslides' }, icon: 'fa fa-sliders fa-2x', color: { color: 'purple' } },
+
+    { name: 'Projects', to: { name: 'Adminprojects' }, icon: 'fa fa-archive fa-2x', color: { color: 'skyblue' } },
+
+   
     { name: 'Blog', to: { name: 'Adminblog' }, icon:'fa fa-sliders fa-2x', color:{color:'orange'}},
 
     { name: 'FAQ', to: { name: 'AdminFAQ' },icon:'fa fa-envelope-square fa-2x', color:{color:'green'}},
-    
     
 ]
 
@@ -199,6 +201,7 @@ const attendants = [{
 ];
 
 const footerLinks = [
+
     { name: 'Training', to: { name: 'Training' } },
     { name: 'Projects', to: { name: 'Projects' } },
     { name: 'Services', to: { name: 'Services' } },
@@ -437,18 +440,72 @@ const store = createStore({
         news,
         testimonials,
         blog,
+        user: {
+            data: {},
+            token: sessionStorage.getItem('TOKEN')
+        },
 
         // admin section
         adminnavigation
+
     },
     getters: {},
     actions: {
 
+        register: async({ commit }, data) => {
+
+            const response = await axiosClient.post('/register', data);
+
+            commit('setUserData', response.data);
+
+            return response.data;
+
+        },
+        login: async({ commit }, data) => {
+
+            const response = await axiosClient.post('/login', data);
+
+            commit('setUserData', response.data);
+
+            return response.data;
+
+        },
+
+        logout: async({ commit }) => {
+
+            const response = await axiosClient.post('/logout');
+
+            commit('logout');
+
+            return response.data;
+        },
+
+        getData: async({ commit }, key) => {
+
+            const response = await axiosClient.get(`/${key}`);
+
+            commit('setData', response.data, key);
+
+            return response.data;
+        }
     },
     mutations: {
-
+        logout: (state) => {
+            state.user.token = null;
+            state.user.data = {};
+            sessionStorage.removeItem("TOKEN");
+        },
+        setData: (state, data, key) => {
+            state[key] = data;
+        },
+        setUserData: (state, { data, token }) => {
+            state.user.data = data;
+            state.user.token = token;
+            sessionStorage.setItem('TOKEN', token);
+        }
     },
     modules: {}
+
 });
 
 export default store;

@@ -13,7 +13,7 @@
                 <button @click="isActiveChange(nav.name)" v-for="nav in navigation" :key="nav.name" :to="nav.to"><li>{{nav.name}}</li><i :class=nav.icon :style=nav.color></i></button>
 
 
-                <button class="logout" to="{name:'Home'}" ><li>Logout</li><i style="color:red" class="fa fa-power-off fa-2x"></i></button>
+                <button class="logout" @click="logout"><li>Logout</li><i style="color:red" class="fa fa-power-off fa-2x"></i></button>
             </ul>
         </section>
 
@@ -51,7 +51,7 @@
    
 </template>
 
-<script>
+<script setup>
 import { computed, ref } from "vue";
 import { useStore } from 'vuex';
 import { useRoute, useRouter } from 'vue-router';
@@ -64,52 +64,31 @@ import Adminprojects from '../../components/admin/Admin-projects.vue';
 import Adminfaq from '../../components/admin/Admin-faq.vue';
 import Adminblog from '../../components/admin/Admin-blog.vue';
 
+// getting Admin navigation
+const store = useStore(); 
+const router = useRouter();
+const route = useRouter();
 
+const navigation=computed(()=>{
+    return store.state.adminnavigation
+});
 
+let isActive = ref("Home");
 
+function isActiveChange(name){
+    isActive=name
+}
 
+function logout() {
 
+    store.dispatch("logout").then(() => {
+        router.push({
+        name: "Adminlogin",
+        });
+    });
 
+}           
 
-    export default {
-        setup(){
-
-            // getting Admin navigation
-            const store = useStore(); 
-            const navigation=computed(()=>{
-            return store.state.adminnavigation
-            })
-
-            const route = useRoute();
-
-            
-
-            // return necessary variable for output
-            return{
-                navigation
-            }
-        },
-
-        data(){
-            return{
-                isActive: "Home"
-            }
-        },
-        methods:{
-            isActiveChange(name){
-                this.isActive=name
-            }
-        },
-        components:{
-           Adminhome,
-           Adminservices,
-           Adminabout,
-           Admintestimonails,Adminslides,Adminprojects,
-           Adminfaq,Adminblog
-        }
-
-        
-    }
 </script>
 
 <style scoped>

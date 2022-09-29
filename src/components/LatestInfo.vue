@@ -26,6 +26,8 @@ const news = computed(() => {
   return store.state.news;
 });
 
+store.dispatch('getData', 'news');
+
 
 </script>
 

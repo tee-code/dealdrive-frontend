@@ -44,6 +44,8 @@ const slides = computed(() => {
   return store.state.slides;
 });
 
+store.dispatch('getData', 'slides');
+
 
 </script>
 

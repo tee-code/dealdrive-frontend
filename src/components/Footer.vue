@@ -24,7 +24,8 @@ const contact = computed(() => {
   return store.state.contactus;
 });
 
-const year = new Date().getFullYear();
+const year = ref(new Date().getFullYear());
+
 
 </script>
 

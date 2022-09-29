@@ -3,24 +3,81 @@
         <BaseModal >
             
             <h1 class="title">Login</h1>
-            
-            <form action="">
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
+           
+            <span v-if="errorMsg"
+                @click="errorMsg = ''"
+                class="alert alert-danger"
+            >
+               {{ errorMsg }}
+            </span>
+            <form @submit="login" method="POST">
 
+                <input
+                    id="email-address"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required=""
+                    v-model="user.email"
+                    placeholder="Email address"
+                    />
+
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    required=""
+                    v-model="user.password"
+                    placeholder="Password"
+                />
+         
                 <button type="submit" class="success">Save</button>
+
             </form>
         </BaseModal>
     </div>
 </template>
 
 <script setup>
+
 import BaseModal from '../../components/BaseModal.vue';
-
+import { useRouter } from "vue-router";
 import { ref } from "vue";
+import { useStore } from 'vuex';
 
+const router = useRouter();
 
-   
+const store = useStore();
+
+const user = {
+  email: "",
+  password: "",
+};
+let loading = ref(false);
+
+let errorMsg = ref("");
+
+function login(ev) {
+
+  ev.preventDefault();
+
+  loading.value = true;
+
+  store
+    .dispatch("login", user)
+    .then(() => {
+      loading.value = false;
+      router.push({
+        name: "adminDashBoard",
+      });
+    })
+    .catch((err) => {
+    
+      loading.value = false;
+      errorMsg.value = err.response.data.error;
+    });
+}
 
 </script>
 

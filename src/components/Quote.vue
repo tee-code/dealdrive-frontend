@@ -71,6 +71,8 @@ const contact = computed(() => {
   return store.state.contactus;
 });
 
+store.dispatch('getData', 'contactus');
+
 const contact_form = ref(null);
 
 const form = {

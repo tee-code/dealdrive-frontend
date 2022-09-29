@@ -8,6 +8,8 @@ const teams = computed(() => {
   return store.state.teams;
 });
 
+store.dispatch('getData', 'teams');
+
 
 </script>
 

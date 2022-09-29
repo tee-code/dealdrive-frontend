@@ -8,6 +8,8 @@ const about = computed(() => {
   return store.state.about;
 });
 
+store.dispatch('getData', 'about');
+
 
 </script>
 
@@ -24,8 +26,9 @@ const about = computed(() => {
             
   
             <div class="col-lg-6 content order-last py-5">
+
               <h3>
-              ` {{ about.short_desc }}
+                {{ about.short_desc }}
               </h3>
   
               <ul>
