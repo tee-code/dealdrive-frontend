@@ -1,6 +1,8 @@
 <template>
     <div >
-        <BaseModal>
+        <BaseModal :showButton=false>
+            
+
         <h1 class="title">Register Admin</h1>
 
         <form action="">
