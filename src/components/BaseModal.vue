@@ -3,9 +3,10 @@
         <div id="modal">
         <div class="modal-content">
             <div v-show="showButton">
+                
                 <button @click="$emit('closeModal')">Close</button>
             </div>
-            <slot />
+            <slot ></slot>
 
             
             
@@ -18,12 +19,15 @@
 <script setup>
     import { ref } from "vue";
 
- defineProps({
-  showButton:{
-    // type:Boolean,
-    default:true
-  }
+    
+
+    defineProps({
+        showButton:{
+            type:Boolean,
+            default:true
+        }
 })
+
 </script>
 
 <style scoped>
