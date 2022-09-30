@@ -149,4 +149,8 @@ router.beforeEach((to, from, next) => {
 });
 
 
+router.beforeEach((to, from) => {
+
+    document.title = `DealDrive | ${to.name}`;
+    } )
 export default router;
