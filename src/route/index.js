@@ -9,6 +9,8 @@ import ReadMore from "../views/ReadMore.vue";
 import Training from "../views/Training.vue";
 import Services from "../views/Services.vue";
 import blogReadMore from "../views/blogReadMore.vue";
+import NotFound from "../views/NotFound.vue";
+
 import DefaultLayout from "../components/DefaultLayout.vue";
 
 import store from "../store"
@@ -75,6 +77,11 @@ const routes = [{
             props: true
         },
 
+        {
+            path: '/:catchAll(.*)',
+            component: NotFound,
+            name: "NotFound"
+        },
         // Admin
 
         {
