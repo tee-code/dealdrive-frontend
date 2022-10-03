@@ -14,11 +14,11 @@ const adminnavigation = [
 
     { name: 'Projects', to: { name: 'AdminProjects' }, icon: 'fa fa-archive fa-2x', color: { color: 'skyblue' } },
 
-   
-    { name: 'Blog', to: { name: 'AdminBlog' }, icon:'fa fa-sliders fa-2x', color:{color:'orange'}},
 
-    { name: 'FAQ', to: { name: 'AdminFaq' },icon:'fa fa-envelope-square fa-2x', color:{color:'green'}},
-    
+    { name: 'Blog', to: { name: 'AdminBlog' }, icon: 'fa fa-sliders fa-2x', color: { color: 'orange' } },
+
+    { name: 'FAQ', to: { name: 'AdminFaq' }, icon: 'fa fa-envelope-square fa-2x', color: { color: 'green' } },
+
 ]
 
 const slides = [{
@@ -170,11 +170,11 @@ const projects = [{
 ];
 
 const services = [
-    { image: "/assets/images/BRANDING.jpeg", title: "Branding", short_desc: "Our branding services is focused on to key areas of brand: Awareness and strategy. We make design that promote your awareness. We developed strategic road map to revamp your brand.", description: "Our branding services is focused on to key areas of brand: Awareness and strategy. We make design that promote your awareness. We developed strategic road map to revamp your brand. Features and benefit: Mobile: a  well design brand is mobile. Your customer carry you around. Memorable: when your customer remember an experience with your brand it is visual that the remember. Story: we provide design that help you tell stories that relate to your audience." },
+    { id: 1, image: "/assets/images/BRANDING.jpeg", title: "Branding", short_desc: "Our branding services is focused on to key areas of brand: Awareness and strategy. We make design that promote your awareness. We developed strategic road map to revamp your brand.", description: "Our branding services is focused on to key areas of brand: Awareness and strategy. We make design that promote your awareness. We developed strategic road map to revamp your brand. Features and benefit: Mobile: a  well design brand is mobile. Your customer carry you around. Memorable: when your customer remember an experience with your brand it is visual that the remember. Story: we provide design that help you tell stories that relate to your audience." },
 
-    { image: "/assets/images/web.jpeg", title: "Websites", short_desc: "We design and build web applicartion for various use cases. Features and benefit: Responsiveness: your website can be easily accessible on different devices of your users.", description: "We design and build web applicartion for various use cases. Features and benefit: Responsiveness: your website can be easily accessible on different devices of your users. Hight conversion: the goal is to make sure your have a return investment. We built the website with features with feature that enhance high sales conversion Security: we guarantee your full security. We make sure your users privacy is well protect. Support: we dont live you hanging. We provide you 24/7 support to ensure quality customer service" },
+    { id: 2, image: "/assets/images/web.jpeg", title: "Websites", short_desc: "We design and build web applicartion for various use cases. Features and benefit: Responsiveness: your website can be easily accessible on different devices of your users.", description: "We design and build web applicartion for various use cases. Features and benefit: Responsiveness: your website can be easily accessible on different devices of your users. Hight conversion: the goal is to make sure your have a return investment. We built the website with features with feature that enhance high sales conversion Security: we guarantee your full security. We make sure your users privacy is well protect. Support: we dont live you hanging. We provide you 24/7 support to ensure quality customer service" },
 
-    { image: "/assets/images/software.jpeg", title: "Custom Application", short_desc: "We build App for mobile, Desktop and other custom device", description: "We build App for mobile, Desktop and other custom device" },
+    { id: 3, image: "/assets/images/software.jpeg", title: "Custom Application", short_desc: "We build App for mobile, Desktop and other custom device", description: "We build App for mobile, Desktop and other custom device" },
 ];
 
 const news = { title: "Particpate in Our Training", description: "Dealdrive Technology Skillup programs is a digital skill acquisition program that train you to be master of tech related skills in the field of design, software and web application" };
@@ -461,6 +461,7 @@ const store = createStore({
             return response.data;
 
         },
+
         login: async({ commit }, data) => {
 
             const response = await axiosClient.post('/login', data);
@@ -484,10 +485,66 @@ const store = createStore({
 
             const response = await axiosClient.get(`/${key}`);
 
-            commit('setData', response.data, key);
+            const data = {
+                response: response.data,
+                key
+            }
+
+            commit('setData', data);
+
+            return response.data;
+
+        },
+
+        postData: async({ commit }, { key, payload }) => {
+
+            const response = await axiosClient.post('createService', payload);
+
+
+            // commit('setService', response.data, key);
+
+
+            return response.data;
+        },
+
+        postFormData: async({ commit }, { key, payload }) => {
+
+            const response = await axiosClient.post(`${key}`, payload, {
+                headers: {
+                    'content-type': 'multipart/form-data'
+                }
+            });
+
+            // console.log(response, ' response ');
+
+            // commit('setData', key, response.data);
+
+            return response.data;
+        },
+
+        updateFormData: async({ commit }, { key, payload }) => {
+
+            const response = await axiosClient.put(`${key}`, payload, {
+                headers: {
+                    'content-type': 'multipart/form-data'
+                }
+            });
+
+            // console.log(response, ' response ');
+
+            // commit('setData', key, response.data);
+
+            return response.data;
+        },
+
+        deleteData: async({ commit }, key) => {
+
+            const response = await axiosClient.delete(`${key}`);
 
             return response.data;
         }
+
+
     },
     mutations: {
         logout: (state) => {
@@ -495,8 +552,9 @@ const store = createStore({
             state.user.data = {};
             sessionStorage.removeItem("TOKEN");
         },
-        setData: (state, data, key) => {
-            state[key] = data;
+        setData: (state, { response, key }) => {
+            // console.log(response, key);
+            state[key] = response.data;
         },
         setUserData: (state, { data, token }) => {
             state.user.data = data;
