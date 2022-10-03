@@ -8,16 +8,16 @@ const adminnavigation = [
 
     { name: 'About', to: { name: 'Adminabout' }, icon: 'fa fa-book fa-2x', color: { color: 'pink' } },
 
-    { name: 'Testimonials', to: { name: 'Admintestimonials' }, icon: 'fa fa-certificate fa-2x', color: { color: 'yellow' } },
+    { name: 'Testimonials', to: { name: 'AdminTestimonials' }, icon: 'fa fa-certificate fa-2x', color: { color: 'yellow' } },
 
-    { name: 'Slides', to: { name: 'Adminslides' }, icon: 'fa fa-sliders fa-2x', color: { color: 'purple' } },
+    { name: 'Slides', to: { name: 'AdminSlides' }, icon: 'fa fa-sliders fa-2x', color: { color: 'purple' } },
 
-    { name: 'Projects', to: { name: 'Adminprojects' }, icon: 'fa fa-archive fa-2x', color: { color: 'skyblue' } },
+    { name: 'Projects', to: { name: 'AdminProjects' }, icon: 'fa fa-archive fa-2x', color: { color: 'skyblue' } },
 
    
-    { name: 'Blog', to: { name: 'Adminblog' }, icon:'fa fa-sliders fa-2x', color:{color:'orange'}},
+    { name: 'Blog', to: { name: 'AdminBlog' }, icon:'fa fa-sliders fa-2x', color:{color:'orange'}},
 
-    { name: 'FAQ', to: { name: 'AdminFAQ' },icon:'fa fa-envelope-square fa-2x', color:{color:'green'}},
+    { name: 'FAQ', to: { name: 'AdminFaq' },icon:'fa fa-envelope-square fa-2x', color:{color:'green'}},
     
 ]
 

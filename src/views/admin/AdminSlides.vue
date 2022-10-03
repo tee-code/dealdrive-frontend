@@ -1,25 +1,21 @@
 <template>
     <div>
-        <h1>Testimonials section</h1>
-         <table style="width:100%">
+        <h1>Slides section</h1>
+       <table style="width:100%">
             <tr>
                 <th>Id</th>
-                <th>Stars</th>
                 <th>Title</th>
-                <th>Author</th>
-                <th>Description</th>
+                <th>Caption</th>
                 <th>Image</th>
                 <th>Actions</th>
             </tr>
 
             <tr>
-                <td>1</td>
-                <td>5</td>
+                <td>0</td>
+                <td>GET MORE DONE WITH OUR SOFTWARE SOLUTIONS</td>
 
-                <td>Scribe, The Mathics</td>
-                <td>Abasiofon Peter</td>
-                <td>Thank you Dealdrive technology. You did a great job and your service delivery is quite commendable.</td>
-                <td><img style="width:100px; hieght:100px" src="/assets/images/mathics.jpeg" alt=""></td>
+                <td>Accelerate your digital transformation with our branding and software development solutions</td>
+                <td><img style="width:100px; hieght:100px" src='/assets/images/hero-carousel/1.jpg' alt=""></td>
                 <td>
                    <div class="button-section">
                         <button class="info" @click="toggleModal">Edit</button>
@@ -31,12 +27,11 @@
 
             <tr>
                 <td>1</td>
-                <td>5</td>
+                <td>Particpate in Our Training</td>
 
-                <td>Business Owner</td>
-                <td>David Offiong</td>
-                <td>Your services are top-notch bro I love how organized it is And yes the designs are superb! Well done!</td>
-                <td><img style="width:100px; hieght:100px" src="/assets/images/moses.jpeg" alt=""></td>
+                
+                <td>Dealdrive Technology Skillup programs is a digital skill acquisition program that train you to be master of tech related skills in the field of design, software and web application</td>
+                <td><img style="width:100px; hieght:100px" src='/assets/images/page-header.jpg' alt=""></td>
                 <td>
                    <div class="button-section">
                         <button class="info" @click="toggleModal">Edit</button>
@@ -49,19 +44,17 @@
             
 
         </table>
-
         <BaseModal v-show="showModal" @closeModal="toggleModal">
-            <h1 class="title">Testimonials Edit Form</h1>
+            <h1 class="title">Slides Edit Form</h1>
 
             <form action="">
-                <input type="file" placeholder="Chose image">
-                <input type="text" placeholder="Star">
+                
                 <input type="text" placeholder="Id">
                 <input type="text" placeholder="Title">
-                <input type="text" placeholder="Author">
                 
+                <input type="file" placeholder="Chose image">
 
-                <textarea name="" id="" cols="30" rows="10" placeholder="Main Description"></textarea>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Caption"></textarea>
 
                 <button type="submit" class="success">Save</button>
             </form>
@@ -71,14 +64,13 @@
 
 <script>
     import {ref} from 'vue'
-import BaseModal from '../BaseModal.vue';
+import BaseModal from '../../components/BaseModal.vue';
     export default {
         setup(){
             let showModal=ref(false)
 
             function toggleModal() {
                 showModal.value = !showModal.value
-                console.log(showModal)
             }
 
             return{
@@ -122,7 +114,6 @@ form button{
     padding: .2em;
     font-size: 2rem;
 }
-
 div>h1{
     text-align: center;
 }

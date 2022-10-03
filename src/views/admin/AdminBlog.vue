@@ -69,7 +69,7 @@
 
 <script setup>
 import { ref } from "vue";
-import BaseModal from '../BaseModal.vue';
+import BaseModal from '../../components/BaseModal.vue';
 
 let showModal=ref(false)
 

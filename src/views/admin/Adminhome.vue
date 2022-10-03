@@ -1,17 +1,50 @@
 <template>
-    <div>
-        home
+    <div class="Home">
+        <div class="wrapper">
+            <h1>Hello Admin</h1>
+            <p>Edit your content </p>
+
+        </div>
+        
+
+        
     </div>
 </template>
 
 <script>
+import {ref, computed} from 'vue'
+import BaseModal from '../../components/BaseModal.vue';
     export default {
-        name:'Adminhome'
+        setup(){
+            let showModal=ref(false)
+
+
+            return{
+                showModal,
+                
+            }
+        },
+       components:{
+        BaseModal
+       },
     }
 </script>
 
 <style scoped>
-div{
-    margin-top: 10rem;
+.Home{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px #aaa;
 }
+
+.wrapper{
+    padding: 1em;
+    font-size: 1.5rem;
+}
+.wrapper h1{
+    font-size: 3rem;
+}
+
 </style>

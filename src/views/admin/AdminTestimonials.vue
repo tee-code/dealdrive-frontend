@@ -1,22 +1,25 @@
 <template>
     <div>
-        <h1 class="section-title">Service section</h1>
-        <table style="width:100%">
+        <h1>Testimonials section</h1>
+         <table style="width:100%">
             <tr>
+                <th>Id</th>
+                <th>Stars</th>
                 <th>Title</th>
-                <th>Short Description</th>
+                <th>Author</th>
                 <th>Description</th>
                 <th>Image</th>
                 <th>Actions</th>
             </tr>
 
             <tr>
-                <td>Branding</td>
-                <td>Our branding services is focused on to key areas of brand: Awareness and strategy. We make design that promote your awareness. We developed strategic road map to revamp your brand.</td>
+                <td>1</td>
+                <td>5</td>
 
-                <td>Our branding services is focused on to key areas of brand: Awareness and strategy. We make design that promote your awareness. We developed strategic road map to revamp your brand. Features and benefit: Mobile: a  well design brand is mobile. Your customer carry you around. Memorable: when your customer remember an experience with your brand it is visual that the remember. Story: we provide design that help you tell stories that relate to your audience.</td>
-
-                <td><img style="width:100px; hieght:100px" src="/assets/images/BRANDING.jpeg" alt=""></td>
+                <td>Scribe, The Mathics</td>
+                <td>Abasiofon Peter</td>
+                <td>Thank you Dealdrive technology. You did a great job and your service delivery is quite commendable.</td>
+                <td><img style="width:100px; hieght:100px" src="/assets/images/mathics.jpeg" alt=""></td>
                 <td>
                    <div class="button-section">
                         <button class="info" @click="toggleModal">Edit</button>
@@ -24,14 +27,16 @@
                      </div> 
                 </td>
             </tr>
+
 
             <tr>
-                <td>Website</td>
-                <td>Our branding services is focused on to key areas of brand: Awareness and strategy. We make design that promote your awareness. We developed strategic road map to revamp your brand.</td>
+                <td>1</td>
+                <td>5</td>
 
-                <td>Our branding services is focused on to key areas of brand: Awareness and strategy. We make design that promote your awareness. We developed strategic road map to revamp your brand. Features and benefit: Mobile: a  well design brand is mobile. Your customer carry you around. Memorable: when your customer remember an experience with your brand it is visual that the remember. Story: we provide design that help you tell stories that relate to your audience.</td>
-
-                <td><img style="width:100px; hieght:100px" src="/assets/images/web.jpeg" alt=""></td>
+                <td>Business Owner</td>
+                <td>David Offiong</td>
+                <td>Your services are top-notch bro I love how organized it is And yes the designs are superb! Well done!</td>
+                <td><img style="width:100px; hieght:100px" src="/assets/images/moses.jpeg" alt=""></td>
                 <td>
                    <div class="button-section">
                         <button class="info" @click="toggleModal">Edit</button>
@@ -39,16 +44,22 @@
                      </div> 
                 </td>
             </tr>
+
+
+            
 
         </table>
 
         <BaseModal v-show="showModal" @closeModal="toggleModal">
-            <h1 class="title">Service Edit Form</h1>
+            <h1 class="title">Testimonials Edit Form</h1>
 
             <form action="">
                 <input type="file" placeholder="Chose image">
-                <input type="text" placeholder="Tittle">
-                <input type="text" placeholder="Short description">
+                <input type="text" placeholder="Star">
+                <input type="text" placeholder="Id">
+                <input type="text" placeholder="Title">
+                <input type="text" placeholder="Author">
+                
 
                 <textarea name="" id="" cols="30" rows="10" placeholder="Main Description"></textarea>
 
@@ -60,7 +71,7 @@
 
 <script>
     import {ref} from 'vue'
-import BaseModal from '../BaseModal.vue';
+import BaseModal from '../../components/BaseModal.vue';
     export default {
         setup(){
             let showModal=ref(false)
@@ -97,9 +108,6 @@ div p{
 .success{
     background-color: green;
 }
-.section-title{
-    text-align: center;
-}
 form input,textarea{
     width: 100%;
     margin-top: 2em;
@@ -113,6 +121,10 @@ form button{
     margin-bottom: 2em;
     padding: .2em;
     font-size: 2rem;
+}
+
+div>h1{
+    text-align: center;
 }
 
 /* Table */
