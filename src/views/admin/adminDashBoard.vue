@@ -10,10 +10,10 @@
         <section class="sidenav">
             <ul >
                 
-                <button @click="isActiveChange(nav.name)" v-for="nav in navigation" :key="nav.name" :to="nav.to"><li>{{nav.name}}</li><i :class=nav.icon :style=nav.color></i></button>
+                <router-link v-for="nav in navigation" :key="nav.name" :to="{name:nav.to.name}"><li>{{nav.name}}</li><i :class=nav.icon :style=nav.color></i></router-link>
 
 
-                <button class="logout" @click="logout"><li>Logout</li><i style="color:red" class="fa fa-power-off fa-2x"></i></button>
+                <router-link to="{name:'adminDashBoard'}" class="logout" @click="logout"><li>Logout</li><i style="color:red" class="fa fa-power-off fa-2x"></i></router-link>
             </ul>
         </section>
 
@@ -29,16 +29,12 @@
             </div>
         
                 <div class="content">
-                    <Adminhome v-if="isActive==='Home'"/>
-                    <Adminservices v-if="isActive==='Services'"/>
-                    <Adminabout v-if="isActive==='About'"/>
-                    <Admintestimonails v-if="isActive==='Testimonials'"/>
-                    <Adminslides v-if="isActive==='Slides'"/>
-                    <Adminprojects v-if="isActive === 'Projects'"/>
-                    <Adminfaq v-if="isActive === 'FAQ'"/>
-                    <Adminblog v-if="isActive === 'Blog'"/>
-
+                    
+                     <router-view></router-view>
                 </div>
+
+
+               
             
 
             
@@ -55,14 +51,7 @@
 import { computed, ref } from "vue";
 import { useStore } from 'vuex';
 import { useRoute, useRouter } from 'vue-router';
-import Adminhome from '../../components/admin/Adminhome.vue';
-import Adminservices from '../../components/admin/Admin-services.vue';
-import Adminabout from '../../components/admin/Admin-about.vue';
-import Admintestimonails from '../../components/admin/Admin-testimonials.vue';
-import Adminslides from '../../components/admin/Admin-slides.vue';
-import Adminprojects from '../../components/admin/Admin-projects.vue';
-import Adminfaq from '../../components/admin/Admin-faq.vue';
-import Adminblog from '../../components/admin/Admin-blog.vue';
+
 
 // getting Admin navigation
 const store = useStore(); 
@@ -102,7 +91,7 @@ body,html{
     height: 100%;
 }
 #admin{
-    margin-top: 10em;
+    
     height: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -154,14 +143,14 @@ body,html{
     flex: 1;
     
 }
-.sidenav ul button{
+.sidenav ul a{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #642afb;
     border-radius: 5px;
 }
-.sidenav ul button {
+.sidenav ul a {
     padding: 1em;
     margin: .5em;
     cursor: pointer;
@@ -169,11 +158,11 @@ body,html{
     font-size: 1rem;
 }
 
-.sidenav ul button li {
+.sidenav ul a li {
     font-size: 1.5rem;
 }
 
-.sidenav ul button:hover {
+.sidenav ul a:hover {
     background-color: hsl(39, 94%, 62%);
     border-radius: 5px;
 }

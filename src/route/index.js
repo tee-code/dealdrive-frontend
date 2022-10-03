@@ -24,6 +24,13 @@ import AdminSignUp from "../views/admin/AdminSignUp.vue";
 import Adminhome from "../views/admin/Adminhome.vue";
 import Adminabout from "../views/admin/Adminabout.vue";
 import Adminservices from "../views/admin/Adminservices.vue";
+import AdminTestimonials from "../views/admin/AdminTestimonials.vue";
+import AdminSlides from "../views/admin/AdminSlides.vue";
+import AdminProjects from "../views/admin/AdminProjects.vue";
+import AdminBlog from "../views/admin/AdminBlog.vue";
+import AdminFaq from "../views/admin/AdminFaq.vue";
+
+
 
 
 const routes = [{
@@ -75,35 +82,20 @@ const routes = [{
             component: blogReadMore,
             name: "blogReadMore",
             props: true
-        },
+        }  
 
-        {
-            path: '/:catchAll(.*)',
-            component: NotFound,
-            name: "NotFound"
-        },
-        // Admin
+    ]
+},
 
-        {
-            path: '/admin-dashboard',
-            component: adminDashBoard,
-            name: "adminDashBoard",
-            meta: { requiresAuth: true },
-        },
+{
+    path: '/admin-dashboard',
+    redirect:'/Adminhome',
+    component: adminDashBoard,
+    name: "adminDashBoard",
+    meta: { requiresAuth: true },
+    children:[
 
-        {
-            path: '/Adminlogin',
-            component: Adminlogin,
-            name: "Adminlogin",
 
-        },
-
-        {
-            path: '/AdminSignUp',
-            component: AdminSignUp,
-            name: "AdminSignUp",
-
-        },
         {
             path: '/Adminhome',
             component: Adminhome,
@@ -123,9 +115,65 @@ const routes = [{
             component: Adminservices,
             name: "Adminservices",
             meta: { requiresAuth: true },
+        },
+
+        {
+            path: '/Admintestimonials',
+            component: AdminTestimonials,
+            name: "AdminTestimonials",
+            meta: { requiresAuth: true },
+        },
+
+        {
+            path: '/Adminslides',
+            component: AdminSlides,
+            name: "AdminSlides",
+            meta: { requiresAuth: true },
+        },
+
+        {
+            path: '/Adminprojects',
+            component: AdminProjects,
+            name: "AdminProjects",
+            meta: { requiresAuth: true },
+        },
+
+        {
+            path: '/Adminblog',
+            component: AdminBlog,
+            name: "AdminBlog",
+            meta: { requiresAuth: true },
+        },
+
+        {
+            path: '/Adminfag',
+            component: AdminFaq,
+            name: "AdminFaq",
+            meta: { requiresAuth: true },
         }
     ]
-}];
+},
+
+{
+    path: '/Admin/login',
+    component: Adminlogin,
+    name: "Adminlogin",
+
+},
+
+{
+    path: '/Admin/SignUp',
+    component: AdminSignUp,
+    name: "AdminSignUp",
+
+},
+{
+    path: '/:catchAll(.*)',
+    component: NotFound,
+    name: "NotFound"
+}
+
+];
 
 
 
