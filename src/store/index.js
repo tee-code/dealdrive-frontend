@@ -498,7 +498,7 @@ const store = createStore({
 
         postData: async({ commit }, { key, payload }) => {
 
-            const response = await axiosClient.post('createService', payload);
+            const response = await axiosClient.post(`${key}`, payload);
 
 
             // commit('setService', response.data, key);
