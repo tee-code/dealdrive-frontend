@@ -79,7 +79,15 @@ const about = {
     ]
 };
 
-const categories = [{ name: 'Web Apps', id: 1, class: ".filter-web" }, { name: 'Brand Designs', id: 2, class: ".filter-brand" }];
+const categories = [
+    { name: 'Web Apps', id: 1, class: ".filter-web" },
+    { name: 'Brand Designs', id: 2, class: ".filter-brand" }
+];
+
+const project_categories = [
+    { name: 'Web Apps', id: 1, class: "filter-web" },
+    { name: 'Brand Designs', id: 2, class: "filter-brand" }
+];
 
 const projects = [{
         id: 1,
@@ -435,6 +443,7 @@ const store = createStore({
         attendants,
         about,
         categories,
+        project_categories,
         projects,
         services,
         news,

@@ -3,7 +3,7 @@
         <div class="d-flex flex-row justify-content-between">
             <h1 class="section-title">Service section</h1>
             <button class="info bg-primary text-white border-0 px-4 mb-2" @click="toggleModal(0)">Create Service</button>
-            <BaseModal key="service.id" v-if="showModal && currentModalIndex == 0" @closeModal="toggleModal(0)">
+            <BaseModal v-if="showModal && currentModalIndex == 0" @closeModal="toggleModal(0)">
 
                     <h1 class="title">Create Service</h1>
 
@@ -21,7 +21,7 @@
 
                     </form>
 
-                </BaseModal>
+            </BaseModal>
         </div>
         
         <table style="width:100%">
@@ -43,7 +43,7 @@
                 <td>
                    <div class="button-section">
                         <button class="info" @click="toggleModal(service.id)">Edit</button>
-                        <button class="danger" @click="deleteData(service.id)" >Delete {{ service.id }}</button>
+                        <button class="danger" @click="deleteData(service.id)" >Delete </button>
                      </div> 
                 </td>
                 <BaseModal key="service.id" v-if="showModal && currentModalIndex == service.id" @closeModal="toggleModal(service.id)">
@@ -51,6 +51,8 @@
                     <h1 class="title">Service Edit Form {{service.title}}</h1>
 
                     <form id="updateService" @submit.prevent="updateData(service.id)">
+
+                        <img :src="service.image" alt="Current Image" width="100" height="100">
 
                         <input name="image" type="file" accept="image/*" placeholder="Chose image" @change="handleFileUpload( $event )">
                         
@@ -69,7 +71,6 @@
 
         </table>
 
-        
     </div>
 </template>
 
