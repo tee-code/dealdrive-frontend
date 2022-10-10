@@ -73,7 +73,7 @@
 
                     <h1 class="title">Edit Project {{project.name}}</h1>
 
-                    <form id="updateProject" @submit="updateData">
+                    <form id="updateProject" @submit="updateData(project.id)">
 
                     <img :src="project.image" alt="Current Project Image" width="100" height="100">
 
@@ -114,7 +114,6 @@
            
 
         </table>
-
     </div>
 
 </template>

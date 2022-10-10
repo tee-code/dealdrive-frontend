@@ -22,36 +22,36 @@ const adminnavigation = [
 ]
 
 const slides = [{
-        id: 0,
+        id: 1,
         title: 'GET MORE DONE WITH OUR SOFTWARE SOLUTIONS',
         caption: 'Accelerate your digital transformation with our branding and software development solutions',
         image: '/assets/images/hero-carousel/1.jpg'
     },
     {
-        id: 1,
+        id: 2,
         title: 'Particpate in Our Training',
         caption: 'Dealdrive Technology Skillup programs is a digital skill acquisition program that train you to be master of tech related skills in the field of design, software and web application',
         image: '/assets/images/page-header.jpg'
     },
     {
-        id: 2,
+        id: 3,
         title: 'GET MORE DONE WITH OUR SOFTWARE SOLUTIONS',
         caption: 'Accelerate your digital transformation with our branding and software development solutions',
         image: '/assets/images/hero-carousel/2.jpg'
     },
     {
-        id: 3,
+        id: 4,
         title: 'GET MORE DONE WITH OUR SOFTWARE SOLUTIONS',
         caption: 'Accelerate your digital transformation with our branding and software development solutions',
         image: '/assets/images/hero-carousel/3.jpg'
     },
     {
-        id: 4,
+        id: 5,
         title: 'GET MORE DONE WITH OUR SOFTWARE SOLUTIONS',
         caption: 'Accelerate your digital transformation with our branding and software development solutions',
         image: '/assets/images/hero-carousel/4.jpg'
     }, {
-        id: 5,
+        id: 6,
         title: 'GET MORE DONE WITH OUR SOFTWARE SOLUTIONS',
         caption: 'Accelerate your digital transformation with our branding and software development solutions',
         image: '/assets/images/hero-carousel/5.jpg'
@@ -494,8 +494,14 @@ const store = createStore({
 
             const response = await axiosClient.get(`/${key}`);
 
+            let result = response.data;
+
+            if (response.data.message == "Sorry No Data...") {
+                result = store.state[key].value;
+            }
+
             const data = {
-                response: response.data,
+                response: result,
                 key
             }
 
@@ -552,7 +558,6 @@ const store = createStore({
 
             return response.data;
         }
-
 
     },
     mutations: {
