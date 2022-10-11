@@ -12,9 +12,9 @@
 
                     <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
                             
-                    <input type="text" placeholder="Title">
+                    <input name="title" type="text" placeholder="Title">
 
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Caption"></textarea>
+                    <textarea name="caption" id="" cols="30" rows="10" placeholder="Caption"></textarea>
 
                     <button type="submit" class="success">Save</button>
 
@@ -52,9 +52,9 @@
 
                         <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
                                
-                        <input type="text" placeholder="Title" :value="slide.title">
+                        <input name="title" type="text" placeholder="Title" :value="slide.title">
 
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Caption" :value="slide.caption"></textarea>
+                        <textarea name="caption" id="" cols="30" rows="10" placeholder="Caption" :value="slide.caption"></textarea>
 
                         <button type="submit" class="success">Save</button>
                     </form>
@@ -87,7 +87,7 @@ let currentModalIndex = ref(null);
 
 
 function handleFileUpload(event){
-    service.image = event.target.files[0];
+    slide.image = event.target.files[0];
 }
 
 

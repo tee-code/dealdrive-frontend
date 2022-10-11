@@ -68,6 +68,7 @@ const socials = [
 const contacts = { email: 'dealdrivetechnology@gmail.com', phone: '+2348061467293' };
 
 const about = {
+    id: 1,
     image: "/assets/images/about.jpg",
     heading: 'Dealdrive Technology - your one-stop shop for your digital solution',
     short_desc: 'We believe there is a software solution to every hard craked experience in a brand. What we do is to ease the experience.',
@@ -188,8 +189,8 @@ const services = [
 const news = { title: "Particpate in Our Training", description: "Dealdrive Technology Skillup programs is a digital skill acquisition program that train you to be master of tech related skills in the field of design, software and web application" };
 
 const testimonials = [
-    { star: "5", id: "0", image: "/assets/images/mathics.jpeg", author: "Abasiofon Peter", title: "Scribe, The Mathics", description: "Thank you Dealdrive technology. You did a great job and your service delivery is quite commendable." },
-    { star: "5", id: "1", image: "/assets/images/moses.jpeg", author: "David Offiong", title: "Business Owner", description: "Your services are top-notch bro I love how organized it is And yes the designs are superb! Well done!" },
+    { star: "5", id: "1", image: "/assets/images/mathics.jpeg", author: "Abasiofon Peter", title: "Scribe, The Mathics", description: "Thank you Dealdrive technology. You did a great job and your service delivery is quite commendable." },
+    { star: "5", id: "2", image: "/assets/images/moses.jpeg", author: "David Offiong", title: "Business Owner", description: "Your services are top-notch bro I love how organized it is And yes the designs are superb! Well done!" },
 ];
 
 const contactus = { email1: "torwisdom4@gmail.com", email2: "dealdrivetechnology@gmail.com", phone1: "+2348182041899", phone2: "+2348061467293", address: "81 Itu road, Uyo, Akwa Ibom, Nigeria" };
@@ -488,6 +489,7 @@ const store = createStore({
             commit('logout');
 
             return response.data;
+
         },
 
         getData: async({ commit }, key) => {
@@ -497,8 +499,12 @@ const store = createStore({
             let result = response.data;
 
             if (response.data.message == "Sorry No Data...") {
-                result = store.state[key].value;
+
+                result = store.state[key];
+
             }
+
+            // console.log(response.data, result)
 
             const data = {
                 response: result,
@@ -507,7 +513,7 @@ const store = createStore({
 
             commit('setData', data);
 
-            return response.data;
+            return result;
 
         },
 
@@ -568,7 +574,7 @@ const store = createStore({
         },
         setData: (state, { response, key }) => {
             // console.log(response, key);
-            state[key] = response.data;
+            state[key] = response;
         },
         setUserData: (state, { data, token }) => {
             state.user.data = data;

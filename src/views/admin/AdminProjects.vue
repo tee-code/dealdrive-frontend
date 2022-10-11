@@ -82,6 +82,7 @@
                     <select name="class" id="">
 
                         <option value="">---Select Class---</option>
+
                         <option v-for="category in project_categories" :key="category.id" :value="category.class" :selected="project.class == category.class">{{category.name}}</option>
                     
                     </select>
@@ -142,7 +143,7 @@ let showModal=ref(false);
 let currentModalIndex = ref(null);
 
 function handleFileUpload(event){
-    service.image = event.target.files[0];
+    project.image = event.target.files[0];
 }
 
 function toggleModal(id) {
