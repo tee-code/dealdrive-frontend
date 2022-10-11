@@ -2,7 +2,7 @@
     <div>
         <div class="d-flex flex-row justify-content-between">
             <h1 class="section-title">Slide Section</h1>
-            <button class="info bg-primary text-white border-0 px-4 mb-2" @click="toggleModal(0)">Create Project</button>
+            <button class="info bg-primary text-white border-0 px-4 mb-2" @click="toggleModal(0)">Create Slide</button>
             
             <BaseModal v-if="showModal && currentModalIndex == 0" @closeModal="toggleModal(0)">
 
