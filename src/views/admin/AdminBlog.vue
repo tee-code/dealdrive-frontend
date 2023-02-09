@@ -1,6 +1,37 @@
 <template>
     <div>
-        <h1>Blog section</h1>
+        <div class="d-flex flex-row justify-content-between">
+            <h1 class="section-title">Blog Section</h1>
+            <button class="info bg-primary text-white border-0 px-4 mb-2" @click="toggleModal(0)">Create Post</button>
+            
+            <BaseModal v-if="showModal && currentModalIndex == 0" @closeModal="toggleModal(0)">
+
+                    <h1 class="title">Create Post</h1>
+
+                    <form id="createPost" @submit="createData">
+
+                    <input name="image" type="file" accept="image/*"  placeholder="Choose image">
+                
+                    <input name="title" type="text" placeholder="Title">
+    
+                    <input name="description" type="text" placeholder="Description">
+    
+                    <input name="date" type="date" placeholder="Date">
+    
+                    <input name="category" type="text" placeholder="Category">
+    
+                    <input name = "username" type="text" placeholder="User profile name">
+    
+                    <label for="avatar">User image</label>
+                    
+                    <input id="avatar" name="avatar" type="file" placeholder="Chose image" accept="image/*">
+
+                    <button type="submit" class="success">Save</button>
+
+                </form>
+
+            </BaseModal>
+        </div>
         <table style="width:100%">
             <tr>
                 <th>Id</th>
@@ -16,69 +47,155 @@
             </tr>
 
 
-            <tr>
-                <td>1</td>
-                <td>EIGHT STRATEGIES FOR BUSINESS GROWTH</td>
-                <td>Build A Brand</td>
-                <td>02/ 08/ 2022</td>
-                <td>Business</td>
+            <tr v-for="post in posts" :key="post.id">
+                <td>{{post.id}}</td>
+                <td>{{post.title}}</td>
+                <td>{{post.description}}</td>
+                <td>{{post.date}}</td>
+                <td>{{post.category}}</td>
                 
-                <td><img style="width:100px; hieght:100px" src='/assets/images/post/post-landscape-2.jpg' alt=""></td>
+                <td><img style="width:100px; hieght:100px" :src='post.image' alt=""></td>
 
-                <td>Wade Warren</td>
-                <td><img style="width:100px; hieght:100px" src='/assets/images/me.png' alt=""></td>
+                <td>{{post.userProfile.name}}</td>
+                <td><img style="width:100px; hieght:100px" :src='post.userProfile.image' alt=""></td>
 
                 <td>
                    <div class="button-section">
-                        <button class="info" @click="toggleModal">Edit</button>
-                        <button class="danger" >Delete</button>
-                     </div> 
+                        <button class="info" @click="toggleModal(post.id)">Edit</button>
+                        <button class="danger" @click="deleteData(post.id)" >Delete </button>
+                    </div> 
                 </td>
+
+                <BaseModal key="post.id" v-if="showModal && currentModalIndex == post.id" @closeModal="toggleModal(post.id)">
+
+                    <h1 class="title">Post Edit Form {{post.title}}</h1>    
+
+                    <form id="updatePost" @submit.prevent="updateData(post.id)">
+                        
+                        <img :src="post.image" alt="Current Image" width="100" height="100" />
+                        
+                        <input name="image" type="file" accept="image/*"  placeholder="Choose image">
+                
+                        <input name="title" type="text" placeholder="Title" :value="post.title">
+        
+                        <input name="description" type="text" placeholder="Description" :value="post.description">
+        
+                        <input name="date" type="date" placeholder="Date" :value="post.date">
+        
+                        <input name="category" type="text" placeholder="Category" :value="post.category">
+        
+                        <input name = "username" type="text" placeholder="User profile name" :value="post.userProfile.name">
+                        
+                        <img :src="post.userProfile.image" alt="Current Image" width="100" height="100" />
+
+                        <label for="avatar">User image</label>
+                        
+                        <input id="avatar" name="avatar" type="file" placeholder="Chose image" accept="image/*">
+    
+                        <button type="submit" class="success">Save</button>
+                      
+                        
+                    </form>
+                </BaseModal>
             </tr>
            
 
         </table>
 
 
-        <BaseModal v-show="showModal" @closeModal="toggleModal">
-            <h1 class="title">Blog Edit Form</h1>
-
-            <form action="">
-                
-                <input type="text" placeholder="Id">
-                
-                <input type="text" placeholder="Title">
-
-                <input type="text" placeholder="Description">
-
-                <input type="date" placeholder="Date">
-
-                <input type="text" placeholder="Category">
-
-                <input type="file" placeholder="Chose image">
-
-                <input type="text" placeholder="User profile name">
-
-                <label for="">User image</label>
-                <input type="file" placeholder="Chose image">
-                
-            </form>
-        </BaseModal>
+       
     </div>
 </template>
 
+
 <script setup>
-import { ref } from "vue";
+
+import {computed, onMounted, ref} from 'vue'
+import { useStore } from 'vuex';
 import BaseModal from '../../components/BaseModal.vue';
 
-let showModal=ref(false)
+const store = useStore();
 
-    function toggleModal() {
-        showModal.value = !showModal.value
-        console.log(showModal)
+const posts = computed(() => {
+    return store.state.posts;
+});
+
+// console.log(services, ' services')
+
+store.dispatch('getData', 'posts');
+
+
+let showModal=ref(false);
+
+let currentModalIndex = ref(null);
+
+function toggleModal(id) {
+
+    currentModalIndex.value = id;
+
+    showModal.value = !showModal.value;
+
+    // console.log(showModal, currentModalIndex.value);
+
+}
+
+function deleteData(id){
+
+    store.dispatch('deleteData', `posts/${id}`)
+        .then((data) => {
+            store.dispatch('getData', 'posts');
+            alert('Deleted Successfully!');
+        }).catch((e) => {
+            alert('Uable to delete data');
+        });
+}
+
+function createData(e){
+
+    e.preventDefault();
+
+    const form = document.querySelector('form#createPost');
+    
+    let formData = new FormData(form);
+
+    const data = {
+        key: 'posts',
+        payload: formData
     }
 
+    store.dispatch('postFormData', data)
+        .then((data) => {
+            store.dispatch('getData', 'posts');
+            alert('Successfully Created!');
+        }).catch((e) => {
+            alert('Unable to create new data.');
+        });
+
+}
+
+function updateData(id){
+
+    const form = document.querySelector('form#updatePost');
+
+    let formData = new FormData(form);
+
+    const data = {
+        key: `posts/${id}`,
+        payload: formData
+    }
+
+    store.dispatch('updateFormData', data)
+        .then((data) => {
+            store.dispatch('getData', 'posts');
+            alert('Successfully Updated!!!');
+        }).catch((e) => {
+            alert('Unable to update data!!!');
+        });
+}
+
 </script>
+
+
 
 <style scoped>
 div> h1{

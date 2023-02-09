@@ -44,7 +44,7 @@
                     
                     <h1 class="title">FAQ Edit Form </h1>
 
-                    <form id="updateFAQ" @submit="updateData(faq.id)">
+                    <form id="updateFAQ" @submit.prevent="updateData(faq.id)">
 
                         <textarea name="question" id="" cols="30" rows="10" placeholder="Question" :value="faq.question"></textarea>
 
@@ -94,11 +94,15 @@ function toggleModal(id) {
 
 function deleteData(id){
 
-    store.dispatch('deleteData', `deleteFAQ/${id}`)
+    store.dispatch('deleteData', `faqs/${id}`)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'faqs');
+            alert('Deleted Successfully!!!');
+            // console.log(data, ' data ');
         }).catch((e) => {
             console.log(e);
+            alert('Unable to delete!!!');
+            
         });
 }
 
@@ -111,15 +115,18 @@ function createData(e){
     let formData = new FormData(form);
 
     const data = {
-        key: 'createFAQ',
+        key: 'faqs',
         payload: formData
     }
 
     store.dispatch('postFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'faqs');
+            // console.log(data, ' data ');
+            alert('Created Successfully!!!');
         }).catch((e) => {
-            console.log(e);
+            // console.log(e);
+            alert('Unable to delete');
         });
 
 }
@@ -131,15 +138,18 @@ function updateData(id){
     let formData = new FormData(form);
 
     const data = {
-        key: `updateFAQ/${id}`,
+        key: `faqs/${id}`,
         payload: formData
     }
 
     store.dispatch('updateFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'faqs');
+            // console.log(data, ' data ');
+            alert('Updated Successfully!!!');
         }).catch((e) => {
-            console.log(e);
+            // console.log(e);
+            alert('Unable to update');
         });
 
 }

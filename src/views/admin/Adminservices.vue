@@ -46,13 +46,14 @@
                         <button class="danger" @click="deleteData(service.id)" >Delete </button>
                      </div> 
                 </td>
+
                 <BaseModal key="service.id" v-if="showModal && currentModalIndex == service.id" @closeModal="toggleModal(service.id)">
 
                     <h1 class="title">Service Edit Form {{service.title}}</h1>
+                    
+                    <img :src="service.image" alt="Current Image" width="100" height="100">
 
                     <form id="updateService" @submit.prevent="updateData(service.id)">
-
-                        <img :src="service.image" alt="Current Image" width="100" height="100">
 
                         <input name="image" type="file" accept="image/*" placeholder="Chose image" @change="handleFileUpload( $event )">
                         
@@ -76,7 +77,7 @@
 
 <script setup>
 
-import {computed, ref} from 'vue'
+import {computed, onMounted, ref} from 'vue'
 import { useStore } from 'vuex';
 import BaseModal from '../../components/BaseModal.vue';
 
@@ -85,6 +86,8 @@ const store = useStore();
 const services = computed(() => {
     return store.state.services;
 });
+
+// console.log(services, ' services')
 
 store.dispatch('getData', 'services');
 
@@ -103,7 +106,7 @@ let currentModalIndex = ref(null);
 // }
 
 function handleFileUpload(event){
-    service.image = event.target.files[0];
+    //service.image = event.target.files[0];
 }
 
 
@@ -125,11 +128,12 @@ function toggleModal(id) {
 
 function deleteData(id){
 
-    store.dispatch('deleteData', `deleteService/${id}`)
+    store.dispatch('deleteData', `services/${id}`)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'services');
+            alert('Deleted Successfully!');
         }).catch((e) => {
-            console.log(e);
+            alert('Uable to delete data');
         });
 }
 
@@ -142,15 +146,16 @@ function createData(e){
     let formData = new FormData(form);
 
     const data = {
-        key: 'createService',
+        key: 'services',
         payload: formData
     }
 
     store.dispatch('postFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'services');
+            alert('Successfully Created!');
         }).catch((e) => {
-            console.log(e);
+            alert('Unable to create new data.');
         });
 
 }
@@ -158,23 +163,22 @@ function createData(e){
 function updateData(id){
 
     const form = document.querySelector('form#updateService');
-    
+
     let formData = new FormData(form);
 
     const data = {
-        key: `updateService/${id}`,
+        key: `services/${id}`,
         payload: formData
     }
 
     store.dispatch('updateFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'services');
+            alert('Successfully Updated!!!');
         }).catch((e) => {
-            console.log(e);
+            alert('Unable to update data!!!');
         });
-
 }
-
 
 </script>
 

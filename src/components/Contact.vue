@@ -58,6 +58,7 @@
         </div>
 
        <form ref="contact_form" @submit.prevent="postData" class="send">
+         <h2>Let's Have Your Feedback!</h2>
             <div class="row">
               <div class="col-md-6 form-group">
                 <input v-model="form.user_name" type="text" name="user_name" class="form-control" id="name" placeholder="Your Name" required>
@@ -132,10 +133,10 @@ const postData = () => {
   store.dispatch('postData', data)
   .then((data) => {
     sendEmail();
-    console.log(data);
+    // console.log(data);
   })
   .catch((e) => {
-    console.log(e);
+    // console.log(e);
   });
 }
 

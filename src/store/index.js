@@ -3,6 +3,9 @@ import axiosClient from '../axios';
 
 const adminnavigation = [
     { name: 'Home', to: { name: 'Adminhome' }, icon: 'fa fa-home fa-2x', color: { color: 'white' } },
+    { name: 'Users', to: { name: 'AdminUsers' }, icon: 'fa fa-users fa-2x', color: { color: 'white' } },
+    { name: 'Feedbacks', to: { name: 'AdminFeedbacks' }, icon: 'fa fa-users fa-2x', color: { color: 'white' } },
+    { name: 'Quotes', to: { name: 'AdminQuotes' }, icon: 'fa fa-users fa-2x', color: { color: 'white' } },
 
     { name: 'Services', to: { name: 'Adminservices' }, icon: 'fa fa-wheelchair-alt fa-2x', color: { color: 'tomato' } },
 
@@ -14,6 +17,7 @@ const adminnavigation = [
 
     { name: 'Projects', to: { name: 'AdminProjects' }, icon: 'fa fa-archive fa-2x', color: { color: 'skyblue' } },
 
+    { name: 'Teams', to: { name: 'AdminTeams' }, icon: 'fa fa-users fa-2x', color: { color: 'skyblue' } },
 
     { name: 'Blog', to: { name: 'AdminBlog' }, icon: 'fa fa-sliders fa-2x', color: { color: 'orange' } },
 
@@ -67,7 +71,7 @@ const socials = [
 
 const contacts = { email: 'dealdrivetechnology@gmail.com', phone: '+2348061467293' };
 
-const about = {
+const about = [{
     id: 1,
     image: "/assets/images/about.jpg",
     heading: 'Dealdrive Technology - your one-stop shop for your digital solution',
@@ -78,7 +82,7 @@ const about = {
         "With our experienced team of designers and developers, we can bring your business to limelight.",
         "We provide the best value for your money; Every service you receive from us comes with a guarantee that secure your investment.",
     ]
-};
+}];
 
 const categories = [
     { name: 'Web Apps', id: 1, class: ".filter-web" },
@@ -92,6 +96,7 @@ const project_categories = [
 
 const projects = [{
         id: 1,
+        status: '1',
         class: "filter-brand",
         name: "De String Electrical",
         image: "/assets/images/projects/branding/DSTRING.jpg",
@@ -113,6 +118,7 @@ const projects = [{
     },
     {
         id: 2,
+        status: "1",
         class: "filter-brand",
         name: "Savoury Crunches",
         image: "/assets/images/projects/branding/savoury.jpg",
@@ -135,6 +141,7 @@ const projects = [{
     // web app
     {
         id: 3,
+        status: "0",
         class: "filter-web",
         name: "Reform7",
         image: "/assets/images/projects/webServices/sld1.PNG",
@@ -157,6 +164,7 @@ const projects = [{
 
     {
         id: 4,
+        status: "0",
         class: "filter-web",
         name: "Sound mind ministries",
         image: "/assets/images/projects/webServices/sld9.jpeg",
@@ -313,7 +321,7 @@ const teams = [{
     },
 ];
 
-const blog = [{
+const posts = [{
         title: 'EIGHT STRATEGIES FOR BUSINESS GROWTH',
         description: "Build A Brand",
         date: '02/ 08/ 2022',
@@ -449,9 +457,12 @@ const store = createStore({
         services,
         news,
         testimonials,
-        blog,
+        posts,
+        quotes: [],
+        users: [],
+        messages: [],
         user: {
-            data: {},
+            data: JSON.parse(sessionStorage.getItem('data')),
             token: sessionStorage.getItem('TOKEN')
         },
 
@@ -459,7 +470,18 @@ const store = createStore({
         adminnavigation
 
     },
-    getters: {},
+    getters: {
+        completedProjects: state => {
+            return state.projects.filter((project) => project.status == '1');
+        },
+        ongoingProjects: state => {
+            const ongoingProjects = state.projects.filter((project) => project.status == '0');
+            return ongoingProjects;
+        },
+        allProjects: state => {
+            return state.projects;
+        }
+    },
     actions: {
 
         register: async({ commit }, data) => {
@@ -498,6 +520,8 @@ const store = createStore({
 
             let result = response.data;
 
+            // console.log(result, ' get result');
+
             if (response.data.message == "Sorry No Data...") {
 
                 result = store.state[key];
@@ -512,6 +536,8 @@ const store = createStore({
             }
 
             commit('setData', data);
+
+            // console.log(data, ' set data')
 
             return result;
 
@@ -530,6 +556,8 @@ const store = createStore({
 
         postFormData: async({ commit }, { key, payload }) => {
 
+            // console.log(payload.get('aim'), ' gap');
+
             const response = await axiosClient.post(`${key}`, payload, {
                 headers: {
                     'content-type': 'multipart/form-data'
@@ -545,25 +573,37 @@ const store = createStore({
 
         updateFormData: async({ commit }, { key, payload }) => {
 
-            const response = await axiosClient.put(`${key}`, payload, {
-                headers: {
+            let headers = {};
+
+            if (payload.get('image') && payload.get('image').name != "") {
+                headers = {
                     'content-type': 'multipart/form-data'
-                }
+                };
+            } else {
+                headers = {
+                    'content-type': 'application/x-www-form-urlencoded'
+                };
+            }
+
+
+            const response = await axiosClient.post(`${key}`, payload, {
+                headers: headers
             });
 
-            // console.log(response, ' response ');
+            // console.log(response);
 
-            // commit('setData', key, response.data);
+            // commit('setData', "services", response.data);
 
             return response.data;
+
         },
 
         deleteData: async({ commit }, key) => {
 
-            const response = await axiosClient.delete(`${key}`);
+            await axiosClient.delete(`${key}`);
 
-            return response.data;
-        }
+            return true;
+        },
 
     },
     mutations: {
@@ -571,16 +611,21 @@ const store = createStore({
             state.user.token = null;
             state.user.data = {};
             sessionStorage.removeItem("TOKEN");
+            sessionStorage.removeItem("data");
         },
         setData: (state, { response, key }) => {
-            // console.log(response, key);
-            state[key] = response;
+            // console.log(response, key, ' set data');
+            state[key] = response.data;
+            // console.log(state.projects, ' state.projects')
         },
-        setUserData: (state, { data, token }) => {
-            state.user.data = data;
+        setUserData: (state, { user, token }) => {
+            state.user.data = user;
             state.user.token = token;
+            // console.log(user, 'user data')
             sessionStorage.setItem('TOKEN', token);
-        }
+            sessionStorage.setItem('user', JSON.stringify(user));
+        },
+
     },
     modules: {}
 

@@ -1,6 +1,6 @@
 <template>
    
-<form ref="contact_form" @submit.prevent="sendEmail" class="send quote-form">
+<form ref="contact_form" @submit.prevent="postData" class="send quote-form">
                       <h5>TAKE THE LEAD
                           TO DIGITIZING
                           YOUR BUSINESS
@@ -88,6 +88,30 @@ const form = {
     template_id: "dealdrive_0fpecbe",
     user_id: "84Cf-v4RU4LGcbfYz"
 };
+
+const postData = () => {
+  const data = {
+    payload: {
+      name_of_project: form.project,
+      email: form.user_email,
+      location: form.location,
+      timeFrame: form.time,
+      budget: form.budget,
+      name_of_company: form.user_name,
+      message: form.message,
+    },
+    key: 'quotes'
+  }
+
+  store.dispatch('postData', data)
+  .then((data) => {
+    sendEmail();
+    console.log(data);
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+}
 
 
 const sendEmail = () => {

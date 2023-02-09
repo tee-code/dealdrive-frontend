@@ -1,22 +1,23 @@
 <script setup>
 import { ref } from 'vue';
 import FAQ from '../components/FAQ.vue';
+import Contact from '../components/Contact.vue';
 
 import { useStore } from 'vuex';
 import { computed } from 'vue';
 
-defineProps({
-  msg: String
-});
+    defineProps({
+        msg: String
+    });
 
 
-const store = useStore();
+    const store = useStore();
 
-const services = computed(() => {
-  return store.state.services;
-});
+    const services = computed(() => {
+        return store.state.services;
+    });
 
-store.dispatch('getData', 'services');
+    store.dispatch('getData', 'services');
 
 </script>
 
@@ -79,6 +80,8 @@ store.dispatch('getData', 'services');
         </section>
         <!-- End Services Section -->
         <FAQ />
+
+        <Contact />
 
     </main>
     <!-- End #main -->

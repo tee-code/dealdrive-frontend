@@ -29,13 +29,13 @@
                 <td>
                    <div class="button-section">
                         <button class="info" @click="toggleModal(about.id)">Edit</button>
-                        <button class="danger" @click="deleteData(about.id)">Delete</button>
+                        <!-- <button class="danger" @click="deleteData(about.id)">Delete</button> -->
                      </div> 
                 </td>
                 <BaseModal v-if="showModal && currentModalIndex == about.id" @closeModal="toggleModal(about.id)">
                     <h1 class="title">About Us Edit Form </h1>
 
-                    <form id="updateAboutUs" @submit="updateData(about.id)">
+                    <form id="updateAboutUs" @submit.prevent="updateData(about.id)">
                         
                         <img :src="about.image" alt="Current Slide Image" width="100" height="100">
 
@@ -45,7 +45,7 @@
                         
                         <input name="short_desc" type="text" placeholder="Short description" :value="about.short_desc">
 
-                        <textarea v-for="(list,index) in about.list" :key="list" :name="'list_'+index+1" id="" cols="30" rows="10" :placeholder="'List ' +index+1" :value="list"></textarea>
+                        <textarea v-for="(list,index) in about.list" :key="list" :name="'list_'+(index+1)" id="" cols="30" rows="10" :placeholder="'List ' +index+1" :value="list"></textarea>
 
                         <button type="submit" class="success">Save</button>
 
@@ -71,20 +71,19 @@ import BaseModal from '../../components/BaseModal.vue';
 const store = useStore();
 
 const about = computed(() => {
-    return store.state.about;
+    return store.state.about[0];
 });
 
 store.dispatch('getData', 'about');
-
 
 let showModal=ref(false);
 
 let currentModalIndex = ref(null);
 
 
-function handleFileUpload(event){
-    about.image = event.target.files[0];
-}
+// function handleFileUpload(event){
+//     about.image = event.target.files[0];
+// }
 
 
 function toggleModal(id) {
@@ -97,15 +96,16 @@ function toggleModal(id) {
 
 }
 
-function deleteData(id){
+// function deleteData(id){
 
-    store.dispatch('deleteData', `deleteAboutUs/${id}`)
-        .then((data) => {
-            console.log(data, ' data ');
-        }).catch((e) => {
-            console.log(e);
-        });
-}
+//     store.dispatch('deleteData', `deleteAboutUs/${id}`)
+//         .then((data) => {
+//             store.dispatch('getData', 'about');
+//             alert('Deleted Successfully!!!');
+//         }).catch((e) => {
+//             alert('Unable to delete.');
+//         });
+// }
 
 
 function updateData(id){
@@ -121,9 +121,12 @@ function updateData(id){
 
     store.dispatch('updateFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            
+            store.dispatch('getData', 'about');
+            alert('Successfully Created!!!');
         }).catch((e) => {
-            console.log(e);
+            alert('Unable to update.');
+            // console.log(e, "inside data");
         });
 
 }

@@ -1,5 +1,7 @@
 <template>
+
     <div>
+
        <div class="d-flex flex-row justify-content-between">
 
             <h1 class="section-title">Testimonials Section</h1>
@@ -57,7 +59,7 @@
 
                     <h1 class="title">Edit Testimonial {{ testimonial.author }}</h1>
 
-                    <form id="updateTestimonial" @submit="updateData(testimonial.id)">
+                    <form id="updateTestimonial" @submit.prevent="updateData(testimonial.id)">
 
                         <img :src="testimonial.image" alt="Current Image" width="100" height="100">
 
@@ -105,9 +107,9 @@ let showModal=ref(false);
 let currentModalIndex = ref(null);
 
 
-function handleFileUpload(event){
-    testimonial.image = event.target.files[0];
-}
+// function handleFileUpload(event){
+//     testimonial.image = event.target.files[0];
+// }
 
 
 function toggleModal(id) {
@@ -122,11 +124,14 @@ function toggleModal(id) {
 
 function deleteData(id){
 
-    store.dispatch('deleteData', `deleteTestimonial/${id}`)
+    store.dispatch('deleteData', `testimonials/${id}`)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'testimonials');
+            alert('Deleted Successfully!!!')
+            // console.log(data, ' data ');
         }).catch((e) => {
-            console.log(e);
+            alert('Unable to delete.')
+            // console.log(e);
         });
 }
 
@@ -139,15 +144,19 @@ function createData(e){
     let formData = new FormData(form);
 
     const data = {
-        key: 'createTestimonial',
+        key: 'testimonials',
         payload: formData
     }
 
     store.dispatch('postFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'testimonials');
+            alert('Created Successfully!!!');
+
+            // console.log(data, ' data ');
         }).catch((e) => {
-            console.log(e);
+            // console.log(e);
+            alert('Unable to create.');
         });
 
 }
@@ -159,14 +168,17 @@ function updateData(id){
     let formData = new FormData(form);
 
     const data = {
-        key: `updateTestimonial/${id}`,
+        key: `testimonials/${id}`,
         payload: formData
     }
 
     store.dispatch('updateFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'testimonials');
+            alert('Successfully Updated!!!');
+            // console.log(data, ' data ');
         }).catch((e) => {
+            // alert('Unable to update');
             console.log(e);
         });
 

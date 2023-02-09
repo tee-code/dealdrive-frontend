@@ -8,8 +8,10 @@ defineProps({
   msg: String
 })
 const blogs = computed(()=>{
-  return store.state.blog
-})
+  return store.state.posts
+});
+
+store.dispatch('getData', 'posts');
 
 </script>
 

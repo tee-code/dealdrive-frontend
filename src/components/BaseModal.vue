@@ -1,6 +1,6 @@
 <template>
     <!-- <Teleport to="body"> -->
-        <div class="modal">
+        <div class="modal mt-5">
         <div class="modal-content">
             <div v-show="showButton">
                 
@@ -31,13 +31,13 @@
 <style scoped>
 .modal{
     position: absolute;
-    top: 0;
+    top: 5%;
     left: 0;
     width: 100%;
     height: auto;
     background-color: black;
     opacity: .9;
-    z-index: 10;
+    z-index: 100;
 
     display: flex;
     justify-content: center;

@@ -10,7 +10,16 @@
                     <form id="createProject" @submit="createData">
 
                     <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
-                                        
+                
+                    <select name="status" id="">
+
+                        <option value="0">---Select Status---</option>
+
+                        <option value="0">Ongoing</option>
+                        <option value="1">Finished</option>
+                        
+                    </select>
+
                     <select name="class" id="">
                         <option value="">---Select Class---</option>
                         <option v-for="category in project_categories" :key="category.id" :value="category.class">{{category.name}}</option>
@@ -19,15 +28,17 @@
 
                     <input name="name" type="text" placeholder="Name">
 
+                    <input name="url" type="text" placeholder="Url">
+
                     <textarea name="desc" id="" cols="30" rows="10" placeholder="Description"></textarea>
 
-                    <textarea name="full_desc_aim" id="" cols="30" rows="10" placeholder="Full-desc Aim"></textarea>
+                    <textarea name="aim" id="" cols="30" rows="10" placeholder="Full-desc Aim"></textarea>
 
-                    <textarea name="full_desc_gap" id="" cols="30" rows="10" placeholder="Full-desc Gap"></textarea>
+                    <textarea name="gap" id="" cols="30" rows="10" placeholder="Full-desc Gap"></textarea>
 
-                    <textarea name="full_desc_solution" id="" cols="30" rows="10" placeholder="Full-desc Solution"></textarea>
+                    <textarea name="solution" id="" cols="30" rows="10" placeholder="Full-desc Solution"></textarea>
 
-                    <textarea name="full_desc_optimization" id="" cols="30" rows="10" placeholder="Full-desc Optimization"></textarea>
+                    <textarea name="optimization" id="" cols="30" rows="10" placeholder="Full-desc Optimization"></textarea>
 
                     <textarea name="result_title" id="" cols="30" rows="10" placeholder="Result Title"></textarea>
 
@@ -48,6 +59,7 @@
                 <th>Name</th>
                 <th>Short Description</th>
                 <th>Image</th>
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
 
@@ -63,6 +75,9 @@
 
                 <td><img style="width:100px; hieght:100px" :src="project.image" :alt="project.name + ' Image'"></td>
 
+                <td v-if="project.status == 1">Completed</td>
+                <td v-if="project.status == 0">Ongoing</td>
+
                 <td> 
                    <div class="button-section">
                         <button class="info" @click="toggleModal(project.id)">Edit</button>
@@ -73,12 +88,21 @@
 
                     <h1 class="title">Edit Project {{project.name}}</h1>
 
-                    <form id="updateProject" @submit="updateData(project.id)">
+                    <form id="updateProject" @submit.prevent="updateData(project.id)">
 
                     <img :src="project.image" alt="Current Project Image" width="100" height="100">
 
                     <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
                                         
+                    <select name="status" id="">
+
+                        <option value="0">---Select Status---</option>
+
+                        <option value="0" :selected="project.status == 0">Ongoing</option>
+                        <option value="1" :selected="project.status == 1">Finished</option>
+
+                    </select>
+
                     <select name="class" id="">
 
                         <option value="">---Select Class---</option>
@@ -89,15 +113,17 @@
 
                     <input name="name" type="text" placeholder="Name" :value="project.name">
 
+                    <input name="url" type="text" placeholder="URL" :value="project.url">
+
                     <textarea name="desc" id="" cols="30" rows="10" placeholder="Description" :value="project.desc"></textarea>
 
-                    <textarea name="full_desc_aim" id="" cols="30" rows="10" placeholder="Full-desc Aim" :value="project.full_desc.aim"></textarea>
+                    <textarea name="aim" id="" cols="30" rows="10" placeholder="Full-desc Aim" :value="project.full_desc.aim"></textarea>
 
-                    <textarea name="full_desc_gap" id="" cols="30" rows="10" placeholder="Full-desc Gap" :value="project.full_desc.gap"></textarea>
+                    <textarea name="gap" id="" cols="30" rows="10" placeholder="Full-desc Gap" :value="project.full_desc.gap"></textarea>
 
-                    <textarea name="full_desc_solution" id="" cols="30" rows="10" placeholder="Full-desc Solution" :value="project.full_desc.solution"></textarea>
+                    <textarea name="solution" id="" cols="30" rows="10" placeholder="Full-desc Solution" :value="project.full_desc.solution"></textarea>
 
-                    <textarea name="full_desc_optimization" id="" cols="30" rows="10" placeholder="Full-desc Optimization" :value="project.full_desc.optimization"></textarea>
+                    <textarea name="optimization" id="" cols="30" rows="10" placeholder="Full-desc Optimization" :value="project.full_desc.optimization"></textarea>
 
                     <textarea name="result_title" id="" cols="30" rows="10" placeholder="Result Title" :value="project.full_desc.result.title"></textarea>
 
@@ -136,15 +162,15 @@ const project_categories = computed(() => {
     return store.state.project_categories;
 })
 
-// store.dispatch('getData', 'projects');
+store.dispatch('getData', 'projects');
 
 let showModal=ref(false);
 
 let currentModalIndex = ref(null);
 
-function handleFileUpload(event){
-    project.image = event.target.files[0];
-}
+// function handleFileUpload(event){
+//     project.image = event.target.files[0];
+// }
 
 function toggleModal(id) {
 
@@ -158,11 +184,14 @@ function toggleModal(id) {
 
 function deleteData(id){
 
-    store.dispatch('deleteData', `deleteProject/${id}`)
+    store.dispatch('deleteData', `projects/${id}`)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'projects');
+            // console.log(data, ' data ');
+            alert('Deleted Successfully');
         }).catch((e) => {
-            console.log(e);
+            // console.log(e);
+            alert('Unable to delete');
         });
 }
 
@@ -175,15 +204,18 @@ function createData(e){
     let formData = new FormData(form);
 
     const data = {
-        key: 'createProject',
+        key: 'projects',
         payload: formData
     }
 
     store.dispatch('postFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'projects');
+            // console.log(data, ' data ');
+            alert('Created Successfully!!!');
         }).catch((e) => {
             console.log(e);
+            alert('Unable to create');
         });
 
 }
@@ -195,15 +227,18 @@ function updateData(id){
     let formData = new FormData(form);
 
     const data = {
-        key: `updateProject/${id}`,
+        key: `projects/${id}`,
         payload: formData
     }
 
     store.dispatch('updateFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            store.dispatch('getData', 'projects');
+            // console.log(data, ' data ');
+            alert('Updated Successfully!!!');
         }).catch((e) => {
-            console.log(e);
+            // console.log(e);
+            alert('Unable to update');
         });
 
 }

@@ -1,6 +1,110 @@
 <template>
-    <div id="admin">
-        <header class="header">
+    <div>
+         <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="#" class="logo d-flex align-items-center">
+        <img src="/assets/images/picnobg.png" alt="">
+        <span class="d-none d-lg-block">Dealdrive</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn" @click="toggle"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="/assets/images/picnobg.png" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{ user.email }}</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>{{ user.name }}</h6>
+              <span>{{ user.role }}</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <!-- <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li> -->
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+        
+            <li>
+                <router-link to="{name:'adminDashBoard'}" class="dropdown-item d-flex align-items-center" @click="logout">
+                    <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+                </router-link>
+        
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        
+        <a class="nav-link " href="/home">
+          <i class="bi bi-grid"></i>
+          <span>Main Site</span>
+        </a>
+
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <router-link class="nav-link collapsed" v-for="nav in navigation" :key="nav.name" :to="{name:nav.to.name}">
+        
+          <i :class=nav.icon></i><span>{{nav.name}}</span>
+        </router-link>
+       
+      </li><!-- End Components Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+        <router-view></router-view>
+        
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- <header class="header">
             <div>
                 <h3>WELCOME</h3>
                 <p>ADMIN</p>
@@ -14,18 +118,19 @@
 
 
                 <router-link to="{name:'adminDashBoard'}" class="logout" @click="logout"><li>Logout</li><i style="color:red" class="fa fa-power-off fa-2x"></i></router-link>
+            
             </ul>
         </section>
 
         <section class="topnav">
-            <h3>DealDrive Admin</h3>
+            <h3>Dealdrive</h3>
             <p style="color:green" class="fa fa-bell fa-2x"></p>
         </section>
 
         <section class="main">
 
             <div class="main-navigation">
-                <div class="main-card"><h2>Users</h2></div>
+                <div class="main-card"><h2>Dashboard</h2></div>
             </div>
         
                 <div class="content">
@@ -40,7 +145,7 @@
             
             
             
-        </section>
+        </section> -->
         
     </div>
 
@@ -62,10 +167,15 @@ const navigation=computed(()=>{
     return store.state.adminnavigation
 });
 
+const user = JSON.parse(sessionStorage.getItem('user')) || {};
+
 let isActive = ref("Home");
 
 function isActiveChange(name){
     isActive=name
+}
+function toggle(){
+    document.querySelector('body').classList.toggle('toggle-sidebar')
 }
 
 function logout() {
@@ -76,11 +186,27 @@ function logout() {
         });
     });
 
-}           
+}
+
 
 </script>
 
 <style scoped>
+
+  @import url('https://fonts.gstatic.com');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i');
+  
+  @import url('/assets/ourvendor/bootstrap/css/bootstrap.min.css');
+  @import url('/assets/ourvendor/bootstrap-icons/bootstrap-icons.css');
+  @import url('/assets/ourvendor/boxicons/css/boxicons.min.css');
+  @import url('/assets/ourvendor/quill/quill.snow.css');
+  @import url('/assets/ourvendor/quill/quill.bubble.css');
+  @import url('/assets/ourvendor/remixicon/remixicon.css');
+  @import url('/assets/ourvendor/simple-datatables/style.css');
+  
+  @import url('/assets/style.css');
+/**
+
 *{
     padding: 0;
     margin: 0;
@@ -133,7 +259,7 @@ body,html{
     width: 95%;
     margin: 0 auto;
     overflow: auto;
-    /* border: 1px solid #aaa; */
+   
     padding: 0.9em;
 }
 .sidenav ul{
@@ -179,7 +305,6 @@ body,html{
     flex: 1;
 }
 
-/* main navigation */
 .main-navigation{
     border-bottom: 1px solid #aaa;
     margin-bottom: 5em;
@@ -207,4 +332,6 @@ body,html{
         width: 350px;
     }
 }
+
+**/
 </style>

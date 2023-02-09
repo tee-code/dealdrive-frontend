@@ -46,7 +46,7 @@
                  <BaseModal v-if="showModal && currentModalIndex == slide.id" @closeModal="toggleModal(slide.id)">
                     <h1 class="title">Slide Edit Form {{slide.title}}</h1>
 
-                    <form id="updateSlide" @submit="updateData(slide.id)">
+                    <form id="updateSlide" @submit.prevent="updateData(slide.id)">
 
                         <img :src="slide.image" alt="Current Slide Image" width="100" height="100">
 
@@ -86,10 +86,9 @@ let showModal=ref(false);
 let currentModalIndex = ref(null);
 
 
-function handleFileUpload(event){
-    slide.image = event.target.files[0];
-}
-
+// function handleFileUpload(event){
+//     slide.image = event.target.files[0];
+// }
 
 function toggleModal(id) {
 
@@ -103,11 +102,14 @@ function toggleModal(id) {
 
 function deleteData(id){
 
-    store.dispatch('deleteData', `deleteSlide/${id}`)
+    store.dispatch('deleteData', `slides/${id}`)
         .then((data) => {
-            console.log(data, ' data ');
+            // console.log(data, ' data ');
+            store.dispatch('getData', 'slides');
+            alert('Deleted successfully!');
         }).catch((e) => {
-            console.log(e);
+            // console.log(e);
+            alert('Unable to delete.');
         });
 }
 
@@ -120,15 +122,18 @@ function createData(e){
     let formData = new FormData(form);
 
     const data = {
-        key: 'createSlide',
+        key: 'slides',
         payload: formData
     }
 
     store.dispatch('postFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            // console.log(data, ' data ');
+            store.dispatch('getData', 'slides');
+            alert('Created Successfully!!!');
         }).catch((e) => {
-            console.log(e);
+            // console.log(e);
+            alert('Unable to create!!!');
         });
 
 }
@@ -140,15 +145,18 @@ function updateData(id){
     let formData = new FormData(form);
 
     const data = {
-        key: `updateSlide/${id}`,
+        key: `slides/${id}`,
         payload: formData
     }
 
     store.dispatch('updateFormData', data)
         .then((data) => {
-            console.log(data, ' data ');
+            // console.log(data, ' data ');
+            store.dispatch('getData', 'slides');
+            alert('Successfully Updated!!!');
         }).catch((e) => {
-            console.log(e);
+            // console.log(e);
+            alert('Unable to update');
         });
 
 }

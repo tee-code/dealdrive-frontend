@@ -1,7 +1,10 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
+
+import Contact from '../components/Contact.vue';
+
 
 defineProps({
   msg: String
@@ -9,11 +12,38 @@ defineProps({
 
 const store = useStore();
 
-const projects = computed(() => {
-  return store.state.projects;
+let all_projects = computed(() => {
+  return store.getters.allProjects;
 });
 
 store.dispatch('getData', 'projects').then((data) => console.log(data));
+
+let projects = all_projects.value;
+
+onMounted(() => {
+  projects.value = all_projects.value;
+});
+
+const filterProjects = (e) => {
+  const status = e.target.value;
+
+  if (status == 'ongoing'){
+
+    projects.value = all_projects.value.filter((project) => project.status == '0');
+    
+    
+  }else if(status == 'completed'){
+    projects.value = all_projects.value.filter((project) => project.status == '1');
+    
+    
+
+  }else{
+    projects.value = all_projects.value;
+    
+  }
+
+}
+
 
 const route = useRoute();
 
@@ -52,20 +82,29 @@ const route = useRoute();
 
         <div class="section-header">
           <h2>Project View</h2>
+          <div class="form-group d-flex">
+            <label for="">Filter</label>
+            <select class="form-control-sm mx-2" name="project-status" id="" v-on:change="filterProjects">
+              <option value="all" selected>All -- All our projects.</option>
+              <option value="ongoing">Ongoing -- The projects we are working on.</option>
+              <option value="completed">Finished -- The projects we are done with.</option>
+            </select>
+          </div>
+          
           <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
         <div class="row gy-4">
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
-              <li class="nav-item" v-for="project in projects" :key="project">
+              <li class="nav-item" v-for="project in projects.value" :key="project">
                 <a :class="['nav-link', route.params.id == project.id ? 'active show' : '']" data-bs-toggle="tab" :href="'#tab-'+project.id">{{ project.name }}</a>
               </li>
             </ul>
           </div>
           <div class="col-lg-9">
             <div class="tab-content">
-              <div :class="['tab-pane', route.params.id == project.id ? 'active show' : '']" :id="'tab-'+project.id" v-for="project in projects" :key="project">
+              <div :class="['tab-pane', route.params.id == project.id ? 'active show' : '']" :id="'tab-'+project.id" v-for="project in projects.value" :key="project">
                 <div class="row gy-4">
                   <div class="col-lg-4 order-2 order-lg-1 w-100 text-center">
                     <img :src="project.image" alt="" class="img-fluid">
@@ -96,6 +135,8 @@ const route = useRoute();
                           <li v-for="data in project.full_desc.result.data" :key="data">{{ data }}</li>
                         </ul>
                     </div>
+
+                    <a :href="project.url" v-if="project.url != '#'" class="blue text-white border-0 rounded p-2 mx-2">Visit</a>
                     
                   </div>
                 </div>
@@ -106,6 +147,8 @@ const route = useRoute();
         </div>
       </div>
     </section><!-- End Departments Section -->
+
+    <Contact />
 
     </main><!-- End #main -->
 
