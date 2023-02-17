@@ -1,6 +1,6 @@
 <template>
     <div>
-         <div class="d-flex flex-row justify-content-between">
+        <div class="d-flex flex-row justify-content-between">
             <h1 class="section-title">FAQ Section</h1>
             <button class="info bg-primary text-white border-0 px-4 mb-2" @click="toggleModal(0)">Create FAQ</button>
             
@@ -46,8 +46,11 @@
 
                     <form id="updateFAQ" @submit.prevent="updateData(faq.id)">
 
+                        <label>Question</label>
+
                         <textarea name="question" id="" cols="30" rows="10" placeholder="Question" :value="faq.question"></textarea>
 
+                        <label>Answer</label>
                         <textarea name="answer" id="" cols="30" rows="10" placeholder="Answer" :value="faq.answer"></textarea>
 
                         <button type="submit" class="success">Save</button>

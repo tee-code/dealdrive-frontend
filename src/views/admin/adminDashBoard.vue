@@ -55,52 +55,57 @@
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
+  <div class="container-fluid">
+    <div class="row">
+    <!-- ======= Sidebar ======= -->
+      <aside id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
 
-    <ul class="sidebar-nav" id="sidebar-nav">
+        <ul class="sidebar-nav" id="sidebar-nav">
 
-      <li class="nav-item">
-        
-        <a class="nav-link " href="/home">
-          <i class="bi bi-grid"></i>
-          <span>Main Site</span>
-        </a>
+          <li class="nav-item">
+            
+            <a class="nav-link " href="/home">
+              <i class="bi bi-grid"></i>
+              <span>Main Site</span>
+            </a>
 
-      </li><!-- End Dashboard Nav -->
+          </li><!-- End Dashboard Nav -->
 
-      <li class="nav-item">
-        <router-link class="nav-link collapsed" v-for="nav in navigation" :key="nav.name" :to="{name:nav.to.name}">
-        
-          <i :class=nav.icon></i><span>{{nav.name}}</span>
-        </router-link>
+          <li class="nav-item">
+            <router-link class="nav-link collapsed" v-for="nav in navigation" :key="nav.name" :to="{name:nav.to.name}">
+            
+              <i :class=nav.icon></i><span>{{nav.name}}</span>
+            </router-link>
+          
+          </li><!-- End Components Nav -->
+
+        </ul>
+
+      </aside><!-- End Sidebar-->
+
+      <main id="main" class="col-md-9 ml-sm-auto col-lg-9 px-md-4 py-4">
+        <div class="container">
+          <div class="pagetitle">
+            <h1>Dashboard</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+              </ol>
+            </nav>
+          </div><!-- End Page Title -->
+  
+          <section class="section dashboard">
+            <div class="row">
+              <router-view></router-view>
+            </div>
+          </section>
+        </div>
        
-      </li><!-- End Components Nav -->
 
-    </ul>
-
-  </aside><!-- End Sidebar-->
-
-  <main id="main" class="main">
-
-    <div class="pagetitle">
-      <h1>Dashboard</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
-
-    <section class="section dashboard">
-      <div class="row">
-        <router-view></router-view>
-        
-      </div>
-    </section>
-
-  </main><!-- End #main -->
+      </main><!-- End #main -->
+    </div>
+  </div>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

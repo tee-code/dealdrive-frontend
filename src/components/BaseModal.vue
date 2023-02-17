@@ -45,7 +45,6 @@
 }
 .modal-content{
     background-color: white;
-    width: auto;
     height: auto;
     margin: 3em auto;
     padding: .9em;

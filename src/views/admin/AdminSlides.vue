@@ -43,7 +43,9 @@
                         <button class="danger" @click="deleteData(slide.id)">Delete</button>
                      </div> 
                 </td>
+
                  <BaseModal v-if="showModal && currentModalIndex == slide.id" @closeModal="toggleModal(slide.id)">
+                    
                     <h1 class="title">Slide Edit Form {{slide.title}}</h1>
 
                     <form id="updateSlide" @submit.prevent="updateData(slide.id)">
@@ -51,9 +53,11 @@
                         <img :src="slide.image" alt="Current Slide Image" width="100" height="100">
 
                         <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
-                               
+                        
+                        <label>Slide Title</label>
                         <input name="title" type="text" placeholder="Title" :value="slide.title">
 
+                        <label>Caption</label>
                         <textarea name="caption" id="" cols="30" rows="10" placeholder="Caption" :value="slide.caption"></textarea>
 
                         <button type="submit" class="success">Save</button>

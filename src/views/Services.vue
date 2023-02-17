@@ -61,9 +61,9 @@ import { computed } from 'vue';
 
                     <div v-for="service in services" :key="service" class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="card">
-                            <div class="card-img">
+                            <!-- <div class="card-img">
                                 <img :src="service.image" alt="" class="img-fluid">
-                            </div>
+                            </div> -->
                             <h3 class="stretched-link">{{service.title}}</h3>
                             <p>
                                 {{ service.description}}

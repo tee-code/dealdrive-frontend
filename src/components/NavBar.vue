@@ -67,7 +67,7 @@ const name = computed(() =>route.name)
       </ul>
       <div class="d-none d-lg-flex align-center">
       
-          <router-link class="blue text-white border-0 rounded p-2 mx-2" :to="{name:'Training'}"> Join Our Training </router-link>
+          <!-- <router-link class="blue text-white border-0 rounded p-2 mx-2" :to="{name:'Training'}"> Join Our Training </router-link> -->
         
           <router-link class="orange text-white border-0 rounded p-2" :to="{name:'Quotation'}"> Get Quote </router-link>    
       

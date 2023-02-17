@@ -233,7 +233,7 @@ const navigations = [
     { name: 'About Us', to: { name: 'About' } },
 
 
-    { name: 'Blog', to: { name: 'Blog' } },
+    // { name: 'Blog', to: { name: 'Blog' } },
     // { name: 'Training', to: { name: 'Training' } },
 
 
@@ -462,7 +462,7 @@ const store = createStore({
         users: [],
         messages: [],
         user: {
-            data: JSON.parse(sessionStorage.getItem('data')),
+            data: JSON.parse(sessionStorage.getItem('user')),
             token: sessionStorage.getItem('TOKEN')
         },
 

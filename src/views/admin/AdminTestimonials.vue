@@ -64,13 +64,17 @@
                         <img :src="testimonial.image" alt="Current Image" width="100" height="100">
 
                         <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
-                                
+                        
+                        <label>Star</label>
                         <input name="star" type="number" placeholder="Rating from 1 to 5" :value="testimonial.star">
-
+                        
+                        <label>Title</label>
                         <input name="title" type="text" placeholder="Title" :value="testimonial.title">
 
+                        <label>Author</label>
                         <input name="author" type="text" placeholder="Author" :value="testimonial.author">
 
+                        <label>Description</label>
                         <textarea name="description" id="" cols="30" rows="10" placeholder="Main Description" :value="testimonial.description"></textarea>
 
                         <button type="submit" class="success">Save</button>

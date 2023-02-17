@@ -94,6 +94,8 @@
 
                     <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
                                         
+                    <label>Status</label>
+
                     <select name="status" id="">
 
                         <option value="0">---Select Status---</option>
@@ -103,6 +105,7 @@
 
                     </select>
 
+                    <label>Category Class</label>
                     <select name="class" id="">
 
                         <option value="">---Select Class---</option>
@@ -111,24 +114,35 @@
                     
                     </select>
 
+                    <label>Name</label>
+
                     <input name="name" type="text" placeholder="Name" :value="project.name">
 
+                    <label>URL</label>
                     <input name="url" type="text" placeholder="URL" :value="project.url">
 
+                    <label>Desc</label>
                     <textarea name="desc" id="" cols="30" rows="10" placeholder="Description" :value="project.desc"></textarea>
 
+                    <label>Aim</label>
                     <textarea name="aim" id="" cols="30" rows="10" placeholder="Full-desc Aim" :value="project.full_desc.aim"></textarea>
 
+                    <label>Gap</label>
                     <textarea name="gap" id="" cols="30" rows="10" placeholder="Full-desc Gap" :value="project.full_desc.gap"></textarea>
 
+                    <label>Solution</label>
                     <textarea name="solution" id="" cols="30" rows="10" placeholder="Full-desc Solution" :value="project.full_desc.solution"></textarea>
 
+                    <label>Optimization</label>
                     <textarea name="optimization" id="" cols="30" rows="10" placeholder="Full-desc Optimization" :value="project.full_desc.optimization"></textarea>
 
+                    <label>Result Title</label>
                     <textarea name="result_title" id="" cols="30" rows="10" placeholder="Result Title" :value="project.full_desc.result.title"></textarea>
 
+                    <label>Result Data 1</label>
                     <textarea name="result_data_1" id="" cols="10" rows="10" placeholder="Result Data 1" :value="project.full_desc.result.data[0]"></textarea>
                     
+                    <label>Result Data 2</label>
                     <textarea name="result_data_2" id="" cols="10" rows="10" placeholder="Result Data 2" :value="project.full_desc.result.data[1]"></textarea>
                 
                     <button type="submit" class="success">Save</button>

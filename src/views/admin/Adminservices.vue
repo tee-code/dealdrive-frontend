@@ -57,10 +57,13 @@
 
                         <input name="image" type="file" accept="image/*" placeholder="Chose image" @change="handleFileUpload( $event )">
                         
+                        <label>Title</label>
                         <input name="title" type="text" placeholder="Title" :value="service.title">
                         
+                        <label>Short Desc</label>
                         <input name="short_desc" type="text" placeholder="Short description" :value="service.short_desc">
 
+                        <label>Full Desc</label>
                         <textarea name="description" id="" cols="30" rows="10" placeholder="Main Description" :value="service.description"></textarea>
 
                         <button type="submit" class="success">Save</button>

@@ -32,56 +32,67 @@
 
             </BaseModal>
         </div>
-        <table style="width:100%">
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Facebook</th>
-                <th>Twitter</th>
-                <th>Instagram</th>
-                <th>Linkedin</th>
-                <th>Actions</th>
-            </tr>
+        <div class="table-responsive">
+            <table class="table" style="width: auto">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Facebook</th>
+                    <th>Twitter</th>
+                    <th>Instagram</th>
+                    <th>Linkedin</th>
+                    <th>Actions</th>
+                </tr>
+    
+                <tr v-for="team in teams" :key="team.id">
+                    <td>{{team.id}}</td>
+                    <td>{{team.title}}</td>
+                    <td>{{team.name}}</td>
+    
+                    <td><img style="width:100px; hieght:100px" :src='team.image' :alt="team.name+ ' Image'"></td>
+                    <td v-for="social in team.socials" :key="social.name">{{social.profile}}</td>
+                    
+                    <td>
+                       <div class="button-section">
+                            <button class="info" @click="toggleModal(team.id)">Edit</button>
+                            <button class="danger" @click="deleteData(team.id)">Delete</button>
+                         </div> 
+                    </td>
+                     <BaseModal v-if="showModal && currentModalIndex == team.id" @closeModal="toggleModal(team.id)">
+                        <h1 class="title">Team Edit Form {{team.title}}</h1>
+                        <form id="updateTeam" @submit.prevent="updateData(team.id)">
 
-            <tr v-for="team in teams" :key="team.id">
-                <td>{{team.id}}</td>
-                <td>{{team.title}}</td>
-                <td>{{team.name}}</td>
+                            <div class="mb-3">
 
-                <td><img style="width:100px; hieght:100px" :src='team.image' :alt="team.name+ ' Image'"></td>
-                <td v-for="social in team.socials" :key="social.name">{{social.name}}</td>
+                              <label for="exampleInputEmail1" class="form-label">Profile Image</label>
+                              <img class="form-control-sm" :src="team.image" alt="Current Team Image" width="100" height="100">
+    
+                            <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Title</label>
+                                <input class="form-control" name="title" type="text" placeholder="Title" :value="team.title" />
+                                
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                                <input class="form-control" name="name" type="text" placeholder="Full Name" :value="team.name" />
                 
-                <td>
-                   <div class="button-section">
-                        <button class="info" @click="toggleModal(team.id)">Edit</button>
-                        <button class="danger" @click="deleteData(team.id)">Delete</button>
-                     </div> 
-                </td>
-                 <BaseModal v-if="showModal && currentModalIndex == team.id" @closeModal="toggleModal(team.id)">
-                    <h1 class="title">Team Edit Form {{team.title}}</h1>
-
-                    <form id="updateTeam" @submit.prevent="updateData(team.id)">
-
-                        <img :src="team.image" alt="Current Team Image" width="100" height="100">
-
-                        <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
-                            
-                        <input name="title" type="text" placeholder="Title" :value="team.title">
-
-                        <input name="name" type="text" placeholder="Full Name" :value="team.name">
-
-                        <input v-for="social in team.socials" :key="social.name" :name="social.name" type="text" :placeholder="social.name +  ' Username'" :value="social.name">
-                        
-                        <button type="submit" class="success">Save</button>
-
-                    </form>
-                </BaseModal>
-            </tr>
-
-        </table>
-       
+                            </div>
+                            <div class="mb-3" v-for="social in team.socials" :key="social.name">
+                                <label for="exampleInputEmail1" class="form-label">{{ social.name }}</label>
+                                <input :name="social.name" type="text" :placeholder="social.name +  ' Username'" :value="social.profile"/>
+                            </div>
+                           
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </BaseModal>
+                </tr>
+    
+            </table>
+        </div>
     </div>
 </template>
 
@@ -184,7 +195,7 @@ function updateData(id){
 </script>
 
 <style scoped>
-
+table.table { width:auto; }
 input::placeholder{
     font-size: 1.4rem;
 }
@@ -208,10 +219,17 @@ input{
     
 }
 form button{
-    width: 100%;
-    margin-bottom: 2em;
-    padding: .2em;
-    font-size: 2rem;
+    
+    margin: 2em 0;
+    padding: 1em;
+    border: none;
+    
+}
+
+form input::placeholder{
+    position: absolute;
+    top: 4%;
+    color: red;
 }
 div>h1{
     text-align: center;

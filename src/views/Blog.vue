@@ -88,8 +88,9 @@ store.dispatch('getData', 'posts');
 
           </div>
 
-          <div class="col-md-3">
-            <!-- ======= Sidebar ======= -->
+          
+          <!-- <div class="col-md-3">
+            
             <div class="aside-block">
 
               <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
@@ -103,7 +104,7 @@ store.dispatch('getData', 'posts');
 
               <div class="tab-content" id="pills-tabContent">
 
-                <!-- Popular -->
+               
                 <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
                   <div class="post-entry-1 border-bottom">
                     <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
@@ -128,10 +129,7 @@ store.dispatch('getData', 'posts');
                     <h2 class="mb-2"><a href="#">The Best Homemade Masks for Face (keep the Pimples Away)</a></h2>
                     <span class="author mb-3 d-block">Jenny Wilson</span>
                   </div>
-                </div> <!-- End Popular -->
-
-
-                <!-- Latest -->
+                </div> 
                 <div class="tab-pane fade" id="pills-latest" role="tabpanel" aria-labelledby="pills-latest-tab">
                   <div class="post-entry-1 border-bottom">
                     <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
@@ -157,7 +155,7 @@ store.dispatch('getData', 'posts');
                     <span class="author mb-3 d-block">Jenny Wilson</span>
                   </div>
 
-                </div> <!-- End Latest -->
+                </div> 
 
               </div>
             </div>
@@ -170,7 +168,7 @@ store.dispatch('getData', 'posts');
                   <img src="/assets/images/post/post-landscape-5.jpg" alt="" class="img-fluid">
                 </a>
               </div>
-            </div><!-- End Video -->
+            </div>
 
             <div class="aside-block">
               <h3 class="aside-title">Tags</h3>
@@ -184,15 +182,15 @@ store.dispatch('getData', 'posts');
                 <li><a href="#">Software</a></li>
                 <li><a href="#">Blockchain</a></li>
               </ul>
-            </div><!-- End Tags -->
+            </div>
 
-          </div>
+          </div> -->
 
         </div>
       </div>
-    </section> <!-- End Search Result -->
+    </section> 
 
-    </main><!-- End #main -->
+    </main>
 </template>
 
 <style scoped>

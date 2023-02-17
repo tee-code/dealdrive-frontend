@@ -53,11 +53,13 @@ const routes = [{
                 path: '/contact',
                 component: Contact,
                 name: "Contact",
-            }, {
-                path: '/blog',
-                component: Blog,
-                name: "Blog",
-            }, {
+            },
+            //{
+            //     path: '/blog',
+            //     component: Blog,
+            //     name: "Blog",
+            // }
+            {
                 path: '/projects/:id',
                 component: Projects,
                 name: "Projects",
@@ -78,14 +80,14 @@ const routes = [{
                 path: '/readmore',
                 component: ReadMore,
                 name: "ReadMore",
-            },
-
-            {
-                path: '/blogReadMore/:id',
-                component: blogReadMore,
-                name: "blogReadMore",
-                props: true
             }
+
+            // {
+            //     path: '/blogReadMore/:id',
+            //     component: blogReadMore,
+            //     name: "blogReadMore",
+            //     props: true
+            // }
 
         ]
     },

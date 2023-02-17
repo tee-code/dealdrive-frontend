@@ -3,6 +3,36 @@
         <div class="d-flex flex-row justify-content-between">
 
             <h1 class="section-title">About Us Section</h1>
+            
+            <button v-if="! abouts" class="info bg-primary text-white border-0 px-4 mb-2" @click="toggleModal(0)">
+                Create About Us
+            </button>
+            
+            <BaseModal v-if="showModal && currentModalIndex == 0" @closeModal="toggleModal(0)">
+
+                <h1 class="title">Create About US</h1>
+
+                <form id="createAboutUs" @submit="createData">
+
+                    <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
+                        
+                    <label>About Heading</label>
+                    <input name="heading" type="text" placeholder="About Heading">
+                    
+                    <label>Short Desc</label>
+                    <input name="short_desc" type="text" placeholder="Short description">
+
+                    <div v-for="(list,index) in [1,2,3,4]" :key="list">
+                        <label>{{ 'List ' +(index+1) }}</label>
+                        <textarea  :name="'list_'+(index+1)" id="" cols="30" rows="10" :placeholder="'List ' +(index+1)"></textarea>
+
+                    </div>
+
+                    <button type="submit" class="success">Save</button>
+
+                </form>
+
+            </BaseModal>
 
         </div>
 
@@ -15,7 +45,7 @@
                 <th>Actions</th>
             </tr>
 
-            <tr>
+            <tr v-for="about in abouts" :key="about">
                 <td>{{about.heading}}</td>
                 <td>{{about.short_desc}}</td>
                 <td>
@@ -29,7 +59,7 @@
                 <td>
                    <div class="button-section">
                         <button class="info" @click="toggleModal(about.id)">Edit</button>
-                        <!-- <button class="danger" @click="deleteData(about.id)">Delete</button> -->
+                        <button class="danger" @click="deleteData(about.id)">Delete</button>
                      </div> 
                 </td>
                 <BaseModal v-if="showModal && currentModalIndex == about.id" @closeModal="toggleModal(about.id)">
@@ -41,12 +71,18 @@
 
                         <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
                         
+                        <label>About Heading</label>
                         <input name="heading" type="text" placeholder="About Heading" :value="about.heading">
                         
+                        <label>Short Desc</label>
                         <input name="short_desc" type="text" placeholder="Short description" :value="about.short_desc">
 
-                        <textarea v-for="(list,index) in about.list" :key="list" :name="'list_'+(index+1)" id="" cols="30" rows="10" :placeholder="'List ' +index+1" :value="list"></textarea>
+                        <div v-for="(list,index) in about.list" :key="list">
+                            <label>{{ 'List ' +(index+1) }}</label>
+                            <textarea  :name="'list_'+(index+1)" id="" cols="30" rows="10" :placeholder="'List ' +index+1" :value="list"></textarea>
 
+                        </div>
+                        
                         <button type="submit" class="success">Save</button>
 
                     </form>
@@ -70,8 +106,8 @@ import BaseModal from '../../components/BaseModal.vue';
 
 const store = useStore();
 
-const about = computed(() => {
-    return store.state.about[0];
+const abouts = computed(() => {
+    return store.state.about;
 });
 
 store.dispatch('getData', 'about');
@@ -96,17 +132,41 @@ function toggleModal(id) {
 
 }
 
-// function deleteData(id){
+function deleteData(id){
 
-//     store.dispatch('deleteData', `deleteAboutUs/${id}`)
-//         .then((data) => {
-//             store.dispatch('getData', 'about');
-//             alert('Deleted Successfully!!!');
-//         }).catch((e) => {
-//             alert('Unable to delete.');
-//         });
-// }
+    store.dispatch('deleteData', `removeAboutUs/${id}`)
+        .then((data) => {
+            store.dispatch('getData', 'about');
+            alert('Deleted Successfully!!!');
+        }).catch((e) => {
+            alert('Unable to delete.');
+        });
+}
 
+function createData(e){
+
+    e.preventDefault();
+
+    const form = document.querySelector('form#createAboutUs');
+
+    let formData = new FormData(form);
+
+    const data = {
+        key: 'about',
+        payload: formData
+    }
+
+    store.dispatch('postFormData', data)
+        .then((data) => {
+            // console.log(data, ' data ');
+            store.dispatch('getData', 'about');
+            alert('Created Successfully!!!');
+        }).catch((e) => {
+            // console.log(e);
+            alert('Unable to create!!!');
+        });
+
+}
 
 function updateData(id){
 
@@ -123,7 +183,7 @@ function updateData(id){
         .then((data) => {
             
             store.dispatch('getData', 'about');
-            alert('Successfully Created!!!');
+            alert('Successfully Updated!!!');
         }).catch((e) => {
             alert('Unable to update.');
             // console.log(e, "inside data");
@@ -150,8 +210,7 @@ form input,textarea{
     margin-top: 2em;
 }
 input{
-    padding: 1em;
-    
+    padding: 1em;   
 }
 form button{
     width: 100%;

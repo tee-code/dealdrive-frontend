@@ -6,8 +6,8 @@
                     <div class="col-md-9 post-content" data-aos="fade-up">
                       
                         <!-- ======= Single Post Content ======= -->
-                        <template v-for="blog in blogs" :key="blog.id">
-                            <div class="single-post" v-if="blog.id == id">
+                        <div v-for="blog in blogs" :key="blog.id">
+                            <div class="single-post" v-if="blog.id == props.id">
                                     <div class="post-meta"><span class="date">{{blog.category}}</span> <span class="mx-1">&bullet;</span> <span>{{blog.date}}</span></div>
                                     <h1 class="mb-5">{{blog.title}}</h1>
 
@@ -21,7 +21,7 @@
                                     <p>{{blog.description}}</p>
                                     
                         </div>
-                        </template>
+                    </div>
                         
                         <!-- End Single Post Content -->
 
@@ -132,7 +132,7 @@
                 </div>
             </div>
         </section>
-    </main>
+</main>
     
 </template>
 
@@ -143,7 +143,7 @@ import { useStore } from 'vuex';
 
 const store = useStore();
 
-defineProps({
+const props = defineProps({
   msg: String,
   id:String
 })
@@ -152,7 +152,10 @@ const route = useRoute()
 
 const blogs=computed(()=>{
     return store.state.blog
-})
+});
+
+// store.dispatch('getData', 'posts');
+
 
 </script>
 

@@ -11,15 +11,20 @@
                     <form id="createPost" @submit="createData">
 
                     <input name="image" type="file" accept="image/*"  placeholder="Choose image">
-                
+                    
+                    <label>Title</label>
                     <input name="title" type="text" placeholder="Title">
     
+                    <label>Description</label>
                     <input name="description" type="text" placeholder="Description">
     
+                    <label>Date</label>
                     <input name="date" type="date" placeholder="Date">
     
+                    <label>Category</label>
                     <input name="category" type="text" placeholder="Category">
-    
+                    
+                    <label>User Profile Name</label>
                     <input name = "username" type="text" placeholder="User profile name">
     
                     <label for="avatar">User image</label>
@@ -76,14 +81,19 @@
                         
                         <input name="image" type="file" accept="image/*"  placeholder="Choose image">
                 
+                        <label>TItle</label>
                         <input name="title" type="text" placeholder="Title" :value="post.title">
-        
+
+                        <label>Description</label>
                         <input name="description" type="text" placeholder="Description" :value="post.description">
-        
+                        
+                        <label>Date</label>
                         <input name="date" type="date" placeholder="Date" :value="post.date">
-        
+                        
+                        <label>Category</label>
                         <input name="category" type="text" placeholder="Category" :value="post.category">
         
+                        <label>User Profile Name</label>
                         <input name = "username" type="text" placeholder="User profile name" :value="post.userProfile.name">
                         
                         <img :src="post.userProfile.image" alt="Current Image" width="100" height="100" />

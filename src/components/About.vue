@@ -5,7 +5,8 @@ import { useStore } from 'vuex';
 const store = useStore();
 
 const about = computed(() => {
-  return store.state.about;
+  console.log(store.state.about[0]);
+  return store.state.about[0];
 });
 
 store.dispatch('getData', 'about');

@@ -1,0 +1,22 @@
+.button-section{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+.button-section button{
+    font-size: 1.1rem;
+    padding: .5em 1em;
+    border-radius: .3em;
+}
+
+.button-section button.info{
+    background-color: var(--clr-orange);
+}
+
+.button-section button.danger{
+    background-color: tomato;
+}
+
+.fa-solid{
+    font-size: 3rem;
+}

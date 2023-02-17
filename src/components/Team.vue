@@ -41,7 +41,7 @@ store.dispatch('getData', 'teams');
           <div class="card-text text-black-50">{{team.title}}</div>
           <div class="social d-flex justify-content-around ">
             <a v-for="social in team.socials" :key="social" 
-              :href="social.profile" target="_blank">
+              :href="social.link" target="_blank">
               <i :class="social.icon"></i>
             </a>
                   
