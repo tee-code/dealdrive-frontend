@@ -10,9 +10,9 @@
 
                 <form id="createFAQ" @submit="createData">
                     
-                    <textarea name="question" id="" cols="30" rows="10" placeholder="Question"></textarea>
+                    <textarea name="question" id="" cols="30" rows="10" placeholder="Question" required></textarea>
 
-                    <textarea name="answer" id="" cols="30" rows="10" placeholder="Answer"></textarea>
+                    <textarea name="answer" id="" cols="30" rows="10" placeholder="Answer" required></textarea>
 
                     <button type="submit" class="success">Save</button>
 
@@ -128,8 +128,8 @@ function createData(e){
             // console.log(data, ' data ');
             alert('Created Successfully!!!');
         }).catch((e) => {
-            // console.log(e);
-            alert('Unable to delete');
+            console.log(e);
+            alert('Unable to create');
         });
 
 }

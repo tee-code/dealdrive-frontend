@@ -9,9 +9,9 @@
 
                     <form id="createProject" @submit="createData">
 
-                    <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )">
+                    <input name="image" type="file" accept="image/*"  placeholder="Choose image" @change="handleFileUpload( $event )" required>
                 
-                    <select name="status" id="">
+                    <select name="status" id="" required>
 
                         <option value="0">---Select Status---</option>
 
@@ -20,31 +20,32 @@
                         
                     </select>
 
-                    <select name="class" id="">
+                    <select name="class" id="" required>
+                        
                         <option value="">---Select Class---</option>
                         <option v-for="category in project_categories" :key="category.id" :value="category.class">{{category.name}}</option>
                         
                     </select>
 
-                    <input name="name" type="text" placeholder="Name">
+                    <input name="name" type="text" placeholder="Name" required>
 
-                    <input name="url" type="text" placeholder="Url">
+                    <input name="url" type="text" placeholder="Url" value="#" required>
 
-                    <textarea name="desc" id="" cols="30" rows="10" placeholder="Description"></textarea>
+                    <textarea name="desc" id="" cols="30" rows="10" placeholder="Description" required></textarea>
 
-                    <textarea name="aim" id="" cols="30" rows="10" placeholder="Full-desc Aim"></textarea>
+                    <textarea name="aim" id="" cols="30" rows="10" placeholder="Full-desc Aim" required></textarea>
 
-                    <textarea name="gap" id="" cols="30" rows="10" placeholder="Full-desc Gap"></textarea>
+                    <textarea name="gap" id="" cols="30" rows="10" placeholder="Full-desc Gap" required></textarea>
 
-                    <textarea name="solution" id="" cols="30" rows="10" placeholder="Full-desc Solution"></textarea>
+                    <textarea name="solution" id="" cols="30" rows="10" placeholder="Full-desc Solution" required></textarea>
 
-                    <textarea name="optimization" id="" cols="30" rows="10" placeholder="Full-desc Optimization"></textarea>
+                    <textarea name="optimization" id="" cols="30" rows="10" placeholder="Full-desc Optimization" required></textarea>
 
-                    <textarea name="result_title" id="" cols="30" rows="10" placeholder="Result Title"></textarea>
+                    <textarea name="result_title" id="" cols="30" rows="10" placeholder="Result Title" required></textarea>
 
-                    <textarea name="result_data_1" id="" cols="30" rows="5" placeholder="Result Data 1"></textarea>
+                    <textarea name="result_data_1" id="" cols="30" rows="5" placeholder="Result Data 1" required></textarea>
                     
-                    <textarea name="result_data_2" id="" cols="30" rows="5" placeholder="Result Data 2"></textarea>
+                    <textarea name="result_data_2" id="" cols="30" rows="5" placeholder="Result Data 2" required></textarea>
                 
                     <button type="submit" class="success">Save</button>
 
@@ -106,6 +107,7 @@
                     </select>
 
                     <label>Category Class</label>
+
                     <select name="class" id="">
 
                         <option value="">---Select Class---</option>
